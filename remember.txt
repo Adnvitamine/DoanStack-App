@@ -1,0 +1,12 @@
+SQL Shell (psql)
+password: 2432Admin21
+\l                       to list all databases
+\c databaseName          to connect to specifil database
+\dt                      to show all tables in selected database
+
+ENCODING:
+SHOW client_encoding;
+SET client_encoding = "UTF8";
+
+QUERY:
+SELECT * FROM tableName ;

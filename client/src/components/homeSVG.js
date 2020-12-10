@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class HomeSVG extends Component {
   render() {
     return (
-      <svg width="1018" height="760" viewBox="0 0 1018 760" fill="none">
+      <svg width="100%" height="760" viewBox="0 0 1018 760" fill="none">
         <g id="home 1">
           <g id="InlineSVGColor 1">
             <g id="InlineSVG">
@@ -399,7 +399,7 @@ export default class HomeSVG extends Component {
             y2="680.377"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#F2F2F2" />
+            <stop stopColor="#F2F2F2" />
           </linearGradient>
           <linearGradient
             id="paint2_linear"
@@ -420,8 +420,8 @@ export default class HomeSVG extends Component {
             y2="355"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#0D41F7" />
-            <stop offset="1" stop-color="#F70C36" />
+            <stop stopColor="#0D41F7" />
+            <stop offset="1" stopColor="#F70C36" />
           </linearGradient>
         </defs>
       </svg>
