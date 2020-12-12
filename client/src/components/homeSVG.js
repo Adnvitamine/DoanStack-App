@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class HomeSVG extends Component {
   render() {
     return (
-      <svg width="100%" height="760" viewBox="0 0 1018 760" fill="none">
+      <svg width="100%" style={{minHeight: 760 + 'px'}} viewBox="0 0 1018 760" fill="none">
         <g id="home 1">
           <g id="InlineSVGColor 1">
             <g id="InlineSVG">

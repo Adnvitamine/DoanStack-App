@@ -76,7 +76,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {article.author}. To comment, please log in" - DoanStack.be
+            {article.author}. To comment, please sign in" - DoanStack.be
           </p>
         )}
         {user.username && (
@@ -316,7 +316,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                   <h1>Write a comment</h1>
                 </div>
               </div>
-              {user === "Visitor" && <p>Please sign in to write a review</p>}
+              {user === "Visitor" && <p>Please <a href="/login">sign in</a> to write a review</p>}
               {user.username && (
                 <ArticleCreateCom articleId={articleId} user={user} />
               )}

@@ -102,7 +102,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {product.vendor}. To comment, please log in" - DoanStack.be
+            {product.vendor}. To comment, please sign in" - DoanStack.be
           </p>
         )}
         {user.username && (
@@ -369,7 +369,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 </div>
               </div>
               {user === "Visitor" && (
-                <p>Please sign in to evaluate this product</p>
+                <p>Please <a href="/login">sign in</a> to evaluate this product</p>
               )}
               {user.username && (
                 <ProductCreateRating productId={productId} userId={user.id} />
@@ -381,7 +381,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                   <h1>Write a review</h1>
                 </div>
               </div>
-              {user === "Visitor" && <p>Please sign in to write a review</p>}
+              {user === "Visitor" && <p>Please <a href="/login">sign in</a> to write a review</p>}
               {user.username && (
                 <ProductCreateReview productId={productId} user={user} />
               )}

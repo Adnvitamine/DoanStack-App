@@ -168,12 +168,12 @@ class App extends Component {
                           </Link>
                         </li>
                         <li className="mobilenav-item" id="MobileBlog">
-                          <Link to={"/"} className="nav-link">
+                          <Link to={"/blog"} className="nav-link">
                             Blog
                           </Link>
                         </li>
                         <li className="mobilenav-item" id="MobileShop">
-                          <Link to={"/"} className="nav-link">
+                          <Link to={"/shop"} className="nav-link">
                             Shop
                           </Link>
                         </li>

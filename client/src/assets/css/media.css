@@ -228,28 +228,28 @@
     width: 60%;
     left: 50%;
     margin-left: -30%;
-    font-size: 14px;
+    font-size: 18px;
     animation: fontSize2 1s linear forwards;
   }
   @keyframes fontSize2 {
     from {
-      font-size: 14px;
+      font-size: 18px;
     }
     to {
-      font-size: 20px;
+      font-size: 22px;
     }
   }
   #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 20px;
+    font-size: 22px;
     animation: fontSizeReverse2 1s linear reverse,
       neon2 3s ease-in-out infinite alternate;
   }
   @keyframes fontSizeReverse2 {
     from {
-      font-size: 20px;
+      font-size: 22px;
     }
     to {
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   #MoreProducts {
@@ -337,28 +337,28 @@
     width: 70%;
     left: 50%;
     margin-left: -35%;
-    font-size: 12px;
+    font-size: 16px;
     animation: fontSize2 1s linear forwards;
   }
   @keyframes fontSize2 {
     from {
-      font-size: 12px;
+      font-size: 16px;
     }
     to {
-      font-size: 18px;
+      font-size: 20px;
     }
   }
   #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 18px;
+    font-size: 20px;
     animation: fontSizeReverse2 1s linear reverse,
       neon2 3s ease-in-out infinite alternate;
   }
   @keyframes fontSizeReverse2 {
     from {
-      font-size: 18px;
+      font-size: 20px;
     }
     to {
-      font-size: 12px;
+      font-size: 16px;
     }
   }
 }
@@ -431,15 +431,15 @@
     width: 85%;
     left: 50%;
     margin-left: -40%;
-    font-size: 12px;
+    font-size: 16px;
     animation: fontSize2 1s linear forwards;
   }
   @keyframes fontSize2 {
     from {
-      font-size: 12px;
+      font-size: 16px;
     }
     to {
-      font-size: 18px;
+      font-size: 20px;
     }
   }
   #BlogBody {
@@ -451,12 +451,12 @@
   }
 
   .BrowserNavbar p {
-    font-size: 10px;
+    font-size: 14px;
     animation: slide1 10s linear infinite;
   }
 
   .BrowserNavbar p:hover {
-    font-size: 12px;
+    font-size: 16px;
     animation: slide1 10s linear infinite;
   }
   #BlogBody {
@@ -486,28 +486,28 @@
     width: 100%;
     left: 50%;
     margin-left: -50%;
-    font-size: 10px;
+    font-size: 16px;
     animation: fontSize2 1s linear forwards;
   }
   @keyframes fontSize2 {
     from {
-      font-size: 10px;
+      font-size: 16px;
     }
     to {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
   #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 16px;
+    font-size: 20px;
     animation: fontSizeReverse2 1s linear reverse,
       neon2 3s ease-in-out infinite alternate;
   }
   @keyframes fontSizeReverse2 {
     from {
-      font-size: 16px;
+      font-size: 20px;
     }
     to {
-      font-size: 10px;
+      font-size: 16px;
     }
   }
   .BrowserNavbar {
@@ -601,7 +601,7 @@
     top: 50px;
   }
   .BrowserNavbar {
-    display: none;
+    margin-top: 22px;
   }
   #MoreArticles {
     display: none;
@@ -647,43 +647,43 @@
     padding-top: 200px;
   }
   #ShopNav {
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
   #ShopNav ul li:hover {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   #BlogNav {
-    font-size: 10px !important;
+    font-size: 14px !important;
   }
   #BlogNav ul li:hover {
-    font-size: 12px !important;
+    font-size: 16px !important;
   }
 }
 
 @media only screen and (max-width: 400px) {
   #TitleLink h1 {
-    font-size: 10px;
+    font-size: 14px;
     animation: fontSize2 1s linear forwards;
   }
   @keyframes fontSize2 {
     from {
-      font-size: 10px;
+      font-size: 14px;
     }
     to {
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 14px;
+    font-size: 18px;
     animation: fontSizeReverse2 1s linear reverse,
       neon2 3s ease-in-out infinite alternate;
   }
   @keyframes fontSizeReverse2 {
     from {
-      font-size: 14px;
+      font-size: 18px;
     }
     to {
-      font-size: 10px;
+      font-size: 14px;
     }
   }
   .DoanStackLogoName p {
@@ -708,28 +708,38 @@
     width: 100%;
     left: 50%;
     margin-left: -50%;
-    font-size: 10px;
+    font-size: 14px;
     animation: fontSize2 1s linear forwards;
   }
   @keyframes fontSize2 {
     from {
-      font-size: 10px;
+      font-size: 14px;
     }
     to {
-      font-size: 12px;
+      font-size: 18px;
     }
   }
   #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 12px;
+    font-size: 18px;
     animation: fontSizeReverse2 1s linear reverse,
       neon2 3s ease-in-out infinite alternate;
   }
   @keyframes fontSizeReverse2 {
     from {
-      font-size: 12px;
+      font-size: 18px;
     }
     to {
-      font-size: 10px;
+      font-size: 14px;
     }
+  }
+  #ShopNav {
+    font-size: 10px !important;
+  }
+  #ShopNav ul li:hover {
+    font-size: 12px !important;
+  }
+
+  .shopFrame {
+    width: 270px !important;
   }
 }
