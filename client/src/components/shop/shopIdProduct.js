@@ -73,7 +73,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
       <div className="BrowserNavbar">
         {user === "Visitor" && (
           <p>
-            "This product is proposed by{" "}
+            "Proposed by{" "}
             {product.vendor_avatar === "null" && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -102,12 +102,12 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {product.vendor}. To comment, please sign in" - DoanStack.be
+            {product.vendor}. Sign in to comment" - DoanStack.be
           </p>
         )}
         {user.username && (
           <p>
-            "This product is proposed by{" "}
+            "Proposed by{" "}
             {product.vendor_avatar === "null" && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -136,7 +136,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {product.vendor}. You are connected as {user.username}." -
+            {product.vendor}. Connected as {user.username}." -
             DoanStack.be
           </p>
         )}
@@ -175,28 +175,6 @@ const ShopIdProduct = ({ productId, currentUser }) => {
               )}
             </li>
             <li>
-              {(product.category === "Food" && (
-                <Link to="/Food" style={{ color: "rgb(0, 162, 255)" }}>
-                  <b>Food</b>
-                </Link>
-              )) || (
-                <Link to="/Food">
-                  <b>Food</b>
-                </Link>
-              )}
-            </li>
-            <li>
-              {(product.category === "Grocery" && (
-                <Link to="/Grocery" style={{ color: "rgb(0, 162, 255)" }}>
-                  <b>Grocery</b>
-                </Link>
-              )) || (
-                <Link to="/Grocery">
-                  <b>Grocery</b>
-                </Link>
-              )}
-            </li>
-            <li>
               {(product.category === "PC" && (
                 <Link to="/PC" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>PC</b>
@@ -208,24 +186,24 @@ const ShopIdProduct = ({ productId, currentUser }) => {
               )}
             </li>
             <li>
-              {(product.category === "Property" && (
-                <Link to="/Property" style={{ color: "rgb(0, 162, 255)" }}>
-                  <b>Property</b>
+              {(product.category === "Estate" && (
+                <Link to="/Estate" style={{ color: "rgb(0, 162, 255)" }}>
+                  <b>Estate</b>
                 </Link>
               )) || (
-                <Link to="/Property">
-                  <b>Property</b>
+                <Link to="/Estate">
+                  <b>Estate</b>
                 </Link>
               )}
             </li>
             <li>
-              {(product.category === "Service" && (
-                <Link to="/Service" style={{ color: "rgb(0, 162, 255)" }}>
-                  <b>Service</b>
+              {(product.category === "Services" && (
+                <Link to="/Services" style={{ color: "rgb(0, 162, 255)" }}>
+                  <b>Services</b>
                 </Link>
               )) || (
-                <Link to="/Service">
-                  <b>Service</b>
+                <Link to="/Services">
+                  <b>Services</b>
                 </Link>
               )}
             </li>

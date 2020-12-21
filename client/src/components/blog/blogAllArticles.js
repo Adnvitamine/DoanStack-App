@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
+import "../../assets/css/blog.css";
 import { Link } from "react-router-dom";
+
 
 //import ArticleId from "./articeId";
 
@@ -40,10 +42,7 @@ const BlogAllArticles = ({ currentUser }) => {
               <div className="blogInfo">
                 <ul>
                   <li>
-                    <strong>Title: </strong> {article.title}
-                  </li>
-                  <li>
-                    <strong>Author: </strong>
+                    <p>by 
                     {article.author_avatar === "null" && (
                       <img
                         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -72,18 +71,19 @@ const BlogAllArticles = ({ currentUser }) => {
                         }}
                       ></img>
                     )}
-                    {article.author}
+                    {article.author}</p>
+                  </li>
+                  
+                  <li>
+                    <p>#{article.category}</p>
                   </li>
                   <li>
-                    <strong>Date: </strong>
+                    <p>
                     {new Intl.DateTimeFormat("nl-BE", {
                       year: "numeric",
                       month: "long",
                       day: "2-digit",
-                    }).format(Date.parse(article.createdAt))}
-                  </li>
-                  <li>
-                    <strong>Tag: </strong>#{article.category}
+                    }).format(Date.parse(article.createdAt))}</p>
                   </li>
                 </ul>
               </div>

@@ -54,28 +54,6 @@ class shopCateg extends Component {
                 )}
               </li>
               <li>
-                {(this.props.match.params.category === "Food" && (
-                  <Link to="/Food" style={{ color: "rgb(0, 162, 255)" }}>
-                    <b>Food</b>
-                  </Link>
-                )) || (
-                  <Link to="/Food">
-                    <b>Food</b>
-                  </Link>
-                )}
-              </li>
-              <li>
-                {(this.props.match.params.category === "Grocery" && (
-                  <Link to="/Grocery" style={{ color: "rgb(0, 162, 255)" }}>
-                    <b>Grocery</b>
-                  </Link>
-                )) || (
-                  <Link to="/Grocery">
-                    <b>Grocery</b>
-                  </Link>
-                )}
-              </li>
-              <li>
                 {(this.props.match.params.category === "PC" && (
                   <Link to="/PC" style={{ color: "rgb(0, 162, 255)" }}>
                     <b>PC</b>
@@ -87,24 +65,24 @@ class shopCateg extends Component {
                 )}
               </li>
               <li>
-                {(this.props.match.params.category === "Property" && (
-                  <Link to="/Property" style={{ color: "rgb(0, 162, 255)" }}>
-                    <b>Property</b>
+                {(this.props.match.params.category === "Estate" && (
+                  <Link to="/Estate" style={{ color: "rgb(0, 162, 255)" }}>
+                    <b>Estate</b>
                   </Link>
                 )) || (
-                  <Link to="/Property">
-                    <b>Property</b>
+                  <Link to="/Estate">
+                    <b>Estate</b>
                   </Link>
                 )}
               </li>
               <li>
-                {(this.props.match.params.category === "Service" && (
-                  <Link to="/Service" style={{ color: "rgb(0, 162, 255)" }}>
-                    <b>Service</b>
+                {(this.props.match.params.category === "Services" && (
+                  <Link to="/Services" style={{ color: "rgb(0, 162, 255)" }}>
+                    <b>Services</b>
                   </Link>
                 )) || (
-                  <Link to="/Service">
-                    <b>Service</b>
+                  <Link to="/Services">
+                    <b>Services</b>
                   </Link>
                 )}
               </li>

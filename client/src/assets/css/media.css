@@ -271,6 +271,11 @@
     flex-direction: column !important;
   }
 }
+@media only screen and (max-width: 850px) {
+  .blogInfo li p {
+    font-size: 10px !important;
+  }
+}
 
 @media only screen and (max-width: 805px) {
   #Footer {
@@ -363,6 +368,16 @@
   }
 }
 
+@media only screen and (max-width: 750px) {
+  .blogInfo li p {
+    font-size: 8px !important;
+  }
+  .blogInfo .profile-img-card {
+    width: 15px !important;
+    height: 15px !important;
+  }
+}
+
 @media only screen and (max-width: 730px) {
   #TitleLink {
     height: 140px;
@@ -451,16 +466,26 @@
   }
 
   .BrowserNavbar p {
-    font-size: 14px;
+    font-size: 12px;
     animation: slide1 10s linear infinite;
   }
 
   .BrowserNavbar p:hover {
-    font-size: 16px;
+    font-size: 14px;
     animation: slide1 10s linear infinite;
   }
+
+  .profile-img-card {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
   #BlogBody {
     width: 100% !important;
+  }
+
+  .blogInfo li {
+    display: none !important;
   }
 }
 

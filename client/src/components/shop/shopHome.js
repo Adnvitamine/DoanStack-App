@@ -61,28 +61,18 @@ class ShopHome extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/Food">
-                  <b>Food</b>
-                </Link>
-              </li>
-              <li>
-                <Link to="/Grocery">
-                  <b>Grocery</b>
-                </Link>
-              </li>
-              <li>
                 <Link to="/PC">
                   <b>PC</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Property">
-                  <b>Property</b>
+                <Link to="/Estate">
+                  <b>Estate</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Service">
-                  <b>Service</b>
+                <Link to="/Services">
+                  <b>Services</b>
                 </Link>
               </li>
             </ul>

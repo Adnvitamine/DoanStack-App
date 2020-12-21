@@ -41,10 +41,7 @@ const BlogArticlesCateg = ({ category }) => {
               <div className="blogInfo">
                 <ul>
                   <li>
-                    <strong>Title: </strong> {article.title}
-                  </li>
-                  <li>
-                    <strong>Author: </strong>
+                    <p>by 
                     {article.author_avatar === "null" && (
                       <img
                         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -73,18 +70,17 @@ const BlogArticlesCateg = ({ category }) => {
                         }}
                       ></img>
                     )}
-                    {article.author}
+                    {article.author}</p>
                   </li>
                   <li>
-                    <strong>Date: </strong>
-                    {new Intl.DateTimeFormat("nl-BE", {
+                    <p>#{article.category}</p>
+                  </li>
+                  <li>
+                  <p>{new Intl.DateTimeFormat("nl-BE", {
                       year: "numeric",
                       month: "long",
                       day: "2-digit",
-                    }).format(Date.parse(article.createdAt))}
-                  </li>
-                  <li>
-                    <strong>Tag: </strong>#{article.category}
+                    }).format(Date.parse(article.createdAt))}</p>  
                   </li>
                 </ul>
               </div>

@@ -189,6 +189,10 @@
   display: none;
 }
 
+.blogInfo li p {
+  font-size: 12px;
+}
+
 #Link:hover .blogInfo {
   height: 30px;
   transition: height 1s;

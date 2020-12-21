@@ -377,11 +377,9 @@ const CreateProduct = ({ currentUser }) => {
                   <option value="others">Choose..</option>
                   <option>Cosmetic</option>
                   <option>Fashion</option>
-                  <option>Food</option>
-                  <option>Grocery</option>
                   <option>PC</option>
-                  <option>Property</option>
-                  <option>Service</option>
+                  <option>Estate</option>
+                  <option>Services</option>
                 </select>
               </div>
             </div>

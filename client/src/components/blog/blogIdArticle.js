@@ -47,7 +47,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
       <div className="BrowserNavbar">
         {user === "Visitor" && (
           <p>
-            "This post is writed with love by{" "}
+            "Writed by{" "}
             {article.author_avatar === "null" && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -76,12 +76,12 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {article.author}. To comment, please sign in" - DoanStack.be
+            {article.author}. Sign in to comment" - DoanStack.be
           </p>
         )}
         {user.username && (
           <p>
-            "This post is writed with love by{" "}
+            "Writed by{" "}
             {article.author_avatar === "null" && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -110,7 +110,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {article.author}. You are connected as {user.username}." -
+            {article.author}. Connected as {user.username}." -
             DoanStack.be
           </p>
         )}
