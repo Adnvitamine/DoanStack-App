@@ -1,18 +1,18 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const cors = require("cors");
 //const path = require('path');
 //const uuid = require('uuidv4');
-const bodyParser = require("body-parser");
 //const fileUpload = require('express-fileupload');
 //const morgan = require('morgan');
-const multer = require("multer");
 //const fs = require('fs');
 //const multiparty = require('connect-multiparty');
 //const MultipartyMiddleware = multiparty({uploadDir:'./public'});
 //var multipart = require('connect-multiparty');
 //var multipartMiddleware = multipart({uploadDir: './public'});
-
 //const multipartMiddleware = multipart({uploadDir:'./public'});
-const cors = require("cors");
+
 
 const app = express();
 // middle ware
