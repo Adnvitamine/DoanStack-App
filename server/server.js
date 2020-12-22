@@ -1,7 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const multer = require("multer");
+//const multer = require("multer");
 const cors = require("cors");
+const cloudinary = require("./config/cloudinaryConfig");
+const { uploader } = require ('cloudinary');
+const { multerUpload, dataUri, upload } = require("./middlewares/multer");
+//const multiDataUriParser = require("datauri/parser");
+const fs = require('fs');
+
 //const path = require('path');
 //const uuid = require('uuidv4');
 //const fileUpload = require('express-fileupload');
@@ -17,11 +23,14 @@ const cors = require("cors");
 const app = express();
 // middle ware
 app.use(express.static("public")); //to access the files in public folder
+
 var corsOptions = {
   origin: "http://localhost:8081",
 };
 
 app.use(cors(corsOptions));
+
+//app.use('*', cloudinaryConfig);
 
 //app.use(fileUpload());
 const db = require("./models/");
@@ -57,8 +66,6 @@ function initial() {
 }
 
 /*
-
-*/
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public");
@@ -70,6 +77,7 @@ const storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).single("file");
 var multiupload = multer({ storage: storage }).array("file");
+*/
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -111,19 +119,8 @@ app.post('/upload', (req, res) => {
 });
 
 */
-app.post("/uploadfiles", (req, res) => {
-  upload(req, res, (err) => {
-    if (err) {
-      return res.json({ success: false, err });
-    }
-    return res.json({
-      success: true,
-      url: res.req.file.filename,
-      fileName: res.req.file.filename,
-    });
-  });
-});
 
+/*
 app.post("/upload", function (req, res) {
   console.log(req);
   upload(req, res, function (err) {
@@ -139,6 +136,7 @@ app.post("/upload", function (req, res) {
   });
 });
 
+
 app.post("/multiupload", function (req, res) {
   console.log(req.files);
   multiupload(req, res, function (err) {
@@ -149,6 +147,19 @@ app.post("/multiupload", function (req, res) {
     }
     //console.log(req);
     return res.status(200).send(req.files);
+  });
+});
+
+app.post("/uploadfiles", (req, res) => {
+  upload(req, res, (err) => {
+    if (err) {
+      return res.json({ success: false, err });
+    }
+    return res.json({
+      success: true,
+      url: res.req.file.filename,
+      fileName: res.req.file.filename,
+    });
   });
 });
 
@@ -176,9 +187,95 @@ app.post("/ckeditorupload", upload, function (req, res) {
       res.send(imageinfo);
     }
   });
-
   // don't forget to delete all req.files when done
 });
+
+TESTING POSTMAN
+app.post('/upload', multerUploads, (req, res) => {
+console.log('req.file :', req.file);
+});
+
+*/
+
+
+
+app.post('/upload', multerUpload, (req, res) => {
+
+    if(req.file) {
+ 
+    const file = dataUri(req);
+    return uploader.upload(file).then((result) => {
+  
+    const image = result.url;
+    return res.status(200).send({ name: req.file.originalname, path: image })
+    }).catch((err) => res.status(400).json({
+      message: 'something went wrong while processing your request',
+      data: {err}}))
+    }
+    
+});
+
+app.post('/multiuploads', upload.array('file'), async(req, res)=>{
+  const uploader = async (path) => await cloudinary.uploads(path, 'uploads');
+
+  const urls = [];
+  const files = req.files;
+  for(const file of files){
+    const {path} = file;
+
+    const newPath = await uploader(path);
+
+    urls.push(newPath);
+    
+    fs.unlinkSync(path);
+  }
+
+  res.status(200).json({
+    message: "Images Uploaded Successfully",
+    data: urls
+  }).catch((err) => res.status(400).json({
+    message: 'something went wrong while processing your request',
+    data: {err}}))
+})
+
+app.post('/uploadfiles', multerUpload, (req, res) => {
+
+  if(req.file) {
+ 
+  const file = dataUri(req);
+  return uploader.upload(file).then((result) => {
+
+  const image = result.url;
+  return res.status(200).json({
+    success: true,
+    url: image,
+    fileName: res.req.file.originalname,
+  })
+  }).catch((err) => res.status(400).json({
+    message: 'something went wrong while processing your request',
+    data: {err}}))
+  }
+    
+});
+
+
+app.post('/ckeditorupload', multerUpload, (req, res) => {
+
+  if(req.file) {
+
+  const file = dataUri(req);
+  return uploader.upload(file).then((result) => {
+
+  const image = result.url;
+  return res.status(200).send({ url: image })
+  }).catch((err) => res.status(400).json({
+    message: 'something went wrong while processing your request',
+    data: {err}}))
+  }
+  
+});
+
+  
 
 //console.log(req.files.upload);
 /*

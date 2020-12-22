@@ -62,9 +62,11 @@ const CreateArticle = ({ currentUser }) => {
         },
       })
       .then((res) => {
+        console.log(res);
         getFile({
           name: res.data.name,
-          path: "http://localhost:8080" + res.data.path,
+          // path: "http://localhost:8080" + res.data.path, (before Cloudinary)
+          path: res.data.path,
         });
         console.log(data);
         //const path = res.data.path;

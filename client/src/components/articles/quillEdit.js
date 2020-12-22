@@ -69,7 +69,8 @@ const QuillEdit = ({ article }) => {
         console.log(res);
         getFile({
           name: res.data.name,
-          path: "http://localhost:8080" + res.data.path,
+          // path: "http://localhost:8080" + res.data.path, (before cloudinary)
+          path: res.data.path,
         });
 
         //const path = res.data.path;

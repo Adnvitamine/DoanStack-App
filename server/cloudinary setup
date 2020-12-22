@@ -1,0 +1,139 @@
+in server folder, add cloudinary and dotenv in package.json:
+npm install cloudinary dotenv datauri
+--------------------------------------------------------
+in server folder root, create .env file:
+
+CLOUDINARY_CLOUD_NAME=doanstack-test
+CLOUDINARY_API_KEY=647694274112656
+CLOUDINARY_API_SECRET=rFBx2_2QKghNGM6JLP-mUv-KMUQ
+
+----------------------------------------------------------
+
+in config folder add cloudinaryConfig.js:
+
+const { config, uploader } = require ('cloudinary');
+const dotenv = require("dotenv");
+dotenv.config();
+
+/*
+const cloudinaryConfig = () => config({
+cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+api_key: process.env.CLOUDINARY_API_KEY,
+api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+*/
+
+
+const cloudinaryConfig = (req, res, next) => {
+    config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    });
+    next();
+}
+
+module.exports = { cloudinaryConfig, uploader };
+
+---------------------------------------------------
+
+in middlewares folder add multer.js:
+
+const multer = require("multer");
+//const Datauri = require("datauri");
+const DatauriParser = require("datauri/parser");
+const path = require("path");
+
+const storage = multer.memoryStorage();
+const multerUpload = multer({ storage }).single('file');
+//const dUri = new Datauri();
+const parser = new DatauriParser();
+
+const dataUri = req => parser.format(
+    path.extname(req.file.originalname).toString(),
+    req.file.buffer
+    ).content;
+
+module.exports = { multerUpload, dataUri };
+
+----------------------------------------------------
+
+in server.js add those lines:
+
+
+const { cloudinaryConfig, uploader } = require("./config/cloudinaryConfig");
+const { multerUpload, dataUri } = require("./middlewares/multer");
+
+app.use('*', cloudinaryConfig);
+
+app.post('/upload', multerUpload, (req, res) => {
+
+    if(req.file) {
+    console.log(req);
+    const file = dataUri(req);
+    return uploader.upload(file).then((result) => {
+  
+    const image = result.url;
+    return res.status(200).send({ name: req.file.originalname, path: image })
+    }).catch((err) => res.status(400).json({
+      message: 'something went wrong while processing your request',
+      data: {err}}))
+    }
+    
+    });
+
+-------------------------------------------------------
+
+in client folder, change those lines from createArticle.js in uploadFile function:
+
+getFile({
+          name: res.data.name,
+          path: res.data.path,
+        });
+
+-------------------------------------------------------
+
+same manipulation for editArticle.js
+same manipulation for articles/quillEdit.js
+
+same manipulation for createProduct.js
+same manipulation for editProduct.js
+same manipulation for products/quillEdit.js
+
+same manipulation for editUser.js
+
+------------------------------------------------------
+
+Change for Quilledit
+in server.js add those lines:
+
+app.post('/uploadfiles', multerUpload, (req, res) => {
+
+  if(req.file) {
+  console.log(req);
+  const file = dataUri(req);
+  return uploader.upload(file).then((result) => {
+
+  const image = result.url;
+  return res.status(200).json({
+    success: true,
+    url: image,
+    fileName: res.req.file.originalname,
+  })
+  }).catch((err) => res.status(400).json({
+    message: 'something went wrong while processing your request',
+    data: {err}}))
+  }
+    
+});
+
+----------------------------------------------------------
+
+in client folder, change those lines from editor/QuillEditor.js in insertImage function:
+
+quill.insertEmbed(position, "image", {
+              //src: "http://localhost:8080/" + response.data.url, (before Cloudinary)
+              src: response.data.url,
+              alt: response.data.fileName,
+            });
+

@@ -68,7 +68,8 @@ const QuillEdit = ({ product }) => {
       .then((res) => {
         getSoloFile({
           name: res.data.name,
-          path: "http://localhost:8080" + res.data.path,
+          // path: "http://localhost:8080" + res.data.path, (before cloudinary)
+          path: res.data.path,
         });
 
         //const path = res.data.path;
@@ -109,7 +110,7 @@ const QuillEdit = ({ product }) => {
     }
     //formData.append('file', file); // appending file
     axios
-      .post("http://localhost:8080/multiupload", formData, {
+      .post("http://localhost:8080/multiuploads", formData, {
         onUploadProgress: (ProgressEvent) => {
           let progress = Math.round(
             (ProgressEvent.loaded / ProgressEvent.total) * 100
@@ -119,9 +120,10 @@ const QuillEdit = ({ product }) => {
       })
       .then((res) => {
         const array = [];
-        for (let i = 0; i < res.data.length; i++) {
+        for (let i = 0; i < res.data.data.length; i++) {
           console.log(res.data[i].filename);
-          array.push("http://localhost:8080/" + res.data[i].filename);
+          //array.push("http://localhost:8080/" + res.data[i].filename);
+          array.push(res.data.data[i].url);
         }
         setPathurl(array);
         /*  

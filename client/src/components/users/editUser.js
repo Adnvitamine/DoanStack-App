@@ -48,7 +48,8 @@ const EditUser = ({ currentUser }) => {
         console.log(res);
         getFile({
           name: res.data.filename,
-          path: "http://localhost:8080" + res.data.path,
+          // path: "http://localhost:8080" + res.data.path, (before cloudinary)
+          path: res.data.path,
         });
         //setAvatar(data.path);
 
