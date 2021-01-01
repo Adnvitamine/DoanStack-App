@@ -121,7 +121,6 @@ const QuillEdit = ({ product }) => {
       .then((res) => {
         const array = [];
         for (let i = 0; i < res.data.data.length; i++) {
-          console.log(res.data[i].filename);
           //array.push("http://localhost:8080/" + res.data[i].filename);
           array.push(res.data.data[i].url);
         }

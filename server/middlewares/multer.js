@@ -6,15 +6,20 @@ const path = require("path");
 const singlestorage = multer.memoryStorage();
 const multerUpload = multer({ singlestorage }).single('file');
 
+/*
+
+*/
 const storage = multer.diskStorage({
     destination:function(req,file,cb){
-        cb(null,'./public/uploads')
+        cb(null,'./public/')
     }
     ,
     filename:function(req,file,cb){
         cb(null, file.originalname)
     }
 })
+
+//const storage = multer.memoryStorage();
 
 // FILE VALIDATION
 
@@ -30,7 +35,7 @@ const fileFilter = (req,file,cb) =>{
 
 const upload = multer({
     storage: storage,
-    limits:{fileSize: 1024 * 1024},
+    //limits:{fileSize: 1024 * 1024},
     fileFilter:fileFilter
 })
 

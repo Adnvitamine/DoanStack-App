@@ -1,11 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-//const multer = require("multer");
 const cors = require("cors");
 const cloudinary = require("./config/cloudinaryConfig");
 const { uploader } = require ('cloudinary');
 const { multerUpload, dataUri, upload } = require("./middlewares/multer");
-//const multiDataUriParser = require("datauri/parser");
 const fs = require('fs');
 
 //const path = require('path');
@@ -19,10 +17,7 @@ const fs = require('fs');
 //var multipartMiddleware = multipart({uploadDir: './public'});
 //const multipartMiddleware = multipart({uploadDir:'./public'});
 
-
 const app = express();
-// middle ware
-app.use(express.static("public")); //to access the files in public folder
 
 var corsOptions = {
   origin: "http://localhost:8081",
@@ -30,9 +25,9 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-//app.use('*', cloudinaryConfig);
+// middle ware
+app.use(express.static("public")); //to access the files in public folder
 
-//app.use(fileUpload());
 const db = require("./models/");
 const Role = db.role;
 
@@ -89,6 +84,7 @@ app.use(bodyParser.json({ limit: "800kb" }));
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to DoanStack application." });
 });
+
 require("./routes/auth.routes")(app);
 require("./routes/user.routes")(app);
 require("./routes/product.routes")(app);
@@ -197,8 +193,6 @@ console.log('req.file :', req.file);
 
 */
 
-
-
 app.post('/upload', multerUpload, (req, res) => {
 
     if(req.file) {
@@ -233,9 +227,7 @@ app.post('/multiuploads', upload.array('file'), async(req, res)=>{
   res.status(200).json({
     message: "Images Uploaded Successfully",
     data: urls
-  }).catch((err) => res.status(400).json({
-    message: 'something went wrong while processing your request',
-    data: {err}}))
+  });
 })
 
 app.post('/uploadfiles', multerUpload, (req, res) => {
@@ -274,31 +266,6 @@ app.post('/ckeditorupload', multerUpload, (req, res) => {
   }
   
 });
-
-  
-
-//console.log(req.files.upload);
-/*
-  var fs = require('fs');
-
-    fs.readFile(req.files.upload.path, function (err, data) {
-        var newPath = __dirname + '/../public/' + req.files.upload.name;
-        fs.writeFile(newPath, data, function (err) {
-            if (err) console.log({err: err});
-            else {
-                html = "";
-                html += "<script type='text/javascript'>";
-                html += "    var funcNum = " + req.query.CKEditorFuncNum + ";";
-                html += "    var url     = \"/public/" + req.files.upload.name + "\";";
-                html += "    var message = \"Uploaded file successfully\";";
-                html += "";
-                html += "    window.parent.CKEDITOR.tools.callFunction(funcNum, url, message);";
-                html += "</script>";
-
-                res.send(html);
-            }
-        });
-    });*/
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
