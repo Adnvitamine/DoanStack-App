@@ -55,47 +55,44 @@ const ArticleContent = ({ article }) => {
           <div
             className="articleInfo"
             style={{
-              padding: "20px 0px 20px 0px",
+              padding: "10px 0px 10px 0px",
               margin: "20px 0px 0px 0px",
               borderTop: "1px solid #dee2e6",
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-around"
             }}
           >
             <div
               className="articleAuthor"
-              style={{
-                width: "30%",
-                fontSize: "2rem",
-                display: "inline-block",
-                textAlign: "center",
-              }}
+              
             >
               <p style={{ marginBottom: "0", textAlign: "center" }}>
-                <img
+              <b>By:</b> &nbsp;
+              <img
                   src={article.author_avatar}
-                  className="profile-img-card"
+                  className="user-img-card"
                   alt={article.author}
                   style={{
-                    width: "50px",
-                    height: "50px",
+                    width: "40px",
+                    height: "40px",
                     display: "inline-block",
                     marginBottom: "0",
                   }}
-                ></img>
+                ></img> &nbsp;
                 {article.author}
               </p>
             </div>
             <div
               className="articleDatum"
-              style={{
-                fontSize: "2rem",
-                display: "inline-block",
-                width: "30%",
-              }}
+              
             >
               <p style={{ marginBottom: "0", textAlign: "center" }}>
+                <b>Datum:</b>&nbsp;
                 {new Intl.DateTimeFormat("nl-BE", {
-                  year: "numeric",
-                  month: "long",
+                  year: "2-digit",
+                  month: "2-digit",
                   day: "2-digit",
                 }).format(Date.parse(article.createdAt))}
               </p>
@@ -104,14 +101,9 @@ const ArticleContent = ({ article }) => {
             {article.published === false && (
               <div
                 className="articlePublish"
-                style={{
-                  fontSize: "2rem",
-                  display: "inline-block",
-                  width: "30%",
-                }}
               >
                 <p style={{ marginBottom: "0", textAlign: "center" }}>
-                  <b>Status:</b> Waiting
+                  <b>Status</b>&nbsp;
                   <i className="fas fa-circle" id="ProductStatusFalse"></i>
                 </p>{" "}
               </div>
@@ -120,14 +112,9 @@ const ArticleContent = ({ article }) => {
             {article.published === true && (
               <div
                 className="articlePublish"
-                style={{
-                  fontSize: "2rem",
-                  display: "inline-block",
-                  width: "30%",
-                }}
               >
                 <p style={{ marginBottom: "0", textAlign: "center" }}>
-                  <b>Status:</b> Online{" "}
+                  <b>Status:</b>&nbsp;
                   <i className="fas fa-circle" id="ProductStatusTrue"></i>
                 </p>
               </div>

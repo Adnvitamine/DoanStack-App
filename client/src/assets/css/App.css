@@ -46,6 +46,19 @@ label {
   border-radius: 50%;
 }
 
+.user-img-card {
+  height: 100%;
+  width: 100%;
+  max-height: 96px;
+  max-width: 96px;
+  width: auto;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
 .ComponentTitle {
   display: flex;
   justify-content: center;

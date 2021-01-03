@@ -47,7 +47,7 @@
 }
 
 .userCardInfo {
-  height: 40px;
+  min-height: 40px;
   font-size: 18px;
   border-bottom: 1px solid #dee2e6;
   padding-top: 5px;

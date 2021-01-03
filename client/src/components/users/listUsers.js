@@ -75,7 +75,7 @@ const ListUsers = () => {
               </p>
             </div>
             <UserActivity user_id={user.id} />
-            <div className="userCardInfo" style={{ height: "50px" }}>
+            <div className="userCardInfo" >
               Roles:{" "}
               {user.roles.map((role) => (
                 <div

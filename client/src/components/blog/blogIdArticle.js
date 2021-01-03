@@ -263,7 +263,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                         <img
                           src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                           alt="profile-img"
-                          className="profile-img-card"
+                          className="user-img-card"
                           style={{
                             width: "40px",
                             height: "40px",
@@ -276,7 +276,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                       {article.author_avatar !== "null" && (
                         <img
                           src={article.author_avatar}
-                          className="profile-img-card"
+                          className="user-img-card"
                           alt={article.author}
                           style={{
                             width: "40px",

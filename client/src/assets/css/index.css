@@ -62,6 +62,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   --ck-z-default: 100;
   --ck-z-modal: calc(var(--ck-z-default) + 999);
+  min-width: 320px;
 }
 
 p {

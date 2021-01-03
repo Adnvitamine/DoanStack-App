@@ -119,6 +119,7 @@ const EditUser = ({ currentUser }) => {
                 ref={el}
                 onChange={handleChange}
                 className="inputImage"
+                style= {{ overflow: `hidden`}}
               />
               <p style={{ width: `${progress}%` }} data-value={progress}></p>
 
