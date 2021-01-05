@@ -71,16 +71,16 @@ const UserBoard = ({ currentUser }) => {
             {!user.avatar && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                alt="profile-img"
-                className="profile-img-card"
+                alt="no-avatar"
+                className="user-img-card"
                 style={{ marginTop: "20px" }}
               ></img>
             )}
             {user.avatar && (
               <img
                 src={user.avatar}
-                alt="profile-img"
-                className="profile-img-card"
+                alt={user.username}
+                className="user-img-card"
                 style={{ marginTop: "20px" }}
               ></img>
             )}

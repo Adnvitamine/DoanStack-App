@@ -48,7 +48,34 @@ export default class Profile extends Component {
       return (
         <Fragment>
           <div className="BrowserNavbar">
-            <p>{currentUser.username} is connected.</p>
+            <p>{currentUser.avatar === "null" && (
+              <img
+                src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                alt="guest"
+                className="profile-img-card"
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                  marginRight: "2px",
+                }}
+              ></img>
+            )}
+            {currentUser.avatar !== "null" && (
+              <img
+                src={currentUser.avatar}
+                className="profile-img-card"
+                alt={currentUser.username}
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                  marginRight: "2px",
+                }}
+              ></img>
+            )}{currentUser.username} is connected.</p>
           </div>
           <div id="TitleLink">
             <h1>YOUR PROFILE</h1>

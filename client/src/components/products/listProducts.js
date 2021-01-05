@@ -97,8 +97,8 @@ const ListProducts = ({ currentUser }) => {
               | Date:{" "}
               <b>
                 {new Intl.DateTimeFormat("nl-BE", {
-                  year: "numeric",
-                  month: "numeric",
+                  year: "2-digit",
+                  month: "2-digit",
                   day: "2-digit",
                 }).format(Date.parse(product.createdAt))}
               </b>

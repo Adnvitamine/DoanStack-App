@@ -51,11 +51,13 @@
   font-size: 18px;
   border-bottom: 1px solid #dee2e6;
   padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
 }
 
 .userCardInfo p {
   text-align: center;
+  margin-bottom: 0;
 }
 
 .userCardAction {

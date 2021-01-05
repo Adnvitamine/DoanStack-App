@@ -52,16 +52,16 @@ const ListUsers = () => {
               {!user.avatar && (
                 <img
                   src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                  alt="profile-img"
-                  className="profile-img-card"
+                  alt="no-avatar"
+                  className="user-img-card"
                   style={{ marginTop: "20px" }}
                 ></img>
               )}
               {user.avatar && (
                 <img
                   src={user.avatar}
-                  alt="profile-img"
-                  className="profile-img-card"
+                  alt={user.username}
+                  className="user-img-card"
                   style={{ marginTop: "20px" }}
                 ></img>
               )}
@@ -87,7 +87,7 @@ const ListUsers = () => {
                       className="btn btn-danger"
                       style={{ display: "inline-block", marginRight: "3px" }}
                     >
-                      {role.name}
+                      Admin
                     </li>
                   )}
                   {role.name === "moderator" && (
@@ -95,7 +95,7 @@ const ListUsers = () => {
                       className="btn btn-warning"
                       style={{ display: "inline-block", marginRight: "3px" }}
                     >
-                      {role.name}
+                      Moderator
                     </li>
                   )}
                   {role.name === "user" && (
@@ -103,7 +103,7 @@ const ListUsers = () => {
                       className="btn btn-success"
                       style={{ display: "inline-block", marginRight: "3px" }}
                     >
-                      {role.name}
+                      User
                     </li>
                   )}
                 </div>

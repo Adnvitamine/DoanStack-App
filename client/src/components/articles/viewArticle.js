@@ -18,7 +18,7 @@ const ViewArticle = ({ article }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title">
-                {article.author}'s {article.category}
+                {article.category}/ {article.title}
               </h1>
               <button type="button" id="closeButton" data-dismiss="modal">
                 <i className="far fa-times-circle"></i>

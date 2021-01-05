@@ -66,11 +66,11 @@ const ProductDescription = ({ product }) => {
                 <p>
                   <img
                     src={product.vendor_avatar}
-                    className="profile-img-card"
+                    className="user-img-card"
                     alt={product.author}
                     style={{
-                      width: "25px",
-                      height: "25px",
+                      width: "40px",
+                      height: "40px",
                       display: "inline-block",
                       marginBottom: "0",
                     }}
@@ -81,10 +81,10 @@ const ProductDescription = ({ product }) => {
               <div className="productDate">
                 <p>
                   <b>
-                    Since{" "}
+                    Since &nbsp;
                     {new Intl.DateTimeFormat("nl-BE", {
-                      year: "numeric",
-                      month: "long",
+                      year: "2-digit",
+                      month: "2-digit",
                       day: "2-digit",
                     }).format(Date.parse(product.createdAt))}
                   </b>

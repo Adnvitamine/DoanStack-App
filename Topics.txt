@@ -1,0 +1,16 @@
+Topics to talk about:
+
+- How to change value in LocalStorage
+
+- Git can save your day
+
+- Responsive CSS:
+Use display: flex,
+    flex-direction: column,
+
+Media Queries: @media only screen and (max-width: 600px) {}
+important: from big to small
+
+
+
+    

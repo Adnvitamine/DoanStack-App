@@ -54,8 +54,8 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 alt="profile-img"
                 className="profile-img-card"
                 style={{
-                  width: "40px",
-                  height: "40px",
+                  width: "25px",
+                  height: "25px",
                   display: "inline-block",
                   marginBottom: "0",
                   marginRight: "2px",
@@ -68,8 +68,8 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 className="profile-img-card"
                 alt={article.author}
                 style={{
-                  width: "40px",
-                  height: "40px",
+                  width: "25px",
+                  height: "25px",
                   display: "inline-block",
                   marginBottom: "0",
                   marginRight: "2px",
@@ -110,8 +110,34 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {article.author}. Connected as {user.username}." -
-            DoanStack.be
+            {article.author}. Logged as {user.avatar === "null" && (
+              <img
+                src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                alt="guest"
+                className="profile-img-card"
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                  marginRight: "2px",
+                }}
+              ></img>
+            )}
+            {user.avatar !== "null" && (
+              <img
+                src={user.avatar}
+                alt={user.username}
+                className="profile-img-card"
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                  marginRight: "2px",
+                }}>
+                </img>
+            )}{user.username}."
           </p>
         )}
       </div>

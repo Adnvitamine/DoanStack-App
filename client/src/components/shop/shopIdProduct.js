@@ -73,15 +73,15 @@ const ShopIdProduct = ({ productId, currentUser }) => {
       <div className="BrowserNavbar">
         {user === "Visitor" && (
           <p>
-            "Proposed by{" "}
+            "By{" "}
             {product.vendor_avatar === "null" && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                 alt="profile-img"
                 className="profile-img-card"
                 style={{
-                  width: "40px",
-                  height: "40px",
+                  width: "25px",
+                  height: "25px",
                   display: "inline-block",
                   marginBottom: "0",
                   marginRight: "2px",
@@ -94,8 +94,8 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 className="profile-img-card"
                 alt={product.vendor}
                 style={{
-                  width: "40px",
-                  height: "40px",
+                  width: "25px",
+                  height: "25px",
                   display: "inline-block",
                   marginBottom: "0",
                   marginRight: "2px",
@@ -107,7 +107,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
         )}
         {user.username && (
           <p>
-            "Proposed by{" "}
+            "By{" "}
             {product.vendor_avatar === "null" && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -136,8 +136,34 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {product.vendor}. Connected as {user.username}." -
-            DoanStack.be
+            {product.vendor}. Logged as {user.avatar === "null" && (
+              <img
+                src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                alt="guest"
+                className="profile-img-card"
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                  marginRight: "2px",
+                }}
+              ></img>
+            )}
+            {user.avatar !== "null" && (
+              <img
+                src={user.avatar}
+                alt={user.username}
+                className="profile-img-card"
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                  marginRight: "2px",
+                }}>
+                </img>
+            )}{user.username}."
           </p>
         )}
       </div>

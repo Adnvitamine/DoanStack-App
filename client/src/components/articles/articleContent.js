@@ -70,17 +70,33 @@ const ArticleContent = ({ article }) => {
             >
               <p style={{ marginBottom: "0", textAlign: "center" }}>
               <b>By:</b> &nbsp;
-              <img
-                  src={article.author_avatar}
-                  className="user-img-card"
-                  alt={article.author}
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    display: "inline-block",
-                    marginBottom: "0",
-                  }}
-                ></img> &nbsp;
+              {article.author_avatar === "null" && (
+                <img
+                src={article.author_avatar}
+                className="user-img-card"
+                alt={article.author}
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                }}
+              ></img>
+              )}
+              {article.author_avatar !== "null" && (
+                <img
+                src={article.author_avatar}
+                className="user-img-card"
+                alt={article.author}
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  display: "inline-block",
+                  marginBottom: "0",
+                }}
+              ></img>
+              )}
+               &nbsp;
                 {article.author}
               </p>
             </div>

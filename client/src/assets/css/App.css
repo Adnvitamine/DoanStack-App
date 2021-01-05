@@ -63,7 +63,7 @@ label {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-
+  margin-top: 10px;
   font-family: MontB;
 }
 
@@ -100,7 +100,7 @@ label {
 }
 
 #productsList:hover .ComponentTitle div h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
   background-clip: text;
@@ -109,7 +109,7 @@ label {
 }
 
 #productCreate:hover .ComponentTitle div h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
   background-clip: text;
@@ -118,7 +118,7 @@ label {
 }
 
 #userProfile:hover .ComponentTitle div h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
   background-clip: text;
@@ -127,7 +127,7 @@ label {
 }
 
 #userEdit:hover .ComponentTitle div h1 {
-  font-size: 50px;
+  font-size: 40px;
   transition: font-size 1s;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
@@ -137,7 +137,7 @@ label {
 }
 
 #usersList:hover .ComponentTitle div h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
   background-clip: text;

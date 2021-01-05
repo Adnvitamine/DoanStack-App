@@ -1,0 +1,17 @@
+- Mail services : Mail confirmation
+
+- Views per page
+
+- Connexion status
+
+- message between users
+
+- ask permission to admin
+
+- pagination ?
+
+- Localstorage (done)
+
+- Meta for SEO
+
+- Multi Upload item limit

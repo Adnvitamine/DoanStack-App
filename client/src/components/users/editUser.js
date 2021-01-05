@@ -5,13 +5,13 @@ const EditUser = ({ currentUser }) => {
   const [username, setUsername] = useState(currentUser.username);
   const [email, setEmail] = useState(currentUser.email);
   const [password, setPassword] = useState(currentUser.password);
-  const [avatar, setAvatar] = useState();
+  //const [avatar] = useState(currentUser.avatar);
   const [preview, setPreview] = useState();
 
   // UploadAvatar
   const [file, setFile] = useState(""); // storing the uploaded file
 
-  // storing the recived file from backend
+  // getting the received file from backend
   const [data, getFile] = useState({ name: "", path: "" });
   const [progress, setProgess] = useState(0); // progess bar
   const el = useRef(); // accessing input element
@@ -60,7 +60,10 @@ const EditUser = ({ currentUser }) => {
 
   // Update user function
   const UpdateUser = async (e) => {
-    e.preventDefault();
+    console.log(data.path);
+    if (data.path === ""){
+      const avatar = currentUser.avatar;
+      e.preventDefault();
     try {
       const body = { username, email, password, avatar };
       const response = await fetch(
@@ -71,12 +74,91 @@ const EditUser = ({ currentUser }) => {
           body: JSON.stringify(body),
         }
       );
+      const updateData = {
+        id: currentUser.id,
+        username: username,
+        avatar: avatar,
+        email: email,
+        password: password,
+        passwordcrypt: currentUser.passwordcrypt,
+        roles: currentUser.roles,
+        accessToken: currentUser.accessToken,
+      };
+  
+      localStorage.setItem("user", JSON.stringify(updateData));
+
       window.location = "";
       console.log(response);
+    
     } catch (err) {
       console.error(err.message);
     }
+    }else{
+      const avatar = data.path;
+      e.preventDefault();
+    try {
+      const body = { username, email, password, avatar };
+      const response = await fetch(
+        `http://localhost:8080/api/user/${currentUser.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
+      const updateData = {
+        id: currentUser.id,
+        username: username,
+        avatar: avatar,
+        email: email,
+        password: password,
+        passwordcrypt: currentUser.passwordcrypt,
+        roles: currentUser.roles,
+        accessToken: currentUser.accessToken,
+      };
+
+      localStorage.setItem("user", JSON.stringify(updateData));
+
+      window.location = "";
+      console.log(response);
+
+
+    } catch (err) {
+      console.error(err.message);
+    }
+    }
+    
   };
+
+  /*
+  const test = () =>{
+    console.log(JSON.parse(localStorage.getItem("user")));
+    const pseudo = "AdnVita";
+    const updateData = {
+      id: currentUser.id,
+      username: currentUser.username,
+      avatar: currentUser.avatar,
+      email: currentUser.email,
+      password: currentUser.password,
+      passwordcrypt: currentUser.passwordcrypt,
+      roles: currentUser.roles,
+      accessToken: currentUser.accessToken,
+    };
+
+    console.log(currentUser.id);
+    console.log(currentUser.username);
+    console.log(currentUser.avatar);
+    console.log(currentUser.email);
+    console.log(currentUser.password);
+    console.log(currentUser.passwordcrypt);
+    console.log(currentUser.roles);
+    console.log(currentUser.accessToken);
+    console.log(updateData);
+
+    localStorage.setItem("user", JSON.stringify(updateData));
+    console.log(JSON.parse(localStorage.getItem("user")));
+  };
+  */
 
   // TRES TRES IMPORTANT
   let imgPreview;
@@ -196,12 +278,18 @@ const EditUser = ({ currentUser }) => {
                             </div>*/}
 
             <div className="wrap">
-              <button id="createButton" onClick={(e) => setAvatar(data.path)}>
+              <button id="createButton">
                 <i className="fas fa-plus"></i>
                 <p>Save Profile</p>
               </button>
             </div>
           </form>
+          {/*<div className="wrap">
+          <button id="uploadButton" onClick={test}>
+              <i className="fas fa-upload"></i>
+              <p>Test</p>
+            </button>
+            </div>*/}
         </div>
       </div>
     </Fragment>
