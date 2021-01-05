@@ -1,10 +1,15 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import {
+  Link
+} from "react-router-dom";
+import { useHistory } from "react-router";
 import ArticleCreateCom from "./articleComs/articleCreateCom";
 import ArticleReadComs from "./articleComs/articleReadComs";
+import BlogLogin from "./blogLogin";
 
 const BlogIdArticle = ({ articleId, currentUser }) => {
   //const id =
+  const history = useHistory();
   const [user] = useState(currentUser);
   const [article, setArticle] = useState([]);
   const [listArticles, setListArticles] = useState([]);
@@ -41,6 +46,10 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
 
   let test = new Date();
   let dateformat = Date.parse(test.toString(article.createdAt));
+
+  const back = () =>{
+    history.goBack();
+  }
 
   return (
     <Fragment>
@@ -154,55 +163,55 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
             </li>
             <li>
               {(article.category === "News" && (
-                <Link to="/News" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/blog/News" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>News</b>
                 </Link>
               )) || (
-                <Link to="/News">
+                <Link to="/blog/News">
                   <b>News</b>
                 </Link>
               )}
             </li>
             <li>
               {(article.category === "BackEnd" && (
-                <Link to="/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/blog/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>BackEnd</b>
                 </Link>
               )) || (
-                <Link to="/BackEnd">
+                <Link to="/blog/BackEnd">
                   <b>BackEnd</b>
                 </Link>
               )}
             </li>
             <li>
               {(article.category === "FrontEnd" && (
-                <Link to="/FrontEnd" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/blog/FrontEnd" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>FrontEnd</b>
                 </Link>
               )) || (
-                <Link to="/FrontEnd">
+                <Link to="/blog/FrontEnd">
                   <b>FrontEnd</b>
                 </Link>
               )}
             </li>
             <li>
               {(article.category === "Life" && (
-                <Link to="/Life" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/blog/Life" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>Life</b>
                 </Link>
               )) || (
-                <Link to="/Life">
+                <Link to="/blog/Life">
                   <b>Life</b>
                 </Link>
               )}
             </li>
             <li>
               {(article.category === "Others" && (
-                <Link to="/Others" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/blog/Others" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>Others</b>
                 </Link>
               )) || (
-                <Link to="/Others">
+                <Link to="/blog/Others">
                   <b>Others</b>
                 </Link>
               )}
@@ -210,14 +219,15 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
           </ul>
         </div>
         <div id="BlogHome">
-          <div className="backbutton" style={{ marginBottom: "10px" }}>
-            <Link
-              to={`/${article.category}`}
+          <div className="backbutton" style={{ marginBottom: "50px" }}>
+            {/*<Link
+              to={`/blog/${article.category}`}
               className="btn btn-warning"
               style={{ color: "white", textDecoration: "none" }}
             >
               Back
-            </Link>
+            </Link>*/}
+            <button type="button" className="btn btn-warning" onClick={back} style={{ color: "white", textDecoration: "none"}}>Back</button>
           </div>
           <div id="MoreArticles">
             <div className="header">
@@ -229,11 +239,10 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
             <div className="body">
               {listArticles.map((listarticle) => (
                 <Link
-                  to={`/${listarticle.category}/${listarticle.id}/${listarticle.title}`}
+                  to={`/blog/${listarticle.category}/${listarticle.id}/${listarticle.title}`}
                   key={listarticle.id}
                 >
-                  <div className="list">
-                    {(listarticle.title !== article.title && (
+                  { listarticle.id !== article.id && (<div className="list">
                       <div className="articleImg">
                         <span className="profile-img-card">
                           <img
@@ -243,30 +252,10 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                           ></img>
                         </span>
                       </div>
-                    )) || (
-                      <div className="articleImg">
-                        <span
-                          className="profile-img-card"
-                          style={{ height: "75px" }}
-                        >
-                          <img
-                            className="profile-img-card"
-                            src={listarticle.image}
-                            alt={listarticle.title}
-                          ></img>
-                        </span>
-                      </div>
-                    )}
                     <div className="articleTitle">
-                      {(listarticle.title !== article.title && (
                         <b>{listarticle.title}</b>
-                      )) || (
-                        <b style={{ color: "rgb(38, 253, 38)" }}>
-                          {listarticle.title}
-                        </b>
-                      )}
                     </div>
-                  </div>
+                  </div>)}
                 </Link>
               ))}
             </div>
@@ -342,7 +331,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                   <h1>Write a comment</h1>
                 </div>
               </div>
-              {user === "Visitor" && <p>Please <a href="/login">sign in</a> to write a review</p>}
+              {user === "Visitor" && (<div><p style={{ color: "#ffc107" }} >Please sign in to comment!</p><BlogLogin></BlogLogin></div>)}
               {user.username && (
                 <ArticleCreateCom articleId={articleId} user={user} />
               )}
@@ -356,6 +345,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
           </div>
         </div>
       </div>
+      
     </Fragment>
   );
 };

@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-import { Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import BlogAllArticles from "./blogAllArticles";
 
 import UserService from "../../services/user.service";
@@ -46,32 +46,32 @@ class BlogHome extends Component {
           <div id="BlogNav">
             <ul>
               <li>
-                <Link to="/" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/blog" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>All</b>
                 </Link>
               </li>
               <li>
-                <Link to="/News">
+                <Link to="/blog/News">
                   <b>News</b>
                 </Link>
               </li>
               <li>
-                <Link to="/BackEnd">
+                <Link to="/blog/BackEnd">
                   <b>BackEnd</b>
                 </Link>
               </li>
               <li>
-                <Link to="/FrontEnd">
+                <Link to="/blog/FrontEnd">
                   <b>FrontEnd</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Life">
+                <Link to="/blog/Life">
                   <b>Life</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Others">
+                <Link to="/blog/Others">
                   <b>Others</b>
                 </Link>
               </li>
@@ -81,6 +81,7 @@ class BlogHome extends Component {
             <BlogAllArticles currentUser={currentUser} />
           </div>
         </div>
+        
       </Fragment>
     );
   }

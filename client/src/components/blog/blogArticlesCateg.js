@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from "react";
-import "../../assets/css/blog.css";
 import { Link } from "react-router-dom";
 
 //import ArticleId from "./articeId";
@@ -26,22 +25,10 @@ const BlogArticlesCateg = ({ category }) => {
     <Fragment>
       {allArticles.map((article) => (
         <div className="blogFrame" key={article.id}>
-          <div className="blogImg">
-            <img
-              src={article.image}
-              alt={article.titre}
-              style={{ width: "100%" }}
-            ></img>
-          </div>
-          <Link
-            to={`/${article.category}/${article.id}/${article.title}`}
-            id="Link"
-          >
-            <div className="blogBody">
-              <div className="blogInfo">
+          <div className="blogInfo">
                 <ul>
                   <li>
-                    <p>by 
+                    <b>by 
                     {article.author_avatar === "null" && (
                       <img
                         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -70,25 +57,39 @@ const BlogArticlesCateg = ({ category }) => {
                         }}
                       ></img>
                     )}
-                    {article.author}</p>
+                    {article.author}</b>
                   </li>
                   <li>
-                    <p>#{article.category}</p>
+                    <b>#{article.category}</b>
                   </li>
                   <li>
-                  <p>{new Intl.DateTimeFormat("nl-BE", {
+                  <b>{new Intl.DateTimeFormat("nl-BE", {
                       year: "numeric",
                       month: "long",
                       day: "2-digit",
-                    }).format(Date.parse(article.createdAt))}</p>  
+                    }).format(Date.parse(article.createdAt))}</b>  
                   </li>
                 </ul>
               </div>
-              <div className="blogContent">
-                <div dangerouslySetInnerHTML={{ __html: article.content }} />
-              </div>
+              <div className="blogArticle">
+            <div className="blogImg">
+              <img
+                src={article.image}
+                alt={article.titre}
+                style={{ width: "100%" }}
+              ></img>
             </div>
-          </Link>
+            <Link
+              to={`/blog/${article.category}/${article.id}/${article.title}`}
+              id="Link"
+            >
+              <div className="blogBody">
+                <div className="blogContent">
+                  <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
       ))}
     </Fragment>

@@ -1,10 +1,8 @@
 import React, { Fragment, Component } from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  BrowserRouter,
+  Link
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/App.css";
@@ -18,6 +16,7 @@ import "./assets/css/home.css";
 import "./assets/css/articles.css";
 import "./assets/css/nav.css";
 import "./assets/css/media.css";
+import "./assets/css/blog.css";
 //import './css/line-awesome.css';
 
 import AuthService from "./services/auth.service";
@@ -32,6 +31,8 @@ import BoardAdmin from "./components/board-admin.component";
 import AboutMe from "./components/aboutMe.component";
 import ContactMe from "./components/contactMe.component";
 import Blog from "./components/blog.component";
+import BlogCateg from "./components/blog/blogCateg";
+import BlogId from "./components/blog/blogId";
 import Shop from "./components/shop.component";
 import Footer from "./components/footer/footer";
 
@@ -68,8 +69,6 @@ class App extends Component {
 
     return (
       <Fragment>
-        <BrowserRouter>
-          <Router>
             <input id="switch" type="checkbox" />
             <div id="FullFrame">
               <nav className="navbar navbar-expand" id="fixedNavbar">
@@ -225,7 +224,7 @@ class App extends Component {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="/login"
+                        href="/home"
                         className="nav-link"
                         onClick={this.logOut}
                       >
@@ -262,6 +261,8 @@ class App extends Component {
                   <Route exact path={["/", "/home"]} component={Home} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/blog" component={Blog} />
+                  <Route exact path="/blog/:category" component={BlogCateg} />
+                  <Route exact path="/blog/:category/:id/:title" component={BlogId} />
                   <Route exact path="/shop" component={Shop} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/profile" component={Profile} />
@@ -274,8 +275,6 @@ class App extends Component {
               </div>
               <Footer />
             </div>
-          </Router>
-        </BrowserRouter>
       </Fragment>
     );
   }

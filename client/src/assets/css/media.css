@@ -271,11 +271,6 @@
     flex-direction: column !important;
   }
 }
-@media only screen and (max-width: 850px) {
-  .blogInfo li p {
-    font-size: 10px !important;
-  }
-}
 
 @media only screen and (max-width: 805px) {
   #Footer {
@@ -365,16 +360,6 @@
     to {
       font-size: 16px;
     }
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  .blogInfo li p {
-    font-size: 8px !important;
-  }
-  .blogInfo .profile-img-card {
-    width: 15px !important;
-    height: 15px !important;
   }
 }
 
@@ -482,10 +467,6 @@
 
   #BlogBody {
     width: 100% !important;
-  }
-
-  .blogInfo li {
-    display: none !important;
   }
 }
 
@@ -682,6 +663,11 @@
   }
   #BlogNav ul li:hover {
     font-size: 16px !important;
+  }
+
+  .blogFrame:hover .blogInfo {
+    height: 50px !important;
+    transition: height 1s !important;
   }
 }
 

@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import { Link } from "react-router-dom";
 import BlogArticlesCateg from "./blogArticlesCateg";
 
+
 class blogCateg extends Component {
   constructor(props) {
     super(props);
@@ -26,61 +27,61 @@ class blogCateg extends Component {
           <div id="BlogNav">
             <ul>
               <li>
-                <Link to="/">
+                <Link to="/blog">
                   <b>All</b>
                 </Link>
               </li>
               <li>
                 {(this.props.match.params.category === "News" && (
-                  <Link to="/News" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/News" style={{ color: "rgb(0, 162, 255)" }}>
                     <b>News</b>
                   </Link>
                 )) || (
-                  <Link to="/News">
+                  <Link to="/blog/News">
                     <b>News</b>
                   </Link>
                 )}
               </li>
               <li>
                 {(this.props.match.params.category === "BackEnd" && (
-                  <Link to="/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
                     <b>BackEnd</b>
                   </Link>
                 )) || (
-                  <Link to="/BackEnd">
+                  <Link to="/blog/BackEnd">
                     <b>BackEnd</b>
                   </Link>
                 )}
               </li>
               <li>
                 {(this.props.match.params.category === "FrontEnd" && (
-                  <Link to="/FrontEnd" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/FrontEnd" style={{ color: "rgb(0, 162, 255)" }}>
                     <b>FrontEnd</b>
                   </Link>
                 )) || (
-                  <Link to="/FrontEnd">
+                  <Link to="/blog/FrontEnd">
                     <b>FrontEnd</b>
                   </Link>
                 )}
               </li>
               <li>
                 {(this.props.match.params.category === "Life" && (
-                  <Link to="/Life" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/Life" style={{ color: "rgb(0, 162, 255)" }}>
                     <b>Life</b>
                   </Link>
                 )) || (
-                  <Link to="/Life">
+                  <Link to="/blog/Life">
                     <b>Life</b>
                   </Link>
                 )}
               </li>
               <li>
                 {(this.props.match.params.category === "Others" && (
-                  <Link to="/Others" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/Others" style={{ color: "rgb(0, 162, 255)" }}>
                     <b>Others</b>
                   </Link>
                 )) || (
-                  <Link to="/Others">
+                  <Link to="/blog/Others">
                     <b>Others</b>
                   </Link>
                 )}
