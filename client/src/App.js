@@ -132,6 +132,14 @@ class App extends Component {
                           </li>
                         )}
 
+                        {currentUser && (
+                          <li className="mobilenav-item">
+                            <Link to={"/user"} className="nav-link">
+                              User
+                            </Link>
+                          </li>
+                        )}
+                        
                         {showAdminBoard && (
                           <li className="mobilenav-item">
                             <Link to={"/admin"} className="nav-link">
@@ -140,13 +148,6 @@ class App extends Component {
                           </li>
                         )}
 
-                        {currentUser && (
-                          <li className="mobilenav-item">
-                            <Link to={"/user"} className="nav-link">
-                              User
-                            </Link>
-                          </li>
-                        )}
                         <li className="mobilenav-item">
                           <Link to={"/profile"} className="nav-link">
                             {currentUser.username}
@@ -180,14 +181,13 @@ class App extends Component {
                           </Link>
                         </li>
                         <li className="mobilenav-item">
-                          <Link to={"/login"} className="nav-link">
-                            Login
-                          </Link>
-                        </li>
-
-                        <li className="mobilenav-item">
                           <Link to={"/register"} className="nav-link">
                             Register
+                          </Link>
+                        </li>
+                        <li className="mobilenav-item">
+                          <Link to={"/login"} className="nav-link">
+                            Login
                           </Link>
                         </li>
                       </ul>
@@ -205,14 +205,6 @@ class App extends Component {
                       </li>
                     )}
 
-                    {showAdminBoard && (
-                      <li className="nav-item">
-                        <Link to={"/admin"} className="nav-link">
-                          Admin
-                        </Link>
-                      </li>
-                    )}
-
                     {currentUser && (
                       <li className="nav-item">
                         <Link to={"/user"} className="nav-link">
@@ -220,6 +212,15 @@ class App extends Component {
                         </Link>
                       </li>
                     )}
+
+                    {showAdminBoard && (
+                      <li className="nav-item">
+                        <Link to={"/admin"} className="nav-link">
+                          Admin
+                        </Link>
+                      </li>
+                    )}
+                    
                     <li className="nav-item">
                       <Link to={"/profile"} className="nav-link">
                         {currentUser.username}
@@ -238,14 +239,13 @@ class App extends Component {
                 ) : (
                   <div className="navbar-nav ml-auto" id="rightMenu">
                     <li className="nav-item">
-                      <Link to={"/login"} className="nav-link">
-                        Login
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
                       <Link to={"/register"} className="nav-link">
                         Register
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link to={"/login"} className="nav-link">
+                        Login
                       </Link>
                     </li>
                   </div>

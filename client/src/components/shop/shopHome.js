@@ -37,7 +37,7 @@ class ShopHome extends Component {
     return (
       <Fragment>
         <div className="BrowserNavbar">
-          <p>Discover all our best deals - DoanStack.be</p>
+          <p>My Eshop project. You can rate and review products</p>
         </div>
         <div id="TitleLink">
           <h1>Shop</h1>

@@ -37,7 +37,7 @@ class BlogHome extends Component {
     return (
       <Fragment>
         <div className="BrowserNavbar">
-          <p>News && Fullstack tutorials - DoanStack.be</p>
+          <p> How I build this PERN stack web application and more</p>
         </div>
         <div id="TitleLink">
           <h1>Blog</h1>
@@ -56,13 +56,13 @@ class BlogHome extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/blog/BackEnd">
-                  <b>BackEnd</b>
+                <Link to="/blog/FrontEnd">
+                  <b>FrontEnd</b>
                 </Link>
               </li>
               <li>
-                <Link to="/blog/FrontEnd">
-                  <b>FrontEnd</b>
+                <Link to="/blog/BackEnd">
+                  <b>BackEnd</b>
                 </Link>
               </li>
               <li>

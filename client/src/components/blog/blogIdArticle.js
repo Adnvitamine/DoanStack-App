@@ -173,17 +173,6 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
               )}
             </li>
             <li>
-              {(article.category === "BackEnd" && (
-                <Link to="/blog/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
-                  <b>BackEnd</b>
-                </Link>
-              )) || (
-                <Link to="/blog/BackEnd">
-                  <b>BackEnd</b>
-                </Link>
-              )}
-            </li>
-            <li>
               {(article.category === "FrontEnd" && (
                 <Link to="/blog/FrontEnd" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>FrontEnd</b>
@@ -191,6 +180,17 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
               )) || (
                 <Link to="/blog/FrontEnd">
                   <b>FrontEnd</b>
+                </Link>
+              )}
+            </li>
+            <li>
+              {(article.category === "BackEnd" && (
+                <Link to="/blog/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
+                  <b>BackEnd</b>
+                </Link>
+              )) || (
+                <Link to="/blog/BackEnd">
+                  <b>BackEnd</b>
                 </Link>
               )}
             </li>

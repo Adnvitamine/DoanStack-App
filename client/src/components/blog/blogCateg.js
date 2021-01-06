@@ -43,17 +43,6 @@ class blogCateg extends Component {
                 )}
               </li>
               <li>
-                {(this.props.match.params.category === "BackEnd" && (
-                  <Link to="/blog/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
-                    <b>BackEnd</b>
-                  </Link>
-                )) || (
-                  <Link to="/blog/BackEnd">
-                    <b>BackEnd</b>
-                  </Link>
-                )}
-              </li>
-              <li>
                 {(this.props.match.params.category === "FrontEnd" && (
                   <Link to="/blog/FrontEnd" style={{ color: "rgb(0, 162, 255)" }}>
                     <b>FrontEnd</b>
@@ -61,6 +50,17 @@ class blogCateg extends Component {
                 )) || (
                   <Link to="/blog/FrontEnd">
                     <b>FrontEnd</b>
+                  </Link>
+                )}
+              </li>
+              <li>
+                {(this.props.match.params.category === "BackEnd" && (
+                  <Link to="/blog/BackEnd" style={{ color: "rgb(0, 162, 255)" }}>
+                    <b>BackEnd</b>
+                  </Link>
+                )) || (
+                  <Link to="/blog/BackEnd">
+                    <b>BackEnd</b>
                   </Link>
                 )}
               </li>
