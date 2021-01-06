@@ -1,3 +1,9 @@
+- pagination ?
+
+- product image edit
+
+- add user and roles, ask permission to admin
+
 - Mail services : Mail confirmation
 
 - Views per page
@@ -6,12 +12,11 @@
 
 - message between users
 
-- ask permission to admin
 
-- pagination ?
 
 - Localstorage (done)
 
 - Meta for SEO
 
 - Multi Upload item limit
+

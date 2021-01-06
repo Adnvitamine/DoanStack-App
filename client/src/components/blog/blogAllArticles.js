@@ -24,6 +24,9 @@ const BlogAllArticles = ({ currentUser }) => {
 
   return (
     <Fragment>
+      <div className="dataFilter" style={{ width: "100%", border: "1px solid black", minHeight: "50px", display: "flex", flexDirection: "row", flexWrap: "wrap"}} >
+        
+      </div>
       {allArticles.map((article) => (
         <div className="blogFrame" key={article.id}>
           <div className="blogInfo">
