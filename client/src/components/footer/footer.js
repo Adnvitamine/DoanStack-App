@@ -9,27 +9,27 @@ function footer() {
           <div id="SocialMedia">
             <ul className="list-inline text-center">
               <li>
-                <a href="/">
+                <a href="mailto:doan88nguyen@gmail.com">
                   <i className="fa fa-envelope rotate"></i>
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://github.com/Adnvitamine?tab=repositories">
                   <i className="fab fa-github-square"></i>
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://www.youtube.com/channel/UCSx8ihkxw5dYVy-ubOyQyJQ/featured">
                   <i className="fab fa-youtube-square"></i>
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://www.linkedin.com/in/doan88nguyen/">
                   <i className="fab fa-linkedin"></i>
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://www.facebook.com/AznVitamine/">
                   <i className="fab fa-facebook"></i>
                 </a>
               </li>

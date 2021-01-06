@@ -29,8 +29,6 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
-import AboutMe from "./components/aboutMe.component";
-import ContactMe from "./components/contactMe.component";
 import Blog from "./components/blog.component";
 import BlogCateg from "./components/blog/blogCateg";
 import BlogId from "./components/blog/blogId";
@@ -274,8 +272,6 @@ class App extends Component {
                   <Route path="/user" component={BoardUser} />
                   <Route path="/mod" component={BoardModerator} />
                   <Route path="/admin" component={BoardAdmin} />
-                  <Route path="/contact" component={ContactMe} />
-                  <Route path="/about" component={AboutMe} />
                 </Switch>
               </div>
               <Footer />
