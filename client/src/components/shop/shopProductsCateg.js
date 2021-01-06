@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from "react";
-import "../../assets/css/shop.css";
 import { Link } from "react-router-dom";
 import ProductRatings from "./productRatings/productRatings";
 
@@ -27,7 +26,7 @@ const ShopProductsCateg = ({ category }) => {
     <Fragment>
       {allProducts.map((product) => (
         <Link
-          to={`/${product.category}/${product.id}/${product.name}`}
+          to={`/shop/${product.category}/${product.id}/${product.name}`}
           id="ShopLink"
           key={product.id}
         >

@@ -46,32 +46,32 @@ class ShopHome extends Component {
           <div id="ShopNav">
             <ul>
               <li>
-                <Link to="/" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/shop" style={{ color: "rgb(0, 162, 255)" }}>
                   <b>All</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Cosmetic">
+                <Link to="/shop/Cosmetic">
                   <b>Cosmetic</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Fashion">
+                <Link to="/shop/Fashion">
                   <b>Fashion</b>
                 </Link>
               </li>
               <li>
-                <Link to="/PC">
-                  <b>PC</b>
+                <Link to="/shop/PC">
+                  <b>Pc</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Estate">
+                <Link to="/shop/Estate">
                   <b>Estate</b>
                 </Link>
               </li>
               <li>
-                <Link to="/Services">
+                <Link to="/shop/Services">
                   <b>Services</b>
                 </Link>
               </li>

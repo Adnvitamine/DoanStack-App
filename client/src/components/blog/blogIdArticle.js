@@ -242,7 +242,8 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                   to={`/blog/${listarticle.category}/${listarticle.id}/${listarticle.title}`}
                   key={listarticle.id}
                 >
-                  { listarticle.id !== article.id && (<div className="list">
+                  { listarticle.id !== article.id && (
+                  <div className="list">
                       <div className="articleImg">
                         <span className="profile-img-card">
                           <img

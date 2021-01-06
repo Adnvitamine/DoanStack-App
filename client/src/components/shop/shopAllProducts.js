@@ -25,7 +25,7 @@ const ShopAllProducts = ({ currentUser }) => {
     <Fragment>
       {allProducts.map((product) => (
         <Link
-          to={`/${product.category}/${product.id}/${product.name}`}
+          to={`/shop/${product.category}/${product.id}/${product.name}`}
           id="ShopLink"
           key={product.id}
         >

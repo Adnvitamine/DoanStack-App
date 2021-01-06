@@ -2,8 +2,9 @@ import React, { Component, Fragment } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+//import { useHistory } from "react-router";
 
-import AuthService from "../services/auth.service";
+import AuthService from "../../services/auth.service";
 
 const required = (value) => {
   if (!value) {
@@ -15,7 +16,7 @@ const required = (value) => {
   }
 };
 
-export default class Login extends Component {
+export default class ShopLogin extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
@@ -30,6 +31,7 @@ export default class Login extends Component {
     };
   }
 
+  
   onChangeUsername(e) {
     this.setState({
       username: e.target.value,
@@ -55,8 +57,10 @@ export default class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/profile");
+          
+          //this.props.history.push();
           window.location.reload();
+          //window.location = "";
         },
         (error) => {
           const resMessage =
@@ -85,7 +89,7 @@ export default class Login extends Component {
         <div className="BrowserNavbar">
           <p>Login</p>
         </div>
-        <div className="col-md-12" id="Login">
+        <div className="col-md-12" id="Shoplogin">
           <div className="card card-container">
             <img
               src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"

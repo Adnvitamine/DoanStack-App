@@ -15,8 +15,9 @@ import "./assets/css/profile.css";
 import "./assets/css/home.css";
 import "./assets/css/articles.css";
 import "./assets/css/nav.css";
-import "./assets/css/media.css";
 import "./assets/css/blog.css";
+import "./assets/css/shop.css";
+import "./assets/css/media.css";
 //import './css/line-awesome.css';
 
 import AuthService from "./services/auth.service";
@@ -34,6 +35,8 @@ import Blog from "./components/blog.component";
 import BlogCateg from "./components/blog/blogCateg";
 import BlogId from "./components/blog/blogId";
 import Shop from "./components/shop.component";
+import ShopCateg from "./components/shop/shopCateg";
+import ShopId from "./components/shop/shopId";
 import Footer from "./components/footer/footer";
 
 class App extends Component {
@@ -264,6 +267,8 @@ class App extends Component {
                   <Route exact path="/blog/:category" component={BlogCateg} />
                   <Route exact path="/blog/:category/:id/:title" component={BlogId} />
                   <Route exact path="/shop" component={Shop} />
+                  <Route exact path="/shop/:category" component={ShopCateg} />
+                  <Route exact path="/shop/:category/:id/:title" component={ShopId} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/profile" component={Profile} />
                   <Route path="/user" component={BoardUser} />
