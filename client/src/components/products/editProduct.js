@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useRef } from "react";
 import axios from "axios";
-import CKEditor from "@ckeditor/ckeditor5-react";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
 import InlineEditor from "@ckeditor/ckeditor5-build-inline";
 //import InlineEditor from "@ckeditor/ckeditor5-build-inline";
 import CustomUpload from "../../js/CustomUploader";
@@ -482,7 +482,7 @@ const EditProduct = ({ product }) => {
                     config={{
                       extraPlugins: [CustomUpload],
                     }}
-                    onInit={(editor) => {
+                    onReady={(editor) => {
                       // You can store the "editor" and use when it is needed.
                       console.log("Editor is ready to use!", editor);
                     }}
