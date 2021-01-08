@@ -32,10 +32,7 @@
     "postinstall": "patch-package"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "no-console": "off"
-    }
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

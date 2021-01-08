@@ -64,7 +64,20 @@ const ProductDescription = ({ product }) => {
             <div id="ProductInfoBottom" style={{ margin: "auto" }}>
               <div className="productVendor">
                 <p>
-                  <img
+                 {product.vendor_avatar === "null" && (
+                    <img
+                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                    className="user-img-card"
+                    alt={product.author}
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      display: "inline-block",
+                      marginBottom: "0",
+                    }}
+                  ></img>
+                 )}
+                 {product.vendor_avatar !== "null" && ( <img
                     src={product.vendor_avatar}
                     className="user-img-card"
                     alt={product.author}
@@ -74,7 +87,8 @@ const ProductDescription = ({ product }) => {
                       display: "inline-block",
                       marginBottom: "0",
                     }}
-                  ></img>{" "}
+                  ></img>)
+                 }
                   <b>{product.vendor}</b>
                 </p>
               </div>

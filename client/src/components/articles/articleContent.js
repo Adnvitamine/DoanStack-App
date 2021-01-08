@@ -72,7 +72,7 @@ const ArticleContent = ({ article }) => {
               <b>By:</b> &nbsp;
               {article.author_avatar === "null" && (
                 <img
-                src={article.author_avatar}
+                src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                 className="user-img-card"
                 alt={article.author}
                 style={{
