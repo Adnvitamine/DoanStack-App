@@ -84,17 +84,17 @@ class App extends Component {
                 <div className="navbar-nav mr-auto" id="leftMenu">
                   <li className="nav-item">
                     <Link to={"/home"} className="nav-link">
-                      Home
+                      HOME
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to={"/blog"} className="nav-link">
-                      Blog
+                      BLOG
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to={"/shop"} className="nav-link">
-                      Shop
+                      SHOP
                     </Link>
                   </li>
                 </div>

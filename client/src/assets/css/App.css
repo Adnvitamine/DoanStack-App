@@ -198,6 +198,7 @@ label {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fontSize 1s linear forwards;
+  font-family: MontB;
 }
 
 @keyframes fontSize {

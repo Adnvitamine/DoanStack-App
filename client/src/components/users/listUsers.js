@@ -76,7 +76,7 @@ const ListUsers = () => {
             </div>
             <UserActivity user_id={user.id} />
             <div className="userCardInfo" >
-              Roles:{" "}
+              <strong>Roles:</strong> &nbsp;
               {user.roles.map((role) => (
                 <div
                   style={{ display: "inline-block" }}

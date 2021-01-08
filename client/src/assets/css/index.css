@@ -166,6 +166,12 @@ h2 {
   box-shadow: inset 0px -1px 4px #ffe601, inset -1px 0px 4px #ff7300;
 }
 
+#switch:checked + #FullFrame .mainBoard #ShopBody #ShopNav {
+  border-radius: 50px;
+  background: #272626;
+  box-shadow: 8px 8px 16px #1e1d1d, -8px -8px 16px #1e1d1d;
+}
+
 #switch:checked + #FullFrame .mainBoard #ShopBody #ShopNav ul li a {
   color: white;
   transition: color 4s ease-out;
@@ -174,6 +180,12 @@ h2 {
 #switch:checked + #FullFrame .mainBoard #ShopBody #ShopNav ul li a:hover {
   color: rgb(255, 127, 7);
   transition: color 0.5s ease-in-out;
+}
+
+#switch:checked + #FullFrame .mainBoard #BlogBody #BlogNav {
+  border-radius: 50px;
+  background: #272626;
+  box-shadow: 8px 8px 16px #1e1d1d, -8px -8px 16px #1e1d1d;
 }
 
 #switch:checked + #FullFrame .mainBoard #BlogBody #BlogNav ul li a {
@@ -211,6 +223,11 @@ h2 {
   color: rgb(38, 253, 38);
   transition: color 0.5s linear, font-size 0.5s ease-in-out;
 }
+
+#switch:checked + #FullFrame .mainBoard #ShopBody #ShopHome b {
+  color: white;
+}
+
 #switch:checked
   + #FullFrame
   .mainBoard
@@ -271,7 +288,6 @@ h2 {
 #switch:checked + #FullFrame .mainBoard #BlogBody .articleSoloHeader {
   color: white;
 }
-
 #switch:checked
   + #FullFrame
   .mainBoard
@@ -281,17 +297,6 @@ h2 {
   p {
   color: white !important;
 }
-
-#switch:checked
-  + #FullFrame
-  .mainBoard
-  #ShopBody
-  .productSoloInfo
-  .productSoloQuantity
-  p {
-  color: white !important;
-}
-
 #switch:checked + #FullFrame .mainBoard #ShopBody .productSoloContent {
   color: white;
 }
@@ -811,10 +816,10 @@ h2 {
     background: linear-gradient(orange, yellow);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(255, 248, 0, 1), 0 0 35px rgba(255, 248, 0, 1),
-      0 0 40px rgba(255, 248, 0, 1), 0 0 45px rgba(255, 248, 0, 1),
-      0 0 50px rgba(255, 248, 0, 1), 0 0 55px rgba(255, 248, 0, 1),
-      0 0 60px rgba(255, 248, 0, 1), 0 0 70px rgba(255, 248, 0, 1);
+    text-shadow: 0 0 5px rgba(255, 248, 0, 0.5), 0 0 7px rgba(255, 248, 0, 0.5),
+      0 0 9px rgba(255, 248, 0, 0.5), 0 0 11px rgba(255, 248, 0, 0.5),
+      0 0 13px rgba(255, 248, 0, 0.5), 0 0 15px rgba(255, 248, 0, 0.5),
+      0 0 17px rgba(255, 248, 0, 0.5), 0 0 19px rgba(255, 248, 0, 0.5);
   }
 }
 

@@ -37,7 +37,7 @@ class BlogHome extends Component {
     return (
       <Fragment>
         <div className="BrowserNavbar">
-          <p> How I build this PERN stack web application and more</p>
+          <p> How I build this PERN stack web application and more.</p>
         </div>
         <div id="TitleLink">
           <h1>Blog</h1>
