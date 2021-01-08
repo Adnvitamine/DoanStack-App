@@ -5,6 +5,8 @@ const cloudinary = require("./config/cloudinaryConfig");
 const { uploader } = require ('cloudinary');
 const { multerUpload, dataUri, upload } = require("./middlewares/multer");
 const fs = require('fs');
+//const newStart = require("./middlewares/newStart");
+
 
 //const path = require('path');
 //const uuid = require('uuidv4');
@@ -28,37 +30,13 @@ app.use(cors(corsOptions));
 // middle ware
 app.use(express.static("public")); //to access the files in public folder
 
-const db = require("./models/");
-const Role = db.role;
+//const db = require("./models/");
+//const Role = db.role;
+//const User = db.user;
 
-db.sequelize
-  .sync({
-    /*force: true,*/
-  })
-  .then(() => {
-    console.log(
-      //"Drop and Resync Db"
-      "No Drop & Resync"
-    );
-    //initial();
-  });
 
-function initial() {
-  Role.create({
-    id: 1,
-    name: "user",
-  });
+//newStart();
 
-  Role.create({
-    id: 2,
-    name: "moderator",
-  });
-
-  Role.create({
-    id: 3,
-    name: "admin",
-  });
-}
 
 /*
 const storage = multer.diskStorage({
@@ -94,6 +72,8 @@ require("./routes/article.routes")(app);
 require("./routes/articlecom.routes")(app);
 require("./routes/articleimg.routes")(app);
 require("./routes/productRating.routes")(app);
+
+
 
 // file upload api
 /*
@@ -199,8 +179,7 @@ app.post('/upload', multerUpload, (req, res) => {
  
     const file = dataUri(req);
     return uploader.upload(file).then((result) => {
-  
-    const image = result.url;
+    const image = result.secure_url;
     return res.status(200).send({ name: req.file.originalname, path: image })
     }).catch((err) => res.status(400).json({
       message: 'something went wrong while processing your request',
@@ -237,7 +216,7 @@ app.post('/uploadfiles', multerUpload, (req, res) => {
   const file = dataUri(req);
   return uploader.upload(file).then((result) => {
 
-  const image = result.url;
+  const image = result.secure_url;
   return res.status(200).json({
     success: true,
     url: image,
@@ -258,7 +237,7 @@ app.post('/ckeditorupload', multerUpload, (req, res) => {
   const file = dataUri(req);
   return uploader.upload(file).then((result) => {
 
-  const image = result.url;
+  const image = result.secure_url;
   return res.status(200).send({ url: image })
   }).catch((err) => res.status(400).json({
     message: 'something went wrong while processing your request',

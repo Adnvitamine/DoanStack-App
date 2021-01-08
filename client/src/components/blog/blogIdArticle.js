@@ -119,7 +119,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {article.author}. Logged as {user.avatar === "null" && (
+            {article.author}. Logged as {!user.avatar && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                 alt="guest"
@@ -133,7 +133,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 }}
               ></img>
             )}
-            {user.avatar !== "null" && (
+            {user.avatar && (
               <img
                 src={user.avatar}
                 alt={user.username}

@@ -160,7 +160,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {product.vendor}. Logged as {user.avatar === "null" && (
+            {product.vendor}. Logged as {!user.avatar && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                 alt="guest"
@@ -174,7 +174,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 }}
               ></img>
             )}
-            {user.avatar !== "null" && (
+            {user.avatar && (
               <img
                 src={user.avatar}
                 alt={user.username}

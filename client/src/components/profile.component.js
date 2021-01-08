@@ -48,7 +48,7 @@ export default class Profile extends Component {
       return (
         <Fragment>
           <div className="BrowserNavbar">
-            <p>{currentUser.avatar === "null" && (
+            <p>{!currentUser.avatar && (
               <img
                 src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                 alt="guest"
@@ -62,7 +62,7 @@ export default class Profile extends Component {
                 }}
               ></img>
             )}
-            {currentUser.avatar !== "null" && (
+            {currentUser.avatar && (
               <img
                 src={currentUser.avatar}
                 className="profile-img-card"
