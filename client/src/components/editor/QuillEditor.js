@@ -9,7 +9,7 @@ import axios from "axios";
 // Quill.register('modules/clipboard', PlainClipboard, true);
 
 //const ImageFormatAttributesList = ["alt", "height", "width", "style"];
-//var BaseImageFormat = Quill.import('formats/image');
+// var BaseImageFormat = Quill.import('formats/image');
 const QuillClipboard = Quill.import("modules/clipboard");
 //const SizeStyle = Quill.import("attributors/style/size");
 //Quill.register(SizeStyle, true);
@@ -97,7 +97,8 @@ ImageBlot.blotName = "image";
 ImageBlot.tagName = "img";
 Quill.register(ImageBlot);
 
-/*class ImageFormat extends ImageBlot {
+/*
+class ImageFormat extends ImageBlot {
   static formats(domNode) {
     return ImageFormatAttributesList.reduce(function (formats, attribute) {
       if (domNode.hasAttribute(attribute)) {
@@ -120,7 +121,6 @@ Quill.register(ImageBlot);
 }
 
 Quill.register(ImageFormat, true);*/
-
 
 class VideoBlot extends BlockEmbed {
   static create(value) {
@@ -545,6 +545,7 @@ class QuillEditor extends React.Component {
     "indent",
     "link",
     "image",
+    "video",
     "color",
     "background",
     "code-block"

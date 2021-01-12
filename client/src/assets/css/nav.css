@@ -63,17 +63,15 @@
 
 .BrowserNavbar p {
   position: relative;
-  left: 0px;
   display: inline-block;
   margin-bottom: 0;
-  font-size: 18px;
-  font-weight: bolder;
   background: linear-gradient(red, blue);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: neon1 0.5s ease-in-out infinite alternate;
   -moz-animation: neon1 0.5s ease-in-out infinite alternate;
-  animation: slide1 30s linear infinite;
+  animation: neon 0.5s ease-in-out infinite alternate,
+    slide1 25s linear infinite;
 }
 
 .BrowserNavbar:hover p {
@@ -86,11 +84,13 @@
 }
 
 @keyframes slide1 {
-  from {
-    left: 0%;
+  0% {
+    left: 0;
+    transform: translateX(0);
   }
-  to {
+  100% {
     left: 100%;
+    transform: translateX(-100%);
   }
 }
 

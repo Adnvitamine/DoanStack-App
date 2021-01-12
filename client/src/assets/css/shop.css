@@ -45,7 +45,7 @@
 }
 
 #ShopNav ul li:hover {
-  font-size: 25px;
+  font-size: 20px;
   transition: font-size 0.5s linear;
 }
 
@@ -257,7 +257,6 @@
   padding: 0 var(--ck-spacing-standard) !important;
   margin: auto;
   border-radius: 5px;
-  min-height: 500px;
 }
 
 .productSoloContent h1 {

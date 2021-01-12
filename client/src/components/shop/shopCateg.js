@@ -33,7 +33,7 @@ class shopCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "Cosmetic" && (
-                  <Link to="/shop/Cosmetic" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/shop/Cosmetic" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
                     <b>Cosmetic</b>
                   </Link>
                 )) || (
@@ -44,7 +44,7 @@ class shopCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "Fashion" && (
-                  <Link to="/shop/Fashion" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/shop/Fashion" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
                     <b>Fashion</b>
                   </Link>
                 )) || (
@@ -55,7 +55,7 @@ class shopCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "PC" && (
-                  <Link to="/shop/PC" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/shop/PC" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
                     <b>Pc</b>
                   </Link>
                 )) || (
@@ -66,7 +66,7 @@ class shopCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "Estate" && (
-                  <Link to="/shop/Estate" style={{ color: "rgb(0, 162, 255)" }}>
+                  <Link to="/shop/Estate" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
                     <b>Estate</b>
                   </Link>
                 )) || (
