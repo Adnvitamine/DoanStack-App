@@ -8,11 +8,11 @@ import axios from "axios";
 
 // Quill.register('modules/clipboard', PlainClipboard, true);
 
-const ImageFormatAttributesList = ["alt", "height", "width", "style"];
+//const ImageFormatAttributesList = ["alt", "height", "width", "style"];
 //var BaseImageFormat = Quill.import('formats/image');
 const QuillClipboard = Quill.import("modules/clipboard");
-const SizeStyle = Quill.import("attributors/style/size");
-Quill.register(SizeStyle, true);
+//const SizeStyle = Quill.import("attributors/style/size");
+//Quill.register(SizeStyle, true);
 
 class Clipboard extends QuillClipboard {
   getMetaTagElements = (stringContent) => {
@@ -97,7 +97,7 @@ ImageBlot.blotName = "image";
 ImageBlot.tagName = "img";
 Quill.register(ImageBlot);
 
-class ImageFormat extends ImageBlot {
+/*class ImageFormat extends ImageBlot {
   static formats(domNode) {
     return ImageFormatAttributesList.reduce(function (formats, attribute) {
       if (domNode.hasAttribute(attribute)) {
@@ -119,7 +119,8 @@ class ImageFormat extends ImageBlot {
   }
 }
 
-Quill.register(ImageFormat, true);
+Quill.register(ImageFormat, true);*/
+
 
 class VideoBlot extends BlockEmbed {
   static create(value) {
@@ -217,6 +218,10 @@ PollBlot.blotName = "poll";
 PollBlot.tagName = "p";
 PollBlot.className = "poll-inner-post";
 Quill.register(PollBlot);
+
+const Size = Quill.import("formats/size");
+Size.whitelist = ["extra-small", "small", "medium", "large"];
+Quill.register(Size, true);
 
 class QuillEditor extends React.Component {
   bandId;
@@ -351,7 +356,7 @@ class QuillEditor extends React.Component {
       };
       formData.append("file", file);
 
-      axios.post("/api/blog/uploadfiles", formData, config).then((response) => {
+      axios.post("http://localhost:8080/uploadfiles", formData, config).then((response) => {
         if (response.data.success) {
           const quill = this.reactQuillRef.getEditor();
           quill.focus();
@@ -359,7 +364,7 @@ class QuillEditor extends React.Component {
           let range = quill.getSelection();
           let position = range ? range.index : 0;
           quill.insertEmbed(position, "video", {
-            src: "http://localhost:5000/" + response.data.url,
+            src: response.data.url,
             title: response.data.fileName,
           });
           quill.setSelection(position + 1);
@@ -399,7 +404,7 @@ class QuillEditor extends React.Component {
       };
       formData.append("file", file);
 
-      axios.post("/api/blog/uploadfiles", formData, config).then((response) => {
+      axios.post("http://localhost:8080/uploadfiles", formData, config).then((response) => {
         if (response.data.success) {
           const quill = this.reactQuillRef.getEditor();
           quill.focus();
@@ -428,49 +433,52 @@ class QuillEditor extends React.Component {
     return (
       <div>
         <div id={this.props.toolbarId}>
-          <select
-            className="ql-header"
-            defaultValue={""}
-            onChange={(e) => e.persist()}
-          >
+        <span className="ql-formats">
+          <select className="ql-size" defaultValue={""} onChange={e=> e.persist()}>
+            <option value="small">Size 1</option>
+            <option value="">Size 2</option>
+            <option value="large">Size 3</option>
+          </select>
+          <select className="ql-header" defaultValue={""} onChange={e => e.persist()}>
             <option value="1" />
             <option value="2" />
             <option value="" />
           </select>
+        </span>
+        <span className="ql-formats">
           <button className="ql-bold" />
           <button className="ql-italic" />
           <button className="ql-underline" />
-
-          <button className="ql-align" value=""></button>
-          <button className="ql-align" value="center"></button>
-          <button className="ql-align" value="right"></button>
-          <button className="ql-align" value="justify"></button>
-
           <button className="ql-strike" />
-
-          <button className="ql-insertImage">
-            <svg viewBox="0 0 18 18">
-              {" "}
-              <rect
-                className="ql-stroke"
-                height="10"
-                width="12"
-                x="3"
-                y="4"
-              ></rect>{" "}
-              <circle className="ql-fill" cx="6" cy="7" r="1"></circle>{" "}
-              <polyline
-                className="ql-even ql-fill"
-                points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"
-              ></polyline>{" "}
-            </svg>
-          </button>
-          <button className="ql-link" />
-          <button className="ql-code-block" />
-          <button className="ql-video" />
+        </span>
+        <span className="ql-formats">
+          <button className="ql-list" value="ordered" />
+          <button className="ql-list" value="bullet" />
+          <button className="ql-indent" value="-1" />
+          <button className="ql-indent" value="+1" />
+        </span>
+        <span className="ql-formats">
+          <button className="ql-script" value="super" />
+          <button className="ql-script" value="sub" />
           <button className="ql-blockquote" />
+          <button className="ql-direction" />
+        </span>
+        <span className="ql-formats">
+          <select className="ql-align" />
+          <select className="ql-color" />
+          <select className="ql-background" />
+        </span>
+        <span className="ql-formats">
+          <button className="ql-link" />
+          <button className="ql-image" />
+          <button className="ql-video" />
+        </span>
+        <span className="ql-formats">
+          <button className="ql-code-block" />
           <button className="ql-clean" />
+        </span>
         </div>
+        
         <ReactQuill
           ref={(el) => {
             this.reactQuillRef = el;
@@ -511,9 +519,9 @@ class QuillEditor extends React.Component {
     syntax: true,
     toolbar: {
       container: "#" + this.props.toolbarId,
-      //id ="toorbar"는  그 위에 B I U S I V F P 이거 있는 곳이다.
+      //id ="toorbar"
       handlers: {
-        insertImage: this.imageHandler,
+        image: this.imageHandler,
         insertVideo: this.videoHandler,
         insertFile: this.fileHandler,
         insertPoll: this.pollHandler,
@@ -524,17 +532,22 @@ class QuillEditor extends React.Component {
 
   formats = [
     "header",
+    "size",
     "bold",
     "italic",
     "underline",
-    "strike",
     "align",
-    "image",
-    "link",
-    "code-block",
-    "video",
+    "strike",
+    "script",
     "blockquote",
-    "clean",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+    "color",
+    "background",
+    "code-block"
   ];
 }
 

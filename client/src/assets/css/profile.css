@@ -1,7 +1,7 @@
 #ProfileFrame {
   display: flex;
   flex-direction: row;
-  padding-top: 120px;
+  margin-top: 50px;
 }
 #userProfile {
   display: block;
@@ -25,9 +25,8 @@
   background: #f5f6f7;
   box-shadow: -5px 5px 4px rgba(197, 227, 255, 0.5),
     5px 0px 4px rgba(255, 195, 207, 0.5);
-  width: 310px;
   display: inline-block;
-  margin-right: 10px;
+  margin: auto;
   margin-bottom: 10px;
   transition: box-shadow 2s;
 }
@@ -58,7 +57,13 @@
 }
 
 .editUserForm {
-  width: 340px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.editUserForm form {
   border-radius: 10px;
   background: #f5f6f7;
   box-shadow: -5px 5px 4px rgba(197, 227, 255, 0.5),
@@ -66,8 +71,5 @@
   padding: 25px 0px 25px 0px;
   margin: auto;
   margin-top: 20px;
-}
-
-.editUserForm form {
-  display: inline-block;
+  padding: 2rem;
 }

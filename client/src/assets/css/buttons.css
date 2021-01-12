@@ -39,8 +39,6 @@
 }
 
 #createButton:hover {
-  border-radius: 10px;
-  border-radius: 10px;
   box-shadow: -5px 5px 10px #5b5b5b, 5px -5px 10px #c4c5c6;
   transition: box-shadow 1s, font-size 1s;
 }
@@ -278,51 +276,18 @@
   margin-bottom: 5px;
 }
 
-#miniViewButton:visited {
-  border-radius: 10px;
-  background: #f5f6f7;
-  box-shadow: -9px 9px 11px #c4c5c6, 9px -9px 11px #ffffff;
-  border: none;
-  color: blue;
-  font-size: 16px;
-  outline: none;
-}
-#miniViewButton:focus {
-  border-radius: 10px;
-  background: #f5f6f7;
-  box-shadow: -9px 9px 11px #c4c5c6, 9px -9px 11px #ffffff;
-  border: none;
-  color: blue;
-  font-size: 16px;
-  outline: none;
-}
 #miniViewButton:hover {
-  border-radius: 10px;
-  background: #f5f6f7;
   box-shadow: -10px 10px 23px #c0c1c2, 10px -10px 23px #e6e7e8;
 }
 
 #miniViewButton:hover .svg-inline--fa {
-  border: none;
   color: #14d0ff;
-  outline: none;
   transition: color 1s;
 }
 
 #miniViewButton:active {
-  border-radius: 10px;
   background: #f5f6f7;
   box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
-  border: none;
-  color: blue;
-  font-size: 16px;
-  outline: none;
-}
-#miniViewButton:active p {
-  color: #14d0ff;
-}
-
-#miniViewButton:active .svg-inline--fa {
   color: #14d0ff;
 }
 
@@ -352,54 +317,24 @@
   color: #ffcc14;
   font-size: 32px;
   outline: none;
-}
-#editButton:visited {
-  border-radius: 10px;
-  background: #f5f6f7;
-  box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
-  border: none;
-  color: #ffcc14;
-  font-size: 32px;
-  outline: none;
-}
-#editButton:focus {
-  border-radius: 10px;
-  background: #f5f6f7;
-  box-shadow: -9px 9px 11px #c4c5c6, 9px -9px 11px #ffffff;
-  border: none;
-  color: #ffcc14;
-  font-size: 32px;
-  outline: none;
-}
-#editButton:hover {
-  border-radius: 10px;
-  background: #f5f6f7;
-  box-shadow: -10px 10px 23px #c0c1c2, 10px -10px 23px #e6e7e8;
+  transition: color 1s;
 }
 
-#editButton:hover .svg-inline--fa {
-  border: none;
+#editButton:hover {
   color: #f5f74a;
-  outline: none;
+  box-shadow: -10px 10px 23px #c0c1c2, 10px -10px 23px #e6e7e8;
+  transition: color 1s;
 }
+
 #editButton:hover p {
-  border: none;
   color: #ffcc14;
-  outline: none;
 }
 
 #editButton:active {
-  border-radius: 10px;
-  background: #f5f6f7;
   box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
-  border: none;
-  color: #ffcc14;
-  font-size: 32px;
-  outline: none;
-}
-#editButton:active p {
   color: #f5f74a;
 }
+
 #editButton i {
   margin: 0;
   padding: 0;
@@ -427,49 +362,13 @@
   color: #850000;
   outline: none;
 }
-#closeButton:visited {
-  border-radius: 50%;
-  background: #f5f6f7;
-  box-shadow: inset -15px 15px 30px #b8b9b9, inset 15px -15px 30px #ffffff;
-  border: none;
-  color: #850000;
-  font-size: 32px;
-  outline: none;
-}
-#closeButton:focus {
-  border-radius: 50%;
-  background: linear-gradient(45deg, #ddddde, #ffffff);
-  box-shadow: 6px -6px 25px #c6c7c8, -6px 6px 25px #ffffff;
-  border: none;
-  color: #850000;
-  font-size: 32px;
-  outline: none;
-}
-#closeButton:hover {
-  border-radius: 50%;
-  background: linear-gradient(45deg, #ddddde, #ffffff);
-  box-shadow: 6px -6px 25px #c6c7c8, -6px 6px 25px #ffffff;
-}
 
-#closeButton:hover i {
-  border: none;
+#closeButton:hover {
   color: #ff0000;
-  outline: none;
-}
-#closeButton:hover p {
-  border: none;
-  color: #850000;
-  outline: none;
 }
 
 #closeButton:active {
-  border-radius: 50%;
-  background: #f5f6f7;
   box-shadow: inset -15px 15px 30px #b8b9b9, inset 15px -15px 30px #ffffff;
-  border: none;
-  color: #850000;
-  font-size: 32px;
-  outline: none;
 }
 
 #miniEditButton {
@@ -485,45 +384,17 @@
   margin-bottom: 5px;
 }
 
-#miniEditButton:visited {
-  border-radius: 10px;
-  background: #f5f6f7;
-  box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
-  border: none;
-  color: #ffcc14;
-  font-size: 16px;
-  outline: none;
-}
-#miniEditButton:focus {
-  border-radius: 10px;
-  background: #f5f6f7;
-  box-shadow: -9px 9px 11px #c4c5c6, 9px -9px 11px #ffffff;
-  border: none;
-  color: #ffcc14;
-  font-size: 16px;
-  outline: none;
-}
 #miniEditButton:hover {
-  border-radius: 10px;
-  background: #f5f6f7;
   box-shadow: -10px 10px 23px #c0c1c2, 10px -10px 23px #e6e7e8;
 }
 
 #miniEditButton:hover .svg-inline--fa {
-  border: none;
   color: #f5f74a;
-  outline: none;
   transition: color 1s;
 }
 
 #miniEditButton:active {
-  border-radius: 10px;
-  background: #f5f6f7;
   box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
-  border: none;
-  color: #ffcc14;
-  font-size: 16px;
-  outline: none;
 }
 #miniEditButton:active p {
   color: #f5f74a;

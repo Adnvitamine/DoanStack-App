@@ -33,10 +33,10 @@ export default class Home extends Component {
     return (
       <Fragment>
         <div className="BrowserNavbar">
-          <p>"Follow me on Facebook, Twitter and Instagram" - DoanStack.be</p>
+          <p>"Welcome to my React Web Portfolio"</p>
         </div>
         <div id="TitleLink">
-          <h1>HomePage</h1>
+          <h2>Greetings, it's so nice to meet you!</h2>
         </div>
         <div className="homeBody">
           <HomeSVG />

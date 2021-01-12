@@ -40,7 +40,7 @@ class BlogHome extends Component {
           <p> How I build this PERN stack web application and more.</p>
         </div>
         <div id="TitleLink">
-          <h1>Blog</h1>
+          <h2>Blog</h2>
         </div>
         <div id="BlogBody">
           <div id="BlogNav">

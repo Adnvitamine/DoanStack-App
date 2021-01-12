@@ -9,7 +9,7 @@ import CustomUpload from "../../js/CustomUploader";
 //import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 //import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
 
-const sanitizeHtml = require("sanitize-html");
+//const sanitizeHtml = require("sanitize-html");
 
 const CreateArticle = ({ currentUser }) => {
   const [title, setTitle] = useState();
@@ -212,74 +212,11 @@ const CreateArticle = ({ currentUser }) => {
               }}
               onChange={(event, editor) => {
                 console.log(event);
-
-                /*editor.execute( 'imageInsert', {
-                            source:  [
-                                'path/to/image.jpg',
-                                'path/to/other-image.jpg'
-                            ]
-                        } );*/
                 const data = editor.getData();
-                const dataparse = sanitizeHtml(data, {
-                  allowedTags: [
-                    "h3",
-                    "h4",
-                    "h5",
-                    "h6",
-                    "blockquote",
-                    "p",
-                    "a",
-                    "ul",
-                    "ol",
-                    "nl",
-                    "li",
-                    "b",
-                    "i",
-                    "strong",
-                    "em",
-                    "strike",
-                    "code",
-                    "hr",
-                    "br",
-                    "div",
-                    "table",
-                    "thead",
-                    "caption",
-                    "tbody",
-                    "tr",
-                    "th",
-                    "td",
-                    "pre",
-                    "figure",
-                    "oembed",
-                    "img",
-                  ],
-                  allowedAttributes: {
-                    a: ["href", "name", "target"],
-                    figure: ["class"],
-                    oembed: ["url"],
-                    // We don't currently allow img itself by default, but this
-                    // would make sense if we did
-                    img: ["src"],
-                  },
-                  // Lots of these won't come up by default because we don't allow them
-                  selfClosing: [
-                    "br",
-                    "hr",
-                    "area",
-                    "base",
-                    "basefont",
-                    "input",
-                    "link",
-                    "meta",
-                  ],
-                  // URL schemes we permit
-                  allowedSchemes: ["http", "https", "ftp", "mailto"],
-                  allowedSchemesByTag: {},
-                });
+                
                 setContent(data);
 
-                console.log({ event, editor, data, dataparse });
+                console.log({ event, editor, data });
               }}
               onBlur={(event, editor) => {
                 console.log("Blur.", editor);
@@ -338,3 +275,61 @@ const CreateArticle = ({ currentUser }) => {
 };
 
 export default CreateArticle;
+
+/*const dataparse = sanitizeHtml(data, {
+                  allowedTags: [
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6",
+                    "blockquote",
+                    "p",
+                    "a",
+                    "ul",
+                    "ol",
+                    "nl",
+                    "li",
+                    "b",
+                    "i",
+                    "strong",
+                    "em",
+                    "strike",
+                    "code",
+                    "hr",
+                    "br",
+                    "div",
+                    "table",
+                    "thead",
+                    "caption",
+                    "tbody",
+                    "tr",
+                    "th",
+                    "td",
+                    "pre",
+                    "figure",
+                    "oembed",
+                    "img",
+                  ],
+                  allowedAttributes: {
+                    a: ["href", "name", "target"],
+                    figure: ["class"],
+                    oembed: ["url"],
+                    // We don't currently allow img itself by default, but this
+                    // would make sense if we did
+                    img: ["src"],
+                  },
+                  // Lots of these won't come up by default because we don't allow them
+                  selfClosing: [
+                    "br",
+                    "hr",
+                    "area",
+                    "base",
+                    "basefont",
+                    "input",
+                    "link",
+                    "meta",
+                  ],
+                  // URL schemes we permit
+                  allowedSchemes: ["http", "https", "ftp", "mailto"],
+                  allowedSchemesByTag: {},
+                });*/

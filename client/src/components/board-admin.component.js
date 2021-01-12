@@ -52,7 +52,7 @@ export default class BoardAdmin extends Component {
             <p>"Manage registered users" - DoanStack.be</p>
           </div>
           <div id="TitleLink">
-            <h1>ADMIN PANEL</h1>
+            <h2>ADMIN PANEL</h2>
           </div>
           <Users />
         </Fragment>

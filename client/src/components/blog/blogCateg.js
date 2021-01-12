@@ -21,7 +21,7 @@ class blogCateg extends Component {
           </p>
         </div>
         <div id="TitleLink">
-          <h1>{this.props.match.params.category}</h1>
+          <h2>{this.props.match.params.category}</h2>
         </div>
         <div id="BlogBody">
           <div id="BlogNav">

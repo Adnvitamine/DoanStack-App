@@ -78,7 +78,7 @@ export default class Profile extends Component {
             )}{currentUser.username} is connected.</p>
           </div>
           <div id="TitleLink">
-            <h1>YOUR PROFILE</h1>
+            <h2>YOUR PROFILE</h2>
           </div>
           <div id="ProfileFrame">
             <UserProfile currentUser={currentUser} />

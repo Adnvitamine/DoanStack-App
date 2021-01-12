@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 //var sanitizeHtml = require('sanitize-html');
 
 //
@@ -12,9 +12,9 @@ const ProductDescription = ({ product }) => {
     
   */
 
-  const [productimgs, setProductimgs] = useState([]);
+  //const [productimgs, setProductimgs] = useState([]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const getProductimgs = async () => {
       try {
         const response = await fetch(
@@ -30,7 +30,7 @@ const ProductDescription = ({ product }) => {
 
     getProductimgs();
     //console.log(productimgs);
-  }, [product.id]);
+  }, [product.id]);*/
 
   //var a = '<figure class="media"><oembed url="https://www.youtube.com/watch?v=VCqA52XQlys"></oembed></figure>';
   return (
@@ -134,20 +134,6 @@ const ProductDescription = ({ product }) => {
           </div>
         </div>
         <div className="productBody">
-          <div id="slider">
-            <figure>
-              {productimgs.slice(0, 5).map((productimg) => (
-                <img
-                  src={productimg.path}
-                  key={productimg.id}
-                  className="productImage"
-                  alt=""
-                  style={{ width: "300px", height: "300px" }}
-                />
-              ))}
-            </figure>
-          </div>
-
           <div
             className="productDescription"
             dangerouslySetInnerHTML={{ __html: product.description }}
@@ -159,3 +145,17 @@ const ProductDescription = ({ product }) => {
 };
 
 export default ProductDescription;
+
+/*<div id="slider">
+            <figure>
+              {productimgs.slice(0, 5).map((productimg) => (
+                <img
+                  src={productimg.path}
+                  key={productimg.id}
+                  className="productImage"
+                  alt=""
+                  style={{ width: "300px", height: "300px" }}
+                />
+              ))}
+            </figure>
+          </div>*/

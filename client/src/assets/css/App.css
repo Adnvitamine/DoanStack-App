@@ -62,8 +62,7 @@ label {
 .ComponentTitle {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  padding-bottom: 20px;
   font-family: MontB;
 }
 
@@ -172,28 +171,17 @@ label {
 }
 
 #TitleLink {
-  display: block;
-  margin: auto;
-  text-align: center;
-  position: fixed;
+  height: 100px;
+  padding-top: 75px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 1);
-  height: 80px;
-  padding-top: 20px;
-  z-index: 88;
+  background-color: rgba(233, 243, 251, 0.5);
+  text-align: center;
+  margin: auto;
+  z-index: 120;
 }
 
-#TitleLink h1 {
-  position: absolute;
-  display: inline-block;
-  width: 50%;
-  bottom: 0;
-  left: 50%;
-  padding-bottom: 5px;
-  margin-left: -25%;
-  margin-bottom: 0;
+#TitleLink h2 {
   font-size: 1vw;
-  text-align: center;
   background: linear-gradient(red, blue);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -211,9 +199,9 @@ label {
 }
 
 #Login {
-  padding-top: 120px;
+  padding-top: 50px;
 }
 
 #Register {
-  padding-top: 120px;
+  padding-top: 50px;
 }

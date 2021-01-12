@@ -1,9 +1,15 @@
 .editor {
+  font-family: "Open Sans";
+  line-height: 1.5;
+  font-size: 17px;
   border: 1px solid hsla(0, 0%, 0%, 0.15);
   background-color: white;
   width: 100%;
   max-width: 780px;
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+}
+
+.editor p {
+  margin: 0;
+  padding: 0;
 }

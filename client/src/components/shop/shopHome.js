@@ -40,7 +40,7 @@ class ShopHome extends Component {
           <p>My Eshop project. You can rate and review products.</p>
         </div>
         <div id="TitleLink">
-          <h1>Shop</h1>
+          <h2>Shop</h2>
         </div>
         <div id="ShopBody">
           <div id="ShopNav">

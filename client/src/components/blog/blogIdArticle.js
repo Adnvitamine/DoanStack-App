@@ -151,7 +151,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
         )}
       </div>
       <div id="TitleLink">
-        <h1>{article.title}</h1>
+        <h2>{article.title}</h2>
       </div>
       <div id="BlogBody">
         <div id="BlogNav">
@@ -219,7 +219,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
           </ul>
         </div>
         <div id="BlogHome">
-          <div className="backbutton" style={{ marginBottom: "50px" }}>
+          <div className="backbutton" style={{ marginBottom: "25px" }}>
             {/*<Link
               to={`/blog/${article.category}`}
               className="btn btn-warning"
@@ -324,7 +324,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
               </div>
             </div>
             <div className="articleSoloContent">
-              <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              <div className="articleContent" dangerouslySetInnerHTML={{ __html: article.content }} />
             </div>
             <div className="commentArticle">
               <div className="ComponentTitle">

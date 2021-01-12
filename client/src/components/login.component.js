@@ -83,7 +83,10 @@ export default class Login extends Component {
     return (
       <Fragment>
         <div className="BrowserNavbar">
-          <p>Login</p>
+          <p>Please sign in for full access</p>
+        </div>
+        <div id="TitleLink">
+          <h2>Login</h2>
         </div>
         <div className="col-md-12" id="Login">
           <div className="card card-container">

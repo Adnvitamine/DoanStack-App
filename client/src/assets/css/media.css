@@ -1,56 +1,19 @@
 @media only screen and (max-width: 1000px) {
-  .articleCard {
-    width: 48%;
-  }
   .productBody {
     flex-direction: column;
   }
-  #slider {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .productCard {
-    width: 336px;
-  }
-  #profileCard {
-    width: 310px;
-  }
-  .userCard {
-    width: 336px;
-  }
-  #TitleLink {
-    height: 100px;
-    padding-top: 70px;
-  }
-  .BrowserNavbar {
-    top: 105px;
-  }
   #ShopBody {
-    padding-top: 150px !important;
     width: 100% !important;
   }
   #BlogBody {
-    padding-top: 150px !important;
-  }
-  #articlesList {
-    padding-top: 150px;
-  }
-  #usersList {
-    padding-top: 150px;
-  }
-  #productsList {
-    padding-top: 150px;
+    width: 100% !important;
   }
   #ProfileFrame {
     flex-direction: column;
-    padding-top: 150px;
-  }
-  #userEdit {
-    margin-top: 50px;
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
   .productBody {
     flex-direction: column;
   }
@@ -64,6 +27,8 @@
     position: relative;
     float: right;
     top: -20px;
+    height: 60px;
+    width: 60px;
     z-index: 1;
 
     -webkit-user-select: none;
@@ -73,7 +38,7 @@
   #menuToggle a {
     display: inline-block;
     text-decoration: none;
-    color: #232323;
+    color: rgb(0, 162, 255);
 
     transition: color 0.3s ease;
   }
@@ -82,13 +47,29 @@
     color: tomato;
   }
 
-  #menuToggle input {
+  #menuToggle #menuToggleInput {
     position: absolute;
     float: right;
-    width: 50px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     top: 0px;
-    left: -10px;
+    left: -15px;
+    border: 1px solid black;
+
+    cursor: pointer;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+  }
+  #menuToggle #menuToggleInput1 {
+    position: absolute;
+    float: right;
+    width: 60px;
+    height: 60px;
+    top: 0px;
+    left: -15px;
     border: 1px solid black;
 
     cursor: pointer;
@@ -102,10 +83,9 @@
   #menuToggle span {
     display: block;
     top: 5px;
-    left: 2px;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
+    width: 48px;
+    height: 6px;
+    margin-bottom: 8px;
     position: relative;
 
     background: rgba(39, 104, 128, 1);
@@ -131,7 +111,7 @@
      * Transform all the slices of hamburger
      * into a crossmark.
      */
-  #menuToggle input:checked ~ span {
+  #menuToggle #menuToggleInput:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     background: #fc2626;
@@ -140,7 +120,7 @@
   /*
      * But let's hide the middle one.
      */
-  #menuToggle input:checked ~ span:nth-last-child(3) {
+  #menuToggle #menuToggleInput:checked ~ span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
@@ -148,7 +128,7 @@
   /*
      * Ohyeah and the last one should go the other direction
      */
-  #menuToggle input:checked ~ span:nth-last-child(2) {
+  #menuToggle #menuToggleInput:checked ~ span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
   }
 
@@ -158,9 +138,9 @@
     right: 0px;
     display: flex;
     flex-direction: row;
-    padding: 0px 50px 0px 20px;
+    padding: 0px 60px 10px 20px;
     margin: 0px 0px 0px 0px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 1);
     box-shadow: 5px 5px 6px rgba(51, 133, 164, 0.7),
       -5px -5px 6px rgba(51, 133, 164, 0.7);
     border-radius: 0px 0px 0px 30px;
@@ -174,7 +154,28 @@
 
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
+  #menu1 {
+    position: absolute;
+    top: -2px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 60px 10px 20px;
+    margin: 0px 0px 0px 0px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 6px rgba(51, 133, 164, 0.7),
+      -5px -5px 6px rgba(51, 133, 164, 0.7);
+    border-radius: 0px 0px 0px 30px;
 
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(150%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
   .mobilenav-item {
     text-align: center;
     font-size: 18px;
@@ -193,14 +194,8 @@
   /*
      * And let's slide it in from the left
      */
-  #menuToggle input:checked ~ ul {
+  #menuToggle #menuToggleInput:checked ~ #menu {
     transform: none;
-  }
-
-  #LogoNav {
-    position: relative;
-    top: 0px;
-    left: 0px;
   }
   #rightMenu {
     display: none;
@@ -216,20 +211,13 @@
   }
 
   #Label {
-    top: 20px;
-    left: -10px;
+    top: 10px;
+    left: 20px;
   }
 
   #TitleLink {
     height: 100px;
     padding-top: 75px;
-  }
-  #TitleLink h1 {
-    width: 60%;
-    left: 50%;
-    margin-left: -30%;
-    font-size: 18px;
-    animation: fontSize2 1s linear forwards;
   }
   @keyframes fontSize2 {
     from {
@@ -239,19 +227,7 @@
       font-size: 22px;
     }
   }
-  #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 22px;
-    animation: fontSizeReverse2 1s linear reverse,
-      neon2 3s ease-in-out infinite alternate;
-  }
-  @keyframes fontSizeReverse2 {
-    from {
-      font-size: 22px;
-    }
-    to {
-      font-size: 18px;
-    }
-  }
+
   #MoreProducts {
     max-width: 15% !important;
   }
@@ -272,53 +248,18 @@
   }
 }
 
-@media only screen and (max-width: 805px) {
-  #Footer {
-    display: flex;
-    flex-direction: column;
-  }
-  .background {
-    width: 100%;
-  }
-  #contact-bar {
-    display: block;
-    width: 100%;
-  }
-  #FooterContact {
-    display: block;
-    margin: auto;
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .articleCard {
-    width: 365px;
-  }
-  .uploadContainer {
-    width: 100%;
-  }
-  .productCard {
-    width: 336px;
-  }
+@media only screen and (max-width: 865px) {
   .productBody {
     flex-direction: column;
   }
   .productDescription {
     width: 100%;
   }
-  #profileCard {
-    width: 336px;
-  }
   #Label {
     margin-left: auto;
   }
   #leftMenu {
     display: none;
-  }
-
-  .nav-link {
-    font-size: 1rem;
   }
 
   #MobileHome {
@@ -330,55 +271,85 @@
   #MobileShop {
     display: inline-block;
   }
-  #TitleLink {
-    height: 110px;
+}
+
+@media only screen and (max-width: 820px) {
+  #menu {
+    position: absolute;
+    width: 140px;
+    left: -80px;
+    top: -2px;
+    right: 0px;
+    padding: 100px 30px 10px 30px;
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 6px rgba(51, 133, 164, 0.7),
+      -5px -5px 6px rgba(51, 133, 164, 0.7);
+    border-radius: 0px 0px 0px 30px;
+
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(150%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
-  #TitleLink h1 {
-    width: 70%;
-    left: 50%;
-    margin-left: -35%;
-    font-size: 16px;
-    animation: fontSize2 1s linear forwards;
+  #menu1 {
+    position: absolute;
+    width: 140px;
+    left: -80px;
+    top: -2px;
+    right: 0px;
+    padding: 100px 30px 10px 30px;
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 6px rgba(51, 133, 164, 0.7),
+      -5px -5px 6px rgba(51, 133, 164, 0.7);
+    border-radius: 0px 0px 0px 30px;
+
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(150%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
-  @keyframes fontSize2 {
+
+  #TitleLink h2 {
+    font-size: 3vw;
+  }
+
+  @keyframes fontSize {
     from {
-      font-size: 16px;
+      font-size: 3vw;
     }
     to {
-      font-size: 20px;
+      font-size: 4vw;
     }
   }
-  #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 20px;
+
+  #switch:checked + #FullFrame #TitleLink h2 {
+    font-size: 4vw;
     animation: fontSizeReverse2 1s linear reverse,
       neon2 3s ease-in-out infinite alternate;
   }
   @keyframes fontSizeReverse2 {
     from {
-      font-size: 20px;
+      font-size: 4vw;
     }
     to {
-      font-size: 16px;
+      font-size: 3vw;
     }
-  }
-}
-
-@media only screen and (max-width: 730px) {
-  #TitleLink {
-    height: 140px;
-    padding-top: 110px;
-  }
-  #menu {
-    width: 300px;
-    left: -250px;
-    flex-wrap: wrap;
-  }
-  #Label {
-    top: 40px;
-  }
-
-  .BrowserNavbar {
-    top: 145px;
   }
 
   .BrowserNavbar p {
@@ -400,133 +371,39 @@
   #BlogNav ul li:hover {
     font-size: 18px !important;
   }
-  #ShopBody {
-    padding-top: 180px !important;
+}
+@media only screen and (max-width: 805px) {
+  #Footer {
+    display: flex;
+    flex-direction: column;
   }
-  #BlogBody {
-    padding-top: 180px !important;
+  .background {
+    width: 100%;
   }
-  #articlesList {
-    padding-top: 180px;
+  #contact-bar {
+    display: block;
+    width: 100%;
   }
-  #usersList {
-    padding-top: 180px;
-  }
-  #productsList {
-    padding-top: 180px;
-  }
-  #ProfileFrame {
-    padding-top: 180px;
-  }
-  #Login {
-    padding-top: 180px;
-  }
-  #Register {
-    padding-top: 180px;
+  #FooterContact {
+    display: block;
+    margin: auto;
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  #TitleLink h1 {
-    width: 85%;
-    left: 50%;
-    margin-left: -40%;
-    font-size: 16px;
-    animation: fontSize2 1s linear forwards;
-  }
-  @keyframes fontSize2 {
-    from {
-      font-size: 16px;
-    }
-    to {
-      font-size: 20px;
-    }
-  }
-  #BlogBody {
-    width: 100% !important;
-  }
-
-  .BrowserNavbar {
-    top: 140px;
-  }
-
-  .BrowserNavbar p {
-    font-size: 12px;
-    animation: slide1 10s linear infinite;
-  }
-
-  .BrowserNavbar p:hover {
-    font-size: 14px;
-    animation: slide1 10s linear infinite;
-  }
-
   .profile-img-card {
     width: 20px !important;
     height: 20px !important;
   }
-
-  #BlogBody {
-    width: 100% !important;
-  }
 }
 
-@media only screen and (max-width: 550px) {
-  #menu {
-    width: 250px;
-    left: -200px;
-  }
-  .nav-link {
-    font-size: 12px;
-  }
-  #BlogBody {
-    width: 100% !important;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  #TitleLink {
-    height: 160px;
-    padding-top: 125px;
-  }
-  #TitleLink h1 {
-    width: 100%;
-    left: 50%;
-    margin-left: -50%;
-    font-size: 16px;
-    animation: fontSize2 1s linear forwards;
-  }
-  @keyframes fontSize2 {
-    from {
-      font-size: 16px;
-    }
-    to {
-      font-size: 20px;
-    }
-  }
-  #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 20px;
-    animation: fontSizeReverse2 1s linear reverse,
-      neon2 3s ease-in-out infinite alternate;
-  }
-  @keyframes fontSizeReverse2 {
-    from {
-      font-size: 20px;
-    }
-    to {
-      font-size: 16px;
-    }
-  }
-  .BrowserNavbar {
-    top: 155px;
-  }
+@media only screen and (max-width: 520px) {
   #MoreArticles {
     display: none;
   }
   #MoreProducts {
     display: none;
-  }
-  #fixedNavbar {
-    height: 160px;
   }
   #BlogNav ul li {
     padding: 0px 5px 0px 5px !important;
@@ -536,122 +413,35 @@
     padding: 0px 5px 0px 5px !important;
     width: auto;
   }
-
-  #LogoNav {
-    top: -20px;
-  }
-  #menuToggle {
-    top: -45px;
-  }
-  #menu {
-    width: 200px;
-    left: -150px;
-    padding: 0px 30px 0px 15px;
-  }
-  .nav-link {
-    padding: 1px !important;
-    font-size: 12px;
-  }
-  #Label {
-    top: 45px;
-  }
-  #BlogBody {
-    width: 100% !important;
-  }
-
-  #ShopBody {
-    padding-top: 180px !important;
-  }
-  #BlogBody {
-    padding-top: 180px !important;
-  }
-  #articlesList {
-    padding-top: 180px;
-  }
-  #usersList {
-    padding-top: 180px;
-  }
-  #productsList {
-    padding-top: 180px;
-  }
-  #ProfileFrame {
-    padding-top: 180px;
-  }
-  #Login {
-    padding-top: 180px;
-  }
-  #Register {
-    padding-top: 180px;
-  }
 }
-@media only screen and (max-width: 450px) {
-  #fixedNavbar {
-    height: 180px;
+@media only screen and (max-width: 470px) {
+  #TitleLink h2 {
+    font-size: 4vw;
+    animation: fontSize 1s linear forwards;
   }
-  #LogoNav {
-    top: -40px;
+  @keyframes fontSize {
+    from {
+      font-size: 4vw;
+    }
+    to {
+      font-size: 5vw;
+    }
   }
-  #menuToggle {
-    top: -65px;
+
+  #switch:checked + #FullFrame #TitleLink h2 {
+    font-size: 5vw;
+    animation: fontSizeReverse2 1s linear reverse,
+      neon2 3s ease-in-out infinite alternate;
   }
-  #menu {
-    width: 150px;
-    left: -100px;
-    padding: 0px 30px 0px 15px;
+  @keyframes fontSizeReverse2 {
+    from {
+      font-size: 5vw;
+    }
+    to {
+      font-size: 4vw;
+    }
   }
-  .nav-link {
-    padding: 1px !important;
-    font-size: 12px;
-  }
-  #Label {
-    top: 50px;
-  }
-  .BrowserNavbar {
-    margin-top: 22px;
-  }
-  #MoreArticles {
-    display: none;
-  }
-  #MoreProducts {
-    display: none;
-  }
-  #ShopHomeProduct {
-    max-width: 100% !important;
-  }
-  #BlogHomeArticle {
-    max-width: 100% !important;
-  }
-  .uploadContainer {
-    width: 100%;
-  }
-  #TitleLink {
-    height: 185px;
-    padding-top: 155px;
-  }
-  #ShopBody {
-    padding-top: 200px !important;
-  }
-  #BlogBody {
-    padding-top: 200px !important;
-  }
-  #articlesList {
-    padding-top: 200px;
-  }
-  #usersList {
-    padding-top: 200px;
-  }
-  #productsList {
-    padding-top: 200px;
-  }
-  #ProfileFrame {
-    padding-top: 200px;
-  }
-  #Login {
-    padding-top: 200px;
-  }
-  #Register {
-    padding-top: 200px;
-  }
+
   #ShopNav {
     font-size: 12px !important;
   }
@@ -671,86 +461,44 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
-  #TitleLink h1 {
-    font-size: 14px;
-    animation: fontSize2 1s linear forwards;
+@media only screen and (max-width: 450px) {
+  #menu {
+    position: absolute;
+    width: 100px;
+    left: -50px;
+    top: -2px;
+    right: 0px;
+    padding: 100px 30px 10px 20px;
+    margin: 0px 0px 0px 0px;
   }
-  @keyframes fontSize2 {
-    from {
-      font-size: 14px;
-    }
-    to {
-      font-size: 18px;
-    }
+  #menu1 {
+    position: absolute;
+    width: 100px;
+    left: -50px;
+    top: -2px;
+    right: 0px;
+    padding: 100px 30px 10px 20px;
+    margin: 0px 0px 0px 0px;
   }
-  #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 18px;
-    animation: fontSizeReverse2 1s linear reverse,
-      neon2 3s ease-in-out infinite alternate;
-  }
-  @keyframes fontSizeReverse2 {
-    from {
-      font-size: 18px;
-    }
-    to {
-      font-size: 14px;
-    }
-  }
-  .DoanStackLogoName p {
-    font-size: 25px;
-  }
-  .articleCard {
-    width: 100%;
-  }
-  .userCard {
-    width: 100%;
-  }
-  .productCard {
-    width: 100%;
+  #Label {
+    left: 40px;
   }
 }
-
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 400px) {
+  .DoanStackLogoImg {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+  }
   .DoanStackLogoName p {
     font-size: 20px;
   }
-  #TitleLink h1 {
-    width: 100%;
-    left: 50%;
-    margin-left: -50%;
-    font-size: 14px;
-    animation: fontSize2 1s linear forwards;
+  .DoanStackLogoName:hover p {
+    font-size: 22px;
   }
-  @keyframes fontSize2 {
-    from {
-      font-size: 14px;
-    }
-    to {
-      font-size: 18px;
-    }
-  }
-  #switch:checked + #FullFrame #TitleLink h1 {
-    font-size: 18px;
-    animation: fontSizeReverse2 1s linear reverse,
-      neon2 3s ease-in-out infinite alternate;
-  }
-  @keyframes fontSizeReverse2 {
-    from {
-      font-size: 18px;
-    }
-    to {
-      font-size: 14px;
-    }
-  }
-  #ShopNav {
-    font-size: 10px !important;
-  }
-  #ShopNav ul li:hover {
-    font-size: 12px !important;
-  }
-
-  .shopFrame {
-    width: 270px !important;
+}
+@media only screen and (max-width: 320px) {
+  .BrowserNavbar p {
+    font-size: 12px;
   }
 }

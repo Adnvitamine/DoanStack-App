@@ -55,7 +55,7 @@ export default class BoardUser extends Component {
             </p>
           </div>
           <div id="TitleLink">
-            <h1>USER PANEL</h1>
+            <h2>USER PANEL</h2>
           </div>
           <Products currentUser={currentUser} />
         </Fragment>

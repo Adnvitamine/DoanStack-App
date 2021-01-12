@@ -1,7 +1,7 @@
 #articlesList {
   width: 100%;
+  margin-top: 50px;
   padding-bottom: 20px;
-  padding-top: 120px;
   transition: box-shadow 2s, background-color 2s linear;
 }
 
@@ -37,11 +37,7 @@
 
 .articleCard:hover #miniStatusTrue {
   color: #37ff00;
-  float: left;
-  margin-top: 5px;
-  margin-left: 5px;
-  border-right: 1px solid #dee2e6;
-  padding-right: 5px;
+
   transition: color 1s;
 }
 
@@ -51,7 +47,8 @@
   background: #f5f6f7;
   box-shadow: -5px 5px 4px rgba(197, 227, 255, 0.5),
     5px 0px 4px rgba(255, 195, 207, 0.5);
-  width: 30%;
+  width: 100%;
+  max-width: 336px;
   display: inline-block;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -59,20 +56,13 @@
 }
 
 .articleCard:hover {
-  border-radius: 10px;
-  background: #f5f6f7;
   box-shadow: -5px 5px 4px rgba(119, 132, 198, 0.5),
     5px 0px 4px rgba(214, 47, 121, 0.5);
   transition: box-shadow 2s;
 }
 
-.articleCard:hover #miniarticleStatusFalse {
+.articleCard:hover #miniStatusFalse {
   color: #ff0000;
-  float: left;
-  margin-top: 5px;
-  margin-left: 5px;
-  border-right: 1px solid #dee2e6;
-  padding-right: 5px;
   transition: color 1s;
 }
 
@@ -96,7 +86,8 @@
 }
 
 .articleCardContent {
-  font-size: 16px;
+  font-family: "Open Sans";
+  font-size: 17px;
   height: 250px;
   overflow: scroll;
   padding: 0 var(--ck-spacing-standard) !important;
@@ -111,13 +102,19 @@
   width: 100%;
 }
 
-.articleCardContent img {
-  width: 100%;
-}
-
 .articleCardContent p {
+  margin: 0;
+  padding: 0;
   width: 100%;
   word-wrap: break-word;
+}
+
+.articleCardContent figure img {
+  max-width: 100%;
+}
+
+.articleCardContent div img {
+  max-width: 100%;
 }
 
 .articleCard .articleCardInfo {
@@ -168,9 +165,14 @@
 
 .articleContent {
   width: 100%;
-  max-width: 777.78px;
+  font-family: "Open sans";
+  font-size: 17px;
+  line-height: 1.5 !important;
+  max-width: 776px;
   padding: 0 var(--ck-spacing-standard) !important;
   margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .articleContent h1 {
@@ -180,13 +182,14 @@
 .articleContent h2 {
   font-size: 24px;
 }
-
 .articleContent figure img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .articleContent p {
   width: 100%;
+  margin: 0;
+  padding: 0;
   word-wrap: break-word;
 }
 
@@ -215,12 +218,10 @@
   margin: 1em auto;
 }
 .image-style-align-right {
-  position: relative;
   float: right;
   margin-left: var(--ck-image-style-spacing);
 }
 .image-style-align-left {
-  position: relative;
   float: left;
   margin-right: var(--ck-image-style-spacing);
 }
@@ -232,17 +233,18 @@
 }
 
 .ql-editor {
-  font-family: LatoReg;
-  font-size: 17px;
+  width: 100%;
   padding: 0 var(--ck-spacing-standard) !important;
+  font-family: "Open Sans";
+  line-height: 1.5 !important;
+  font-size: 17px;
+  margin: 0;
 }
 
-.ql-editor h1 {
-  font-size: 34px !important;
-  margin-bottom: 0.5rem !important;
+.ql-editor > :first-child {
+  margin-top: var(--ck-spacing-large);
 }
 
-.ql-editor p {
-  margin-bottom: 1rem !important;
-  line-height: 1.65;
+.ql-editor > :last-child {
+  margin-bottom: var(--ck-spacing-large);
 }

@@ -4,14 +4,14 @@
   display: block;
   margin: auto;
   margin-bottom: 100px;
-  padding-top: 120px;
+  padding-top: 50px;
   min-height: 100vh;
   text-align: center;
 }
 
 #BlogNav {
   position: relative;
-  width: 95%;
+  width: 100%;
   margin: auto;
   margin-top: 5px;
   border-radius: 50px;
@@ -28,9 +28,8 @@
   display: block;
   margin: auto;
   padding: 0px 10px 0px 10px;
-  width: 15%;
+  width: auto;
   border-radius: 20px;
-  transition: font-size 0.5s ease-in-out;
 }
 
 #BlogNav ul li a {
@@ -40,21 +39,16 @@
 }
 
 #BlogNav ul li a:hover {
-  color: rgb(38, 253, 38);
-  transition: color 0.5s ease-in-out;
-}
-
-#BlogNav ul li:hover {
   font-size: 25px;
-  transition: font-size 0.5s linear;
+  color: rgb(38, 253, 38);
+  transition: color 0.5s ease-in-out, font-size 0.5s linear;
 }
 
 #BlogHome {
-  padding-top: 50px;
+  padding-top: 25px;
 }
 
 #BlogHomeArticle {
-  max-width: 60%;
   margin: auto;
 }
 
@@ -235,9 +229,11 @@
 }
 
 .blogContent figure img {
-  width: 100%;
+  max-width: 100%;
 }
-
+.blogContent div img {
+  max-width: 100%;
+}
 .blogContent p {
   width: 100%;
   word-wrap: break-word;
@@ -249,28 +245,21 @@
 
 .articleSoloHeader {
   position: relative;
-  display: inline-block;
+  max-width: 90%;
   margin: auto;
-  border-radius: 0px 0px 10px 10px;
   overflow: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .articleSoloContent {
+  font-family: "Open Sans";
+  font-size: 17px;
   width: 100%;
-  max-width: 777.78px;
+  max-width: 778px;
   padding: 0 var(--ck-spacing-standard) !important;
   margin: auto;
   border-radius: 5px;
   min-height: 500px;
-}
-
-.articleSoloContent h1 {
-  font-size: 34px;
-}
-
-.articleSoloContent h2 {
-  font-size: 24px;
 }
 
 .articleSoloContent figure img {
@@ -288,17 +277,19 @@
 }
 
 .articleSoloInfo ul {
+  max-width: 80%;
+  border-bottom: 1px solid grey;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   align-content: flex-start;
-  padding: 0px;
-  margin: 0px;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  margin: auto;
+  list-style-type: none;
 }
 
 .articleSoloInfo ul li {
-  font-size: 25px;
-  width: 50%;
   word-wrap: break-word;
 }
 
@@ -334,8 +325,11 @@
 }
 
 .commentArticle {
-  margin-top: 50px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 25px;
   padding-bottom: 20px;
+  clear: both;
 }
 
 .commentArticle:hover {
@@ -359,9 +353,16 @@
   text-align: center;
 }
 .readComments {
-  margin-top: 50px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 25px;
   padding-bottom: 20px;
 }
+
+.readComments p {
+  text-align: left;
+}
+
 .readComments:hover {
   box-shadow: 0px 2px 0px rgba(255, 0, 0, 1), 0px 4px 0px rgba(6, 1, 255, 1),
     0px -2px 0px rgba(6, 1, 255, 1), 0px -4px 0px rgba(255, 0, 0, 1);
@@ -370,8 +371,8 @@
 }
 
 .commentContainer {
-  margin-top: 20px;
-  padding: 20px 10px 0px 10px;
+  margin-top: 25px;
+  padding: 0px 10px 0px 10px;
   background-color: rgb(255, 255, 255);
 }
 .readComments h1 {
@@ -380,7 +381,6 @@
 }
 
 .readComments:hover h1 {
-  text-align: center;
   font-size: 50px;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
@@ -391,12 +391,13 @@
 .commentInfo {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
-
+.commentInfo > :first-child {
+  margin-top: 10px;
+}
 .commentInfo p {
-  display: block;
-  margin: auto;
+  margin-bottom: 0;
 }
 
 .commentContent {

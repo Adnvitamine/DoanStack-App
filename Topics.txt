@@ -1,8 +1,8 @@
 Topics to talk about:
 
-- How to change value in LocalStorage
+- How to change value in LocalStorage (hint: editUser.js)
 
-- Git can save your day
+- Git can save your day, git init, git add ., git commit -m "", git status, git log, git remote -v, .gitignore 
 
 - BrowserRouter, Switch, Route, Link from react-router-dom
 
@@ -10,32 +10,182 @@ Topics to talk about:
 Use display: flex,
     flex-direction: column,
 
-Media Queries: @media only screen and (max-width: 600px) {}
-important: from big to small
+- css neumorphism
+
+- Css Dark-mode: switch
+
+- secure_url https cloudinary
+
+- ckeditor invalid type error import { CKeditor } from "@ckeditor/ckeditor5-react";
+
+- Package.json: update all dependencies in package: https://www.carlrippon.com/upgrading-npm-dependencies/
 
 
-Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+  background-color: rgba(233, 243, 251, 0.5);
 
-Pourquoi l'utiliser?
-On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).
+1116.61
+
+1229.50
+
+    border-radius: 50px;
+background: #272626;
+box-shadow:  8px 8px 16px #1e1d1d,
+             -8px -8px 16px #302f2f;
+
+About this item
+Multi-function alarm. Acryl Glass
+LED light
+Stainless steel band
+Water resistant to 5 bar
+Calendar function
+
+Chronograph watches:
+A chronograph watch is a display watch with a timer (stopwatch) function. To use the timer function,
+ push the bottom button on the side of the watch to set the second hand to zero (if it’s not on zero yet)
+ and push the top button to start and stop timing. Find out more about chronograph watches here.
+
+<button type="button" onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
+                        {this.state.isToggleOn ? <li className="mobilenav-item" id="MobileHome">
+                          <Link to={"/home"} className="nav-link">
+                            on
+                          </Link>
+                        </li> : <li className="mobilenav-item" id="MobileHome">
+                          <Link to={"/home"} className="nav-link">
+                            off
+                          </Link>
+                        </li>}
+                        <li className="mobilenav-item" id="MobileHome">
+                          <Link to={"/home"} className="nav-link">
+                            Home
+                          </Link>
+                        </li>
+                        <li className="mobilenav-item" id="MobileBlog">
+                          <Link to={"/blog"} className="nav-link">
+                            Blog
+                          </Link>
+                        </li>
+                        <li className="mobilenav-item" id="MobileShop">
+                          <Link to={"/shop"} className="nav-link">
+                            Shop
+                          </Link>
+                        </li>
+
+                        {showModeratorBoard && (
+                          <li className="mobilenav-item">
+                            <Link to={"/mod"} className="nav-link">
+                              Mod
+                            </Link>
+                          </li>
+                        )}
+
+                        {currentUser && (
+                          <li className="mobilenav-item">
+                            <Link to={"/user"} className="nav-link">
+                              User
+                            </Link>
+                          </li>
+                        )}
+                        
+                        {showAdminBoard && (
+                          <li className="mobilenav-item">
+                            <Link to={"/admin"} className="nav-link">
+                              Admin
+                            </Link>
+                          </li>
+                        )}
+
+                        <li className="mobilenav-item">
+                          <Link to={"/profile"} className="nav-link">
+                            {currentUser.username}
+                          </Link>
+                        </li>
+                        <li className="mobilenav-item">
+                          <a
+                            href="/login"
+                            className="nav-link"
+                            onClick={this.logOut}
+                          >
+                            <i className="fas fa-sign-out-alt"></i>
+                          </a>
+                        </li>
+                      </ul>
 
 
-@media only screen and (max-width: 750px) {
-  .blogInfo li p {
-    font-size: 8px !important;
+@keyframes slidy {
+  0% {
+    left: 0%;
   }
-  .blogInfo .profile-img-card {
-    width: 15px !important;
-    height: 15px !important;
+  5% {
+    left: 0%;
+  }
+  10% {
+    left: 0%;
+  }
+  15% {
+    left: -100%;
+  }
+  20% {
+    left: -100%;
+  }
+  25% {
+    left: -100%;
+  }
+  30% {
+    left: -200%;
+  }
+  35% {
+    left: -200%;
+  }
+  40% {
+    left: -200%;
+  }
+  45% {
+    left: -300%;
+  }
+  50% {
+    left: -300%;
+  }
+  55% {
+    left: -300%;
+  }
+  60% {
+    left: -400%;
+  }
+  65% {
+    left: -400%;
+  }
+  70% {
+    left: -400%;
+  }
+  70% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
   }
 }
 
-@media only screen and (max-width: 850px) {
-  .blogInfo li p {
-    font-size: 10px !important;
-  }
+#slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+}
+.productBody #slider {
+  margin-top: 0 !important;
 }
 
- .blogInfo li {
-    display: none !important;
-  }
+#slider figure img {
+  margin-right: 0px;
+}
+
+#slider figure {
+  position: relative;
+  display: inline-block;
+  width: 600%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 15s slidy infinite;
+}

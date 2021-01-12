@@ -55,7 +55,7 @@ export default class BoardModerator extends Component {
             </p>
           </div>
           <div id="TitleLink">
-            <h1>MOD PANEL</h1>
+            <h2>MOD PANEL</h2>
           </div>
           <Articles currentUser={currentUser} />
         </Fragment>

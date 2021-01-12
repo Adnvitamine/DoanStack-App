@@ -12,7 +12,6 @@
   border-radius: 15px 15px 0px 0px;
 }
 .screen :hover {
-  position: relative;
   background-color: rgba(197, 227, 255, 1);
   box-shadow: 0 200px 100px -100px rgba(255, 195, 207, 1) inset;
   transition: box-shadow 2s, background-color 2s linear;

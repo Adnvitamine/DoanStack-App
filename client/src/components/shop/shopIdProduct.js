@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import ShopViewImage from "./shopViewImage";
-import ShopViewImages from "./shopViewImages";
+//import ShopViewImages from "./shopViewImages";
 import ProductRatings from "./productRatings/productRatings";
 import ProductCreateRating from "./productRatings/productCreateRating";
 import ProductCreateReview from "./productComs/productCreateReview";
@@ -15,7 +15,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
   const [user] = useState(currentUser);
   const [product, setProduct] = useState([]);
   const [listProducts, setListProducts] = useState([]);
-  const [productimgs, setProductimgs] = useState([]);
+ // const [productimgs, setProductimgs] = useState([]);
   const [click1, setClick1] = useState();
   const [click2, setClick2] = useState();
 
@@ -49,7 +49,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
     getListProducts();
   }, [product.category]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const getProductimgs = async () => {
       try {
         const response = await fetch(
@@ -65,7 +65,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
 
     getProductimgs();
     //console.log(productimgs);
-  }, [productId]);
+  }, [productId]);*/
 
   const back = () =>{
     history.goBack();
@@ -192,7 +192,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
         )}
       </div>
       <div id="TitleLink">
-        <h1>{product.name}</h1>
+        <h2>{product.name}</h2>
       </div>
       <div id="ShopBody">
         <div id="ShopNav">
@@ -307,20 +307,17 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                 <ShopViewImage product={product} productImage={product.image} />
                 <img
                   src={product.image}
-                  style={{ height: "500px" }}
                   alt={product.name}
                 ></img>
               </div>
-              {productimgs.length !== 0 && (
+              {/*{productimgs.length !== 0 && (
                 <div id="slider">
                   <figure>
                     {productimgs.slice(0, 5).map((productimg) => (
                       <div
                         className="imageSlider"
                         key={productimg.id}
-                        style={{ width: "300px", height: "300px" }}
                       >
-                        {" "}
                         <div className="imageGrid">
                           <ShopViewImages
                             product={product}
@@ -330,14 +327,14 @@ const ShopIdProduct = ({ productId, currentUser }) => {
                           <img
                             src={productimg.path}
                             className="productImage"
-                            alt={product.title}
+                            alt={product.name}
                           />
                         </div>
                       </div>
                     ))}
                   </figure>
                 </div>
-              )}
+              )}*/}
               <div className="productSoloInfo">
                 <div className="productSoloName">
                   <p>{product.name}</p>
@@ -377,7 +374,10 @@ const ShopIdProduct = ({ productId, currentUser }) => {
               </div>
             </div>
             <div className="productSoloContent">
-              <div dangerouslySetInnerHTML={{ __html: product.description }} />
+              <div 
+              className="productDescription" 
+              dangerouslySetInnerHTML={{ __html: product.description }}
+               />
             </div>
             <div className="rateThisProduct">
               <div className="ComponentTitle">
