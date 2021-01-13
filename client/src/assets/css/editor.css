@@ -9,7 +9,33 @@
   margin: auto;
 }
 
+.ck.ck-toolbar .ck.ck-toolbar__items {
+  flex-flow: row wrap !important;
+}
+
 .editor p {
   margin: 0;
   padding: 0;
+}
+
+.quill {
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
+}
+
+.ql-editor {
+  width: 100%;
+  padding: 0 var(--ck-spacing-standard) !important;
+  font-family: "Open Sans";
+  line-height: 1.5 !important;
+  font-size: 17px;
+  margin: 0;
+}
+.ql-editor > :first-child {
+  margin-top: var(--ck-spacing-large);
+}
+
+.ql-editor > :last-child {
+  margin-bottom: var(--ck-spacing-large);
 }

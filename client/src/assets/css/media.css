@@ -11,6 +11,9 @@
   #ProfileFrame {
     flex-direction: column;
   }
+  #userEdit {
+    margin-top: 3rem !important;
+  }
 }
 
 @media only screen and (max-width: 960px) {

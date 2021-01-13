@@ -12,7 +12,7 @@
 
 - message between users
 
-
+- apple touch icon
 
 - Localstorage (done)
 
@@ -20,3 +20,5 @@
 
 - Multi Upload item limit
 
+
+{productimgs.slice(0, 5).map((productimg) => (

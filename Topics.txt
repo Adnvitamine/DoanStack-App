@@ -14,6 +14,19 @@ Use display: flex,
 
 - Css Dark-mode: switch
 
+- css animation slide from left to right : 
+  Dynamically position and center an HTML element with CSS, based on percentage
+0% {
+      left: 0;
+      transform: translateX(0);
+    }
+    100% {
+      left: 100%;
+      transform: translateX(-100%);
+    }
+
+
+
 - secure_url https cloudinary
 
 - ckeditor invalid type error import { CKeditor } from "@ckeditor/ckeditor5-react";
