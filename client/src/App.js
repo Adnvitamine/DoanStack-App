@@ -243,7 +243,7 @@ class App extends Component {
                     </li>
                     <li className="nav-item">
                       <a
-                        href="/home"
+                        href="/login"
                         className="nav-link"
                         onClick={this.logOut}
                       >

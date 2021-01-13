@@ -13,6 +13,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
   const [user] = useState(currentUser);
   const [article, setArticle] = useState([]);
   const [listArticles, setListArticles] = useState([]);
+  const [click1, setClick1] = useState();
 
   useEffect(() => {
     const getArticle = async () => {
@@ -49,6 +50,15 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
 
   const back = () =>{
     history.goBack();
+  }
+
+  const activeClick1 = () =>{
+    setClick1("true");
+  }
+
+  let clickStatus1;
+  if(click1==="true"){
+    clickStatus1 = <BlogLogin></BlogLogin>;
   }
 
   return (
@@ -332,10 +342,14 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                   <h1>Write a comment</h1>
                 </div>
               </div>
-              {user === "Visitor" && (<div><p style={{ color: "#ffc107" }} >Please sign in to comment!</p><BlogLogin></BlogLogin></div>)}
+              {user === "Visitor" && (<p>
+                To comment, please: &nbsp;
+                <button type="button" className="btn btn-warning" onClick={activeClick1}>Sign in</button> 
+              </p>)}
               {user.username && (
                 <ArticleCreateCom articleId={articleId} user={user} />
               )}
+              {clickStatus1}
             </div>
             <div className="readComments">
               <ArticleReadComs

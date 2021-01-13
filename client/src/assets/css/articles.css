@@ -182,6 +182,9 @@
 .articleContent h2 {
   font-size: 24px;
 }
+.articleContent img {
+  max-width: 100%;
+}
 .articleContent figure img {
   max-width: 100%;
 }
