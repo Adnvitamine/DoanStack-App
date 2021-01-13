@@ -38,6 +38,9 @@ export default class Profile extends Component {
     if (currentUser == null) {
       return (
         <Fragment>
+          <div id="TitleLink">
+            <h2>No authorisation</h2>
+          </div>
           <div className="BrowserNavbar">
             <p>No access</p>
           </div>
@@ -47,6 +50,9 @@ export default class Profile extends Component {
     } else {
       return (
         <Fragment>
+          <div id="TitleLink">
+            <h2>Manage your account</h2>
+          </div>
           <div className="BrowserNavbar">
             <p>{!currentUser.avatar && (
               <img
@@ -76,9 +82,6 @@ export default class Profile extends Component {
                 }}
               ></img>
             )}{currentUser.username} is connected.</p>
-          </div>
-          <div id="TitleLink">
-            <h2>YOUR PROFILE</h2>
           </div>
           <div id="ProfileFrame">
             <UserProfile currentUser={currentUser} />

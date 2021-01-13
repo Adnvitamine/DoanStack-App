@@ -94,6 +94,9 @@ const ShopIdProduct = ({ productId, currentUser }) => {
 
   return (
     <Fragment>
+    <div id="TitleLink">
+      <h2>{product.name}</h2>
+    </div>
       <div className="BrowserNavbar">
         {user === "Visitor" && (
           <p>
@@ -191,9 +194,6 @@ const ShopIdProduct = ({ productId, currentUser }) => {
           </p>
         )}
       </div>
-      <div id="TitleLink">
-        <h2>{product.name}</h2>
-      </div>
       <div id="ShopBody">
         <div id="ShopNav">
           <ul>
@@ -204,7 +204,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
             </li>
             <li>
               {(product.category === "Cosmetic" && (
-                <Link to="/shop/Cosmetic" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/shop/Cosmetic" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                   <b>Cosmetic</b>
                 </Link>
               )) || (
@@ -215,7 +215,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
             </li>
             <li>
               {(product.category === "Fashion" && (
-                <Link to="/shop/Fashion" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/shop/Fashion" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                   <b>Fashion</b>
                 </Link>
               )) || (
@@ -226,7 +226,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
             </li>
             <li>
               {(product.category === "PC" && (
-                <Link to="/shop/PC" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/shop/PC" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                   <b>Pc</b>
                 </Link>
               )) || (
@@ -237,7 +237,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
             </li>
             <li>
               {(product.category === "Estate" && (
-                <Link to="/shop/Estate" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/shop/Estate" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                   <b>Estate</b>
                 </Link>
               )) || (
@@ -248,7 +248,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
             </li>
             <li>
               {(product.category === "Services" && (
-                <Link to="/shop/Services" style={{ color: "rgb(0, 162, 255)" }}>
+                <Link to="/shop/Services" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                   <b>Services</b>
                 </Link>
               )) || (

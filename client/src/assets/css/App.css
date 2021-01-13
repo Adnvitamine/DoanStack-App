@@ -171,7 +171,6 @@ label {
 }
 
 #TitleLink {
-  height: 100px;
   padding-top: 75px;
   width: 100%;
   background-color: rgba(233, 243, 251, 0.5);
@@ -199,9 +198,9 @@ label {
 }
 
 #Login {
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 #Register {
-  padding-top: 50px;
+  padding-top: 10px;
 }

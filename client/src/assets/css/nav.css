@@ -3,6 +3,7 @@
   top: 0;
   border-radius: 5px;
   margin-right: 10px;
+  background-color: #e9f3fb;
   transition: box-shadow 2s, background-color 1s linear;
 }
 
@@ -54,11 +55,9 @@
 
 .BrowserNavbar {
   overflow: hidden;
-  border-radius: 0px;
-  position: fixed; /* Sticky/fixed navbar */
+  border-radius: 0px; /* Sticky/fixed navbar */
   width: 100%;
   z-index: 99;
-  top: 115px;
 }
 
 .BrowserNavbar p {

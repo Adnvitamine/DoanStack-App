@@ -123,11 +123,11 @@ export default class Register extends Component {
   render() {
     return (
       <Fragment>
+      <div id="TitleLink">
+        <h2>Register</h2>
+      </div>
         <div className="BrowserNavbar">
           <p>Register on DoanStack for full access</p>
-        </div>
-        <div id="TitleLink">
-          <h2>Register</h2>
         </div>
         <div className="col-md-12" id="Register">
           <div className="card card-container">

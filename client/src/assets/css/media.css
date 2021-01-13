@@ -445,14 +445,14 @@
   #ShopNav {
     font-size: 12px !important;
   }
-  #ShopNav ul li:hover {
+  #ShopNav ul li a:hover {
     font-size: 14px !important;
   }
   #BlogNav {
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
-  #BlogNav ul li:hover {
-    font-size: 16px !important;
+  #BlogNav ul li a:hover {
+    font-size: 14px !important;
   }
 
   .blogFrame:hover .blogInfo {

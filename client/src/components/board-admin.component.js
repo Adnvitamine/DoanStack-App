@@ -48,11 +48,11 @@ export default class BoardAdmin extends Component {
     } else if (currentUser.roles[2] === "Role: ADMIN") {
       return (
         <Fragment>
+        <div id="TitleLink">
+          <h2>ADMIN PANEL</h2>
+        </div>
           <div className="BrowserNavbar">
             <p>"Manage registered users" - DoanStack.be</p>
-          </div>
-          <div id="TitleLink">
-            <h2>ADMIN PANEL</h2>
           </div>
           <Users />
         </Fragment>

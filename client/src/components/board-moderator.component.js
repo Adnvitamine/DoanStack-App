@@ -48,14 +48,14 @@ export default class BoardModerator extends Component {
     } else if (currentUser.roles[1] === "Role: MODERATOR") {
       return (
         <Fragment>
+        <div id="TitleLink">
+          <h2>MOD PANEL</h2>
+        </div>
           <div className="BrowserNavbar">
             <p>
               "Manage all your posts here" - DoanStack.be
               {/*this.state.content*/}
             </p>
-          </div>
-          <div id="TitleLink">
-            <h2>MOD PANEL</h2>
           </div>
           <Articles currentUser={currentUser} />
         </Fragment>

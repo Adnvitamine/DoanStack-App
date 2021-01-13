@@ -36,18 +36,18 @@ class BlogHome extends Component {
     const { currentUser } = this.state;
     return (
       <Fragment>
-        <div className="BrowserNavbar">
-          <p>All my topics about PERNstack Application.</p>
-        </div>
         <div id="TitleLink">
           <h2>Blog</h2>
+        </div>
+        <div className="BrowserNavbar">
+          <p>All my topics about PERNstack Application.</p>
         </div>
         <div id="BlogBody">
           <div id="BlogNav">
             <ul>
               <li>
                 <Link to="/blog" style={{ color: "rgb(0, 162, 255)" }}>
-                  <b style={{ fontSize: "20px", color: "rgb(0, 162, 255)"}}>All</b>
+                  <b style={{ fontSize: "18px", color: "rgb(0, 162, 255)"}}>All</b>
                 </Link>
               </li>
               <li>

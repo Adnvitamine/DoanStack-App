@@ -5,7 +5,6 @@
   margin: auto;
   margin-bottom: 100px;
   min-height: 100vh;
-  padding-top: 50px;
   text-align: center;
 }
 
@@ -40,13 +39,9 @@
 }
 
 #ShopNav ul li a:hover {
+  font-size: 18px;
   color: rgb(38, 253, 38);
-  transition: color 0.5s ease-in-out;
-}
-
-#ShopNav ul li:hover {
-  font-size: 20px;
-  transition: font-size 0.5s linear;
+  transition: color 0.5s ease-in-out, font-size 0.5s linear;
 }
 
 #ShopHome {

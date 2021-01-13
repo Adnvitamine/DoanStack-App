@@ -4,7 +4,6 @@
   display: block;
   margin: auto;
   margin-bottom: 100px;
-  padding-top: 50px;
   min-height: 100vh;
   text-align: center;
 }
@@ -39,7 +38,7 @@
 }
 
 #BlogNav ul li a:hover {
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(38, 253, 38);
   transition: color 0.5s ease-in-out, font-size 0.5s linear;
 }

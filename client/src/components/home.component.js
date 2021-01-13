@@ -32,11 +32,11 @@ export default class Home extends Component {
   render() {
     return (
       <Fragment>
-        <div className="BrowserNavbar">
-          <p>"Welcome to my React Web Portfolio"</p>
-        </div>
         <div id="TitleLink">
           <h2>Greetings, it's so nice to meet you!</h2>
+        </div>
+        <div className="BrowserNavbar">
+          <p>"Welcome to my React Web Portfolio"</p>
         </div>
         <div className="homeBody">
           <HomeSVG />

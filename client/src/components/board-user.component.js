@@ -48,14 +48,14 @@ export default class BoardUser extends Component {
     } else {
       return (
         <Fragment>
+        <div id="TitleLink">
+          <h2>USER PANEL</h2>
+        </div>
           <div className="BrowserNavbar">
             <p>
               "Manage all your products here" - DoanStack.be
               {/*this.state.content*/}
             </p>
-          </div>
-          <div id="TitleLink">
-            <h2>USER PANEL</h2>
           </div>
           <Products currentUser={currentUser} />
         </Fragment>

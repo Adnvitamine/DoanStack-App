@@ -15,13 +15,13 @@ class blogCateg extends Component {
   render() {
     return (
       <Fragment>
+        <div id="TitleLink">
+          <h2>{this.props.match.params.category}</h2>
+        </div>
         <div className="BrowserNavbar">
           <p>
             Read all {this.props.match.params.category}'s topics - DoanStack.be
           </p>
-        </div>
-        <div id="TitleLink">
-          <h2>{this.props.match.params.category}</h2>
         </div>
         <div id="BlogBody">
           <div id="BlogNav">
@@ -33,7 +33,7 @@ class blogCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "News" && (
-                  <Link to="/blog/News" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/News" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                     <b>News</b>
                   </Link>
                 )) || (
@@ -44,7 +44,7 @@ class blogCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "FrontEnd" && (
-                  <Link to="/blog/FrontEnd" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/FrontEnd" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                     <b>FrontEnd</b>
                   </Link>
                 )) || (
@@ -55,7 +55,7 @@ class blogCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "BackEnd" && (
-                  <Link to="/blog/BackEnd" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/BackEnd" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                     <b>BackEnd</b>
                   </Link>
                 )) || (
@@ -66,7 +66,7 @@ class blogCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "Life" && (
-                  <Link to="/blog/Life" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/Life" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                     <b>Life</b>
                   </Link>
                 )) || (
@@ -77,7 +77,7 @@ class blogCateg extends Component {
               </li>
               <li>
                 {(this.props.match.params.category === "Others" && (
-                  <Link to="/blog/Others" style={{ fontSize: "20px",color: "rgb(0, 162, 255)" }}>
+                  <Link to="/blog/Others" style={{ fontSize: "18px",color: "rgb(0, 162, 255)" }}>
                     <b>Others</b>
                   </Link>
                 )) || (
