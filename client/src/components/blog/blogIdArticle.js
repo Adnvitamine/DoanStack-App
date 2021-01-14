@@ -334,7 +334,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
               </div>
             </div>
             <div className="articleSoloContent">
-              <div className="articleContent" dangerouslySetInnerHTML={{ __html: article.content }} />
+              <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
             </div>
             <div className="commentArticle">
               <div className="ComponentTitle">

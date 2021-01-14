@@ -20,22 +20,33 @@
 
 .quill {
   width: 100%;
-  max-width: 780px;
   margin: auto;
 }
-
-.ql-editor {
-  width: 100%;
-  padding: 0 var(--ck-spacing-standard) !important;
-  font-family: "Open Sans";
-  line-height: 1.5 !important;
-  font-size: 17px;
-  margin: 0;
+.ql-container {
+  font-size: 17px !important;
+  font-family: "Open Sans" !important;
+  max-width: 780px;
+  margin: auto !important;
 }
+.ql-editor {
+  width: 100% !important;
+  padding: 0 var(--ck-spacing-standard) !important;
+  margin: 0;
+  line-height: 1.5 !important;
+}
+
+.ql-editor::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 .ql-editor > :first-child {
   margin-top: var(--ck-spacing-large);
 }
 
 .ql-editor > :last-child {
   margin-bottom: var(--ck-spacing-large);
+}
+.ql-editor img {
+  max-width: 100%;
+  height: auto;
 }

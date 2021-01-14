@@ -86,26 +86,21 @@
 }
 
 .articleCardContent {
+  width: 100%;
+  max-width: 336px;
   font-family: "Open Sans";
-  font-size: 17px;
+  font-size: 14px;
   height: 250px;
-  overflow: scroll;
-  padding: 0 var(--ck-spacing-standard) !important;
   margin: auto;
 }
-
-.articleCardContent::-webkit-scrollbar {
-  width: 0 !important;
-}
-
-.articleCardContent div {
-  width: 100%;
+.articleCardContent .ql-editor .image-style-align-right {
+  float: right;
+  margin-left: 0;
 }
 
 .articleCardContent p {
   margin: 0;
   padding: 0;
-  width: 100%;
   word-wrap: break-word;
 }
 
@@ -165,51 +160,18 @@
 
 .articleContent {
   width: 100%;
-  font-family: "Open sans";
-  font-size: 17px;
-  line-height: 1.5 !important;
-  max-width: 776px;
-  padding: 0 var(--ck-spacing-standard) !important;
+  max-width: 778px;
+  border: 1px solid rgba(255, 255, 255, 0);
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 
-.articleContent h1 {
-  font-size: 34px;
-}
-
-.articleContent h2 {
-  font-size: 24px;
-}
-.articleContent img {
-  max-width: 100%;
-}
 .articleContent figure img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .articleContent p {
   width: 100%;
-  margin: 0;
-  padding: 0;
   word-wrap: break-word;
-}
-
-.ql-align-left {
-  text-align: left;
-}
-
-.ql-align-center {
-  text-align: center;
-}
-
-.ql-align-right {
-  text-align: right;
-}
-
-.ql-align-justify {
-  text-align: justify;
 }
 
 .articleGallery {
@@ -217,14 +179,19 @@
   width: 300px;
   height: 300px;
 }
-.image {
-  margin: 1em auto;
-}
+
 .image-style-align-right {
   float: right;
-  margin-left: var(--ck-image-style-spacing);
+  margin-left: var(--ck-image-style-spacing) !important;
+}
+figcaption {
+  text-align: center;
 }
 .image-style-align-left {
   float: left;
   margin-right: var(--ck-image-style-spacing);
+}
+
+.image {
+  margin: auto;
 }

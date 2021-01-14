@@ -244,20 +244,16 @@
 
 .articleSoloHeader {
   position: relative;
-  max-width: 90%;
   margin: auto;
-  overflow: hidden;
-  margin-bottom: 25px;
 }
 
 .articleSoloContent {
-  font-family: "Open Sans";
-  font-size: 17px;
   width: 100%;
   max-width: 778px;
-  padding: 0 var(--ck-spacing-standard) !important;
   margin: auto;
-  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: white;
+  padding-top: 25px;
 }
 
 .articleSoloContent figure img {
@@ -276,22 +272,26 @@
 
 .articleSoloInfo ul {
   width: 100%;
-  border-bottom: 1px solid grey;
+  max-width: 1000px;
+  border-radius: 27px;
+  background: #e2effd;
+  box-shadow: 5px 5px 10px #c9d5e1, -5px -5px 10px #fbffff;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 0;
-  padding-bottom: 10px;
   margin: auto;
   list-style-type: none;
 }
 
 .articleSoloInfo ul li {
+  padding-top: 10px;
   word-wrap: break-word;
 }
 
 .articleSoloInfo ul li p {
   text-align: center;
+  margin-bottom: 5px;
 }
 
 .articleSoloInfo h1 {
@@ -306,8 +306,6 @@
 #ImageFrame {
   display: grid;
   place-items: center;
-  min-height: 300px;
-  min-width: 300px;
   overflow: hidden;
 }
 

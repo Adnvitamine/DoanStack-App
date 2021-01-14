@@ -145,10 +145,12 @@ const ArticleContent = ({ article }) => {
               </figure>
               </div>*/}
 
+          <div className="articleContent">
           <div
-            className="articleContent"
+            className="ql-editor"
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
+          </div>
         </div>
       </div>
     </Fragment>

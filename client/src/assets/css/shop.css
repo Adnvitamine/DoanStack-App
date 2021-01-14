@@ -249,7 +249,9 @@
 
 .productSoloContent {
   width: 100%;
-  padding: 0 var(--ck-spacing-standard) !important;
+  max-width: 778px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: white;
   margin: auto;
   border-radius: 5px;
 }
@@ -348,15 +350,16 @@
 #ImageFrame {
   position: relative;
   display: grid;
+  width: 100%;
   place-items: center;
   margin-bottom: 10px;
-  min-height: 300px;
-  min-width: 300px;
+
   overflow: hidden;
 }
 #ImageFrame img {
-  width: 100%;
-  max-width: 450px;
+  max-width: 50%;
+
+  min-width: 265px;
   height: auto !important;
 }
 #ShopProductZoom {

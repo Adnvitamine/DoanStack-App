@@ -77,7 +77,7 @@ const ListArticles = ({ currentUser }) => {
               />
             </div>
             <div className="articleCardContent">
-              <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
             </div>
 
             <div className="articleCardInfo">

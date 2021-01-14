@@ -162,14 +162,12 @@ label {
   background: #f5f6f7;
 }
 
-.modal-dialog {
-  margin-bottom: 600px !important;
-}
-
 .modal-footer {
   background: #f5f6f7;
 }
-
+.modal-dialog {
+  margin: 0;
+}
 #TitleLink {
   padding-top: 75px;
   width: 100%;

@@ -375,7 +375,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
             </div>
             <div className="productSoloContent">
               <div 
-              className="productDescription" 
+              className="ql-editor" 
               dangerouslySetInnerHTML={{ __html: product.description }}
                />
             </div>

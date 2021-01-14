@@ -134,10 +134,12 @@ const ProductDescription = ({ product }) => {
           </div>
         </div>
         <div className="productBody">
+          <div className="productDescription">
           <div
-            className="productDescription"
+            className="ql-editor"
             dangerouslySetInnerHTML={{ __html: product.description }}
           />
+          </div>
         </div>
       </div>
     </Fragment>

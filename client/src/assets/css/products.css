@@ -197,7 +197,7 @@ p[data-value]:after {
 .productDescription {
   width: 100%;
   max-width: 780px !important;
-  padding: 0 var(--ck-spacing-standard) !important;
+  border: 1px solid rgba(255, 255, 255, 0);
   margin: auto;
 }
 .productDescription img {
@@ -212,7 +212,6 @@ p[data-value]:after {
   font-size: 24px;
 }
 .productDescription p {
-  width: 100%;
   word-wrap: break-word;
 }
 .productDescription ul {
@@ -380,7 +379,6 @@ p[data-value]:after {
 }
 
 .productCardDescription p {
-  width: 100%;
   word-wrap: break-word;
 }
 

@@ -1,3 +1,25 @@
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 1.75rem auto;
+  }
+}
+@media (min-width: 900px) {
+  .modal-xl {
+    max-width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  .modal-xl {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .modal-xl {
+    max-width: 70%;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .productBody {
     flex-direction: column;
@@ -16,6 +38,14 @@
   }
 }
 
+@media (max-width: 990px) {
+  .modal-content {
+    border: none;
+  }
+  .modal-body {
+    padding: 0 var(--ck-spacing-standard) !important;
+  }
+}
 @media only screen and (max-width: 960px) {
   .productBody {
     flex-direction: column;
@@ -29,7 +59,7 @@
   #menuToggle {
     position: relative;
     float: right;
-    top: -20px;
+    top: 15px;
     height: 60px;
     width: 60px;
     z-index: 1;
@@ -204,17 +234,12 @@
     display: none;
   }
 
-  #fixedNavbar {
-    height: 100px;
-    padding: 0px;
-  }
-
   .BrowserNavbar {
     top: 110px;
   }
 
   #Label {
-    top: 10px;
+    top: 40px;
     left: 20px;
   }
 
@@ -391,6 +416,20 @@
     display: block;
     margin: auto;
     width: 100%;
+  }
+  #articleCreate {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #productCreate {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 90%;
   }
 }
 

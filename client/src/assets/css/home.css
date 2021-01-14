@@ -1,12 +1,6 @@
 ul {
   position: relative;
 }
-p {
-  text-align: left;
-  margin: 0;
-  padding: 0;
-}
-
 .list-item {
   background: white;
   color: #575757;

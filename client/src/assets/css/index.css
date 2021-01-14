@@ -52,7 +52,6 @@
   font-family: LatoReg;
   src: url(../fonts/Lato-Regular.ttf);
 }
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -75,6 +74,7 @@ body {
   background-size: cover;
   font-family: "Open Sans";
   font-size: 17px;
+  line-height: 1.5 !important;
   letter-spacing: 0.01rem;
 }
 
@@ -93,7 +93,6 @@ body {
 }
 #Label {
   position: relative;
-  top: -30px;
   left: 5px;
   min-width: 100px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -130,7 +129,9 @@ body {
 }
 
 #switch:checked + #FullFrame #fixedNavbar {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: black;
+}
+#switch:checked + #FullFrame #fixedNavbar #Label {
   color: white;
 }
 #switch:checked + #FullFrame #TitleLink {
@@ -177,6 +178,11 @@ body {
 }
 
 #switch:checked + #FullFrame .mainBoard #BlogBody #BlogNav {
+  border-radius: 50px;
+  background: #272626;
+  box-shadow: 8px 8px 16px #1e1d1d, -8px -8px 16px #1e1d1d;
+}
+#switch:checked + #FullFrame .mainBoard #BlogBody .articleSoloInfo ul {
   border-radius: 50px;
   background: #272626;
   box-shadow: 8px 8px 16px #1e1d1d, -8px -8px 16px #1e1d1d;
@@ -294,6 +300,7 @@ body {
   color: white !important;
 }
 #switch:checked + #FullFrame .mainBoard #ShopBody .productSoloContent {
+  background-color: rgb(12, 12, 12);
   color: white;
 }
 
@@ -542,6 +549,7 @@ body {
 }
 
 #switch:checked + #FullFrame .mainBoard #BlogBody .articleSoloContent {
+  background-color: rgb(12, 12, 12);
   color: white;
 }
 #switch:checked + #FullFrame .mainBoard #BlogBody .blogFrame ul li {
