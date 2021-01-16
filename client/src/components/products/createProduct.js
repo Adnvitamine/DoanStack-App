@@ -1,13 +1,9 @@
-import React, { Fragment, useState, useRef } from "react";
+import { Fragment, useState, useRef } from "react";
 import axios from "axios";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import InlineEditor from "@ckeditor/ckeditor5-build-inline";
-//import InlineEditor from "@ckeditor/ckeditor5-build-inline";
 import CustomUpload from "../../js/CustomUploader";
-//import SingleImageUploadComponent from '../single-imgUpload.component';
-//import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-//import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-const sanitizeHtml = require("sanitize-html");
+//const sanitizeHtml = require("sanitize-html");
 
 const CreateProduct = ({ currentUser }) => {
   const [name, setName] = useState();
@@ -144,17 +140,6 @@ const CreateProduct = ({ currentUser }) => {
         </div>
         <div className="form-row">
           <div className="uploadContainer">
-            {/*
-                        <div className="form-group preview">
-                            {imgPreview}
-                        </div>
-
-                        <div className="form-group">
-                            <input type="file" className="form-control" onChange={uploadSingleFile} />
-                        </div>
-                        
-                        */}
-
             <div className="file-upload">
               <input
                 type="file"
@@ -246,13 +231,8 @@ const CreateProduct = ({ currentUser }) => {
               </div>
             </div>
           </div>
-
           {/* <textarea className="form-control mt-3" placeholder={description} onChange={e => setDescription(e.target.value)}></textarea>*/}
           <div className="editor">
-            {/*config={ {
-                   
-                   toolbar: ['heading', '|', 'bold', 'italic', '|', 'undo', 'redo', '|', 'mediaEmbed' ]
-               } }*/}
             <CKEditor
               editor={InlineEditor}
               data="<p>Write a description for you product..</p>"
@@ -265,65 +245,9 @@ const CreateProduct = ({ currentUser }) => {
               }}
               onChange={(event, editor) => {
                 const data = editor.getData();
-                const dataparse = sanitizeHtml(data, {
-                  allowedTags: [
-                    "h3",
-                    "h4",
-                    "h5",
-                    "h6",
-                    "blockquote",
-                    "p",
-                    "a",
-                    "ul",
-                    "ol",
-                    "nl",
-                    "li",
-                    "b",
-                    "i",
-                    "strong",
-                    "em",
-                    "strike",
-                    "code",
-                    "hr",
-                    "br",
-                    "div",
-                    "table",
-                    "thead",
-                    "caption",
-                    "tbody",
-                    "tr",
-                    "th",
-                    "td",
-                    "pre",
-                    "figure",
-                    "oembed",
-                    "img",
-                  ],
-                  allowedAttributes: {
-                    a: ["href", "name", "target"],
-                    figure: ["class"],
-                    oembed: ["url"],
-                    // We don't currently allow img itself by default, but this
-                    // would make sense if we did
-                    img: ["src"],
-                  },
-                  // Lots of these won't come up by default because we don't allow them
-                  selfClosing: [
-                    "br",
-                    "hr",
-                    "area",
-                    "base",
-                    "basefont",
-                    "input",
-                    "link",
-                    "meta",
-                  ],
-                  // URL schemes we permit
-                  allowedSchemes: ["http", "https", "ftp", "mailto"],
-                  allowedSchemesByTag: {},
-                });
+                
                 setDescription(data);
-                console.log({ event, editor, data, dataparse });
+                console.log({ event, editor, data });
               }}
               onBlur={(event, editor) => {
                 console.log("Blur.", editor);
@@ -399,3 +323,61 @@ const CreateProduct = ({ currentUser }) => {
 };
 
 export default CreateProduct;
+
+/*const dataparse = sanitizeHtml(data, {
+                  allowedTags: [
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6",
+                    "blockquote",
+                    "p",
+                    "a",
+                    "ul",
+                    "ol",
+                    "nl",
+                    "li",
+                    "b",
+                    "i",
+                    "strong",
+                    "em",
+                    "strike",
+                    "code",
+                    "hr",
+                    "br",
+                    "div",
+                    "table",
+                    "thead",
+                    "caption",
+                    "tbody",
+                    "tr",
+                    "th",
+                    "td",
+                    "pre",
+                    "figure",
+                    "oembed",
+                    "img",
+                  ],
+                  allowedAttributes: {
+                    a: ["href", "name", "target"],
+                    figure: ["class"],
+                    oembed: ["url"],
+                    // We don't currently allow img itself by default, but this
+                    // would make sense if we did
+                    img: ["src"],
+                  },
+                  // Lots of these won't come up by default because we don't allow them
+                  selfClosing: [
+                    "br",
+                    "hr",
+                    "area",
+                    "base",
+                    "basefont",
+                    "input",
+                    "link",
+                    "meta",
+                  ],
+                  // URL schemes we permit
+                  allowedSchemes: ["http", "https", "ftp", "mailto"],
+                  allowedSchemesByTag: {},
+                });*/

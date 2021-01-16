@@ -425,6 +425,9 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .blogFrame {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -437,6 +440,9 @@
   .profile-img-card {
     width: 20px !important;
     height: 20px !important;
+  }
+  .blogArticle {
+    flex-direction: column;
   }
 }
 

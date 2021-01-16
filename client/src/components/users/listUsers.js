@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import UserActivity from "./userActivity";
 //import ViewProduct from "./viewProduct";
 //import EditUser from "./editUser";

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import ViewProduct from "./viewProduct";
 import EditProduct from "./editProduct";
 import QuillEdit from "./quillEdit";
@@ -81,7 +81,7 @@ const ListProducts = ({ currentUser }) => {
               />
             </div>
             <div className="productCardDescription">
-              <div dangerouslySetInnerHTML={{ __html: product.description }} />
+              <div className="ql-editor" dangerouslySetInnerHTML={{ __html: product.description }} />
             </div>
 
             <div className="productCardPrice">

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 
 import CreateProduct from "./createProduct";
 import ListProducts from "./listProducts";

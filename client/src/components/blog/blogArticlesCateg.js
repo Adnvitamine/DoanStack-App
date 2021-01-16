@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 //import ArticleId from "./articeId";
@@ -111,7 +111,7 @@ const BlogArticlesCateg = ({ category }) => {
             >
               <div className="blogBody">
                 <div className="blogContent">
-                  <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                  <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
                 </div>
               </div>
             </Link>
@@ -186,7 +186,7 @@ const BlogArticlesCateg = ({ category }) => {
             >
               <div className="blogBody">
                 <div className="blogContent">
-                  <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                  <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
                 </div>
               </div>
             </Link>

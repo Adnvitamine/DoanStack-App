@@ -183,7 +183,6 @@ body {
   box-shadow: 8px 8px 16px #1e1d1d, -8px -8px 16px #1e1d1d;
 }
 #switch:checked + #FullFrame .mainBoard #BlogBody .articleSoloInfo ul {
-  border-radius: 50px;
   background: #272626;
   box-shadow: 8px 8px 16px #1e1d1d, -8px -8px 16px #1e1d1d;
 }
@@ -549,9 +548,17 @@ body {
 }
 
 #switch:checked + #FullFrame .mainBoard #BlogBody .articleSoloContent {
-  background-color: rgb(12, 12, 12);
+  background-color: black;
   color: white;
 }
+
+#switch:checked + #FullFrame .mainBoard #BlogBody .blogFrame {
+  background-color: black;
+}
+#switch:checked + #FullFrame .mainBoard #BlogBody .blogFrame ul {
+  box-shadow: inset 0px -1px 4px #ffe601, inset -1px 0px 4px #ff7300;
+}
+
 #switch:checked + #FullFrame .mainBoard #BlogBody .blogFrame ul li {
   color: white !important;
 }
@@ -846,4 +853,14 @@ code {
 iframe {
   height: auto;
   min-height: 20rem;
+}
+
+.image-style-align-right {
+  float: right;
+  margin-left: var(--ck-image-style-spacing) !important;
+}
+
+.image-style-align-left {
+  float: left;
+  margin-right: var(--ck-image-style-spacing);
 }

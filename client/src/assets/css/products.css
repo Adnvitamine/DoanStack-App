@@ -355,10 +355,11 @@ p[data-value]:after {
 }
 
 .productCardDescription {
-  font-size: 17px;
+  width: 100%;
+  max-width: 336px;
+  font-family: "Open Sans";
+  font-size: 14px;
   height: 250px;
-  overflow: scroll;
-  padding: 0 var(--ck-spacing-standard) !important;
   margin: auto;
 }
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef } from "react";
+import { Fragment, useState, useRef } from "react";
 import axios from "axios";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import InlineEditor from "@ckeditor/ckeditor5-build-inline";
@@ -489,7 +489,7 @@ const EditProduct = ({ product }) => {
                     onChange={(event, editor) => {
                       const data = editor.getData();
                       setDescription(data);
-                      console.log(data);
+                      console.log(event, editor, data);
                     }}
                     onBlur={(event, editor) => {
                       console.log("Blur.", editor);

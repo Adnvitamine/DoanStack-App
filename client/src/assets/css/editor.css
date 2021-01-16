@@ -50,3 +50,9 @@
   max-width: 100%;
   height: auto;
 }
+.ql-editor table {
+  width: 100%;
+}
+.ql-editor table td {
+  border: 1px solid #dee2e6;
+}

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductRatings from "./productRatings/productRatings";
 
@@ -59,7 +59,7 @@ const ShopProductsCateg = ({ category }) => {
               <img src={product.image} alt={product.name}></img>
             </div>
             <div className="shopBody">
-              <div dangerouslySetInnerHTML={{ __html: product.description }} />
+              <div className="ql-editor" dangerouslySetInnerHTML={{ __html: product.description }} />
             </div>
             <div className="shopInfo">
               <div className="shopProductName">
@@ -90,7 +90,7 @@ const ShopProductsCateg = ({ category }) => {
               <img src={product.image} alt={product.name}></img>
             </div>
             <div className="shopBody">
-              <div dangerouslySetInnerHTML={{ __html: product.description }} />
+              <div className="ql-editor" dangerouslySetInnerHTML={{ __html: product.description }} />
             </div>
             <div className="shopInfo">
               <div className="shopProductName">

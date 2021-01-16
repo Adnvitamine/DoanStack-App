@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const UserActivity = ({ user_id }) => {
   const [products, setProducts] = useState([]);

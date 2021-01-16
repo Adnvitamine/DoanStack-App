@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const ProductReadReviews = ({ productId, productName }) => {
   const [product_reviews, setProduct_reviews] = useState([]);

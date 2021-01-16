@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
 const ProductCreateRating = ({ productId, userId }) => {

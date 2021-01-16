@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import { Fragment, Component } from "react";
 import Products from "./products/products";
 import authService from "../services/auth.service";
 import UserService from "../services/user.service";

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -113,7 +113,7 @@ const BlogAllArticles = ({ currentUser }) => {
             >
               <div className="blogBody">
                 <div className="blogContent">
-                  <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                  <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
                 </div>
               </div>
             </Link>
@@ -188,7 +188,7 @@ const BlogAllArticles = ({ currentUser }) => {
             >
               <div className="blogBody">
                 <div className="blogContent">
-                  <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                  <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
                 </div>
               </div>
             </Link>

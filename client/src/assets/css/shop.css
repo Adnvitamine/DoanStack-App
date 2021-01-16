@@ -142,6 +142,7 @@
   display: inline-block;
   margin: auto;
   margin-right: 10px;
+  background-color: white;
   border: 1px solid rgba(182, 182, 182, 0.877);
   width: 300px;
   overflow: hidden;
@@ -176,14 +177,16 @@
 }
 
 .shopImg img {
-  height: 300px;
+  height: 250px;
   width: 100%;
   object-fit: contain;
 }
 .shopBody {
-  height: 300px;
-  overflow: scroll;
-  padding: 0 var(--ck-spacing-standard) !important;
+  width: 100%;
+  max-width: 336px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  height: 250px;
   margin: auto;
 }
 

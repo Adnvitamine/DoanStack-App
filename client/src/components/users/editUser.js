@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef } from "react";
+import { Fragment, useState, useRef } from "react";
 import axios from "axios";
 
 const EditUser = ({ currentUser }) => {

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const ArticleReadComs = ({ articleId, articleName }) => {
   const [article_comments, setArticle_comments] = useState([]);
