@@ -23,12 +23,13 @@ const ArticleReadComs = ({ articleId, articleName }) => {
 
   return (
     <Fragment>
-      {article_comments.length === null && (
+      <div className="readComments">
+      {!article_comments.length && (
         <div className="ComponentTitle">
           <div>
             <h1>
-              No comment yet for
-              <span style={{ color: "blue" }}>{articleName}</span>
+              0 comment for 
+              <span style={{ color: "blue" }}> {articleName}</span>
             </h1>
           </div>
         </div>
@@ -102,6 +103,7 @@ const ArticleReadComs = ({ articleId, articleName }) => {
           </div>
         ))}
       </div>
+    </div>
     </Fragment>
   );
 };

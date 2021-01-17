@@ -23,12 +23,13 @@ const ProductReadReviews = ({ productId, productName }) => {
 
   return (
     <Fragment>
+    <div className="readReviews">
       {product_reviews.length === null && (
         <div className="ComponentTitle">
           <div>
             <h1>
-              No review yet for
-              <span style={{ color: "blue" }}>{productName}</span>
+              0 review for
+              <span style={{ color: "blue" }}> {productName}</span>
             </h1>
           </div>
         </div>
@@ -102,6 +103,7 @@ const ProductReadReviews = ({ productId, productName }) => {
           </div>
         ))}
       </div>
+    </div>
     </Fragment>
   );
 };

@@ -58,7 +58,10 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
 
   let clickStatus1;
   if(click1==="true"){
-    clickStatus1 = <BlogLogin></BlogLogin>;
+    clickStatus1 = <Fragment>
+    <div className="BrowserNavbar">
+        <p>Sign in to comment this post</p>
+    </div><BlogLogin></BlogLogin></Fragment>;
   }
 
   return (
@@ -98,7 +101,7 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
                 }}
               ></img>
             )}{" "}
-            {article.author}. Sign in to comment" - DoanStack.be
+            {article.author}. Sign in to comment"
           </p>
         )}
         {user.username && (
@@ -351,12 +354,11 @@ const BlogIdArticle = ({ articleId, currentUser }) => {
               )}
               {clickStatus1}
             </div>
-            <div className="readComments">
-              <ArticleReadComs
+            <ArticleReadComs
                 articleId={articleId}
-                articleName={article.name}
+                articleName={article.title}
               />
-            </div>
+            
           </div>
         </div>
       </div>

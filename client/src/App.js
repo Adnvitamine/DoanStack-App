@@ -22,8 +22,10 @@ import "./assets/css/media.css";
 
 import AuthService from "./services/auth.service";
 
-import Login from "./components/login.component";
-import Register from "./components/register.component";
+//import Login from "./components/login.component";
+//import Register from "./components/register.component";
+import Subscribe from "./components/subscribe.component";
+import SignIn from "./components/signin.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
@@ -277,14 +279,14 @@ class App extends Component {
               <div className="mainBoard">
                 <Switch>
                   <Route exact path={["/", "/home"]} component={Home} />
-                  <Route exact path="/login" component={Login} />
                   <Route exact path="/blog" component={Blog} />
                   <Route exact path="/blog/:category" component={BlogCateg} />
                   <Route exact path="/blog/:category/:id/:title" component={BlogId} />
                   <Route exact path="/shop" component={Shop} />
                   <Route exact path="/shop/:category" component={ShopCateg} />
                   <Route exact path="/shop/:category/:id/:title" component={ShopId} />
-                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/register" component={Subscribe} />
+                  <Route exact path="/login" component={SignIn} />
                   <Route exact path="/profile" component={Profile} />
                   <Route path="/user" component={BoardUser} />
                   <Route path="/mod" component={BoardModerator} />

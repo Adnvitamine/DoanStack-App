@@ -65,10 +65,9 @@
   background: linear-gradient(red, blue);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: neon1 0.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 0.5s ease-in-out infinite alternate;
-  animation: neon 0.5s ease-in-out infinite alternate,
-    slide1 25s linear infinite;
+  -webkit-animation: neon1 1s ease-in-out infinite alternate;
+  -moz-animation: neon1 1s ease-in-out infinite alternate;
+  animation: neon1 1s ease-in-out infinite alternate, slide1 25s linear infinite;
 }
 
 .BrowserNavbar:hover p {
@@ -93,32 +92,34 @@
 
 @-webkit-keyframes neon1 {
   from {
-    text-shadow: 0 0 10px #310385, 0 0 20px #745cff, 0 0 30px #ff0055,
-      0 0 40px #ffd53d, 0 0 70px #ffd53d;
+    text-shadow: 0 0 1px rgb(255, 0, 98), 0 0 1px rgb(255, 0, 98),
+      0 0 1px rgb(255, 0, 98);
   }
   to {
-    text-shadow: 0 0 5px #310385, 0 0 10px #745cff, 0 0 15px #ff0055,
-      0 0 20px #ffd53d, 0 0 35px #ffd53d;
+    text-shadow: 0 0 1px rgb(111, 5, 248), 0 0 1px rgb(111, 5, 248),
+      0 0 1px rgb(111, 5, 248);
   }
 }
 
 @keyframes neon1 {
   from {
-    text-shadow: 0 0 10px #745cff, 0 0 15px #fd0037, 0 0 20px #ffffff;
+    text-shadow: 0 0 1px rgb(255, 0, 98), 0 0 1px rgb(255, 0, 98),
+      0 0 1px rgb(255, 0, 98);
   }
   to {
-    text-shadow: 0 0 5px #745cff, 0 0 7px #fd0037, 0 0 10px #ffffff;
+    text-shadow: 0 0 1px rgb(111, 5, 248), 0 0 1px rgb(111, 5, 248),
+      0 0 1px rgb(111, 5, 248);
   }
 }
 
 @-moz-keyframes neon1 {
   from {
-    text-shadow: 0 0 10px #310385, 0 0 20px #745cff, 0 0 30px #ff0055,
-      0 0 40px #ffd53d, 0 0 70px #ffd53d;
+    text-shadow: 0 0 1px rgb(255, 0, 98), 0 0 1px rgb(255, 0, 98),
+      0 0 1px rgb(255, 0, 98);
   }
   to {
-    text-shadow: 0 0 5px #310385, 0 0 10px #745cff, 0 0 15px #ff0055,
-      0 0 20px #ffd53d, 0 0 35px #ffd53d;
+    text-shadow: 0 0 1px rgb(111, 5, 248), 0 0 1px rgb(111, 5, 248),
+      0 0 1px rgb(111, 5, 248);
   }
 }
 #LogoNav {

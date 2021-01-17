@@ -13,8 +13,10 @@
 }
 
 #articleCreate {
+  margin-top: 50px;
   padding-bottom: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  text-align: center;
   transition: box-shadow 2s, background-color 2s linear;
 }
 

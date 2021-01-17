@@ -170,11 +170,6 @@
 #Link {
   text-decoration: none;
   color: black;
-  position: relative;
-  width: 100%;
-  border-radius: 0px 0px 30px 0px;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;
 }
 
 .blogInfo {
@@ -325,7 +320,8 @@
 }
 
 .commentArticle {
-  max-width: 80%;
+  width: 100%;
+  max-width: 780px;
   margin: auto;
   margin-top: 25px;
   padding-bottom: 20px;
@@ -343,7 +339,7 @@
   margin-bottom: 20px;
 }
 .commentArticle:hover h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
   background-clip: text;
@@ -353,7 +349,8 @@
   text-align: center;
 }
 .readComments {
-  max-width: 80%;
+  width: 100%;
+  max-width: 780px;
   margin: auto;
   margin-top: 25px;
   padding-bottom: 20px;
@@ -372,7 +369,7 @@
 
 .commentContainer {
   margin-top: 25px;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px;
   background-color: rgb(255, 255, 255);
 }
 .readComments h1 {
@@ -381,7 +378,7 @@
 }
 
 .readComments:hover h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
   /* clip hackery */
   background-clip: text;
@@ -391,10 +388,10 @@
 .commentInfo {
   width: 100%;
   display: flex;
-  flex-direction: column;
-}
-.commentInfo > :first-child {
-  margin-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px 0px;
 }
 .commentInfo p {
   margin-bottom: 0;

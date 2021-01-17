@@ -430,12 +430,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 90%;
-  }
-}
-
 @media only screen and (max-width: 600px) {
   .profile-img-card {
     width: 20px !important;
@@ -460,6 +454,9 @@
   #ShopNav ul li {
     padding: 0px 5px 0px 5px !important;
     width: auto;
+  }
+  .BrowserNavbar p {
+    animation: slide1 15s linear infinite;
   }
 }
 @media only screen and (max-width: 470px) {

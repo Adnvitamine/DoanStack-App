@@ -132,7 +132,7 @@ const CreateProduct = ({ currentUser }) => {
 
   return (
     <Fragment>
-      <div className="container text-center mt-5" id="productCreate">
+      <div id="productCreate">
         <div className="ComponentTitle">
           <div>
             <h1>Add a new product</h1>

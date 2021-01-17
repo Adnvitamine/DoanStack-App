@@ -1,161 +1,90 @@
-import { Component, Fragment } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
+import { Fragment, useState } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import AuthService from "../../services/auth.service";
 //import { useHistory } from "react-router";
 
-import AuthService from "../../services/auth.service";
+const LoginSchema = yup.object().shape({
+    username: yup.string().required(),
+    password: yup.string().required()
+});
 
-const required = (value) => {
-  if (!value) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        This field is required!
-      </div>
-    );
-  }
-};
+const BlogLogin = () =>{
+    //const history = useHistory();
+    const [ alert, setAlert ] = useState();
+    const [ loading, setLoading ] = useState(false);
+    const [ hidePassword , setHidePassword ] = useState(true);
 
-export default class BlogLogin extends Component {
-  constructor(props) {
-    super(props);
-    this.handleLogin = this.handleLogin.bind(this);
-    this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.onChangePassword = this.onChangePassword.bind(this);
+    const { register, handleSubmit, errors } = useForm({
+        resolver: yupResolver(LoginSchema)
+    });
 
-    this.state = {
-      username: "",
-      password: "",
-      loading: false,
-      message: "",
+    const onSubmit = (data) =>{
+        setLoading(true);
+        AuthService.login(
+            data.username,
+            data.password
+        ).then(()=>{
+            setAlert(<div className="alert alert-success" role="alert">"Login Successfull!"</div>);
+            setLoading(false);
+            window.location.reload();
+        }, (error)=>{
+            setAlert(<div className="alert alert-success" role="alert">{error.response.data.message}</div>);
+            setLoading(false);
+        })
     };
-  }
 
-  
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
-
-  onChangePassword(e) {
-    this.setState({
-      password: e.target.value,
-    });
-  }
-
-  handleLogin(e) {
-    e.preventDefault();
-
-    this.setState({
-      message: "",
-      loading: true,
-    });
-
-    this.form.validateAll();
-
-    if (this.checkBtn.context._errors.length === 0) {
-      AuthService.login(this.state.username, this.state.password).then(
-        () => {
-          
-          //this.props.history.push();
-          window.location.reload();
-          //window.location = "";
-        },
-        (error) => {
-          const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-
-          this.setState({
-            loading: false,
-            message: resMessage,
-          });
+    const showPassword = () =>{
+        if(hidePassword === true){
+        setHidePassword(false);
+        }else{
+            setHidePassword(true);
         }
-      );
-    } else {
-      this.setState({
-        loading: false,
-      });
     }
-  }
 
-  render() {
-    return (
-      <Fragment>
-        <div className="BrowserNavbar">
-          <p>Login</p>
-        </div>
-        <div className="col-md-12" id="BlogLogin">
-          <div className="card card-container">
-            <img
-              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-              alt="profile-img"
-              className="profile-img-card"
-            />
+    return(
+        <Fragment>
+                <div className="col-md-12" id="Register">
+                    <div className="card card-container">
+                    <img
+                        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                        alt="profile-img"
+                        className="user-img-card"
+                    />
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        {alert}
+                    <div className="form-group">
+                        <label>Username</label>
+                        <input type="text" className="form-control" name="username" ref={register} />
+                        {errors.username && <div className="alert alert-danger" role="alert">{errors.username.message}</div>}
+                    </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                            <div className="input-group">
+                                <input type={hidePassword ? "password":"text"} className="form-control" placeholder="Enter password" name="password" autoComplete="current-password" ref={register} />
+                                <div className="input-group-append">
+                                    
+                                { hidePassword===true && (<span className="input-group-text" onClick={showPassword}>
+                                        <i className="far fa-eye"></i>
+                                    </span>)}
+                                { hidePassword !==true && (<span className="input-group-text" onClick={showPassword}>
+                                        <i className="fas fa-eye-slash"></i>
+                                    </span>)}    
+                                    
+                                </div>
+                                {errors.password && <div className="alert alert-danger" role="alert">{errors.password.message}</div>}
+                            </div>
+                        </div>
+                    <div className="form-group">
+                    <button type="submit" className="btn btn-primary btn-block">{loading && (<span className="spinner-border spinner-border-sm"></span>)}<span>Login</span></button>
+                    </div>
+                    </form>
+                    </div>
+            </div>
 
-            <Form
-              onSubmit={this.handleLogin}
-              ref={(c) => {
-                this.form = c;
-              }}
-            >
-              <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="username"
-                  value={this.state.username}
-                  onChange={this.onChangeUsername}
-                  validations={[required]}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <Input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.onChangePassword}
-                  validations={[required]}
-                />
-              </div>
-
-              <div className="form-group">
-                <button
-                  className="btn btn-primary btn-block"
-                  disabled={this.state.loading}
-                >
-                  {this.state.loading && (
-                    <span className="spinner-border spinner-border-sm"></span>
-                  )}
-                  <span>Login</span>
-                </button>
-              </div>
-
-              {this.state.message && (
-                <div className="form-group">
-                  <div className="alert alert-danger" role="alert">
-                    {this.state.message}
-                  </div>
-                </div>
-              )}
-              <CheckButton
-                style={{ display: "none" }}
-                ref={(c) => {
-                  this.checkBtn = c;
-                }}
-              />
-            </Form>
-          </div>
-        </div>
-      </Fragment>
-    );
-  }
+        </Fragment>
+    )
 }
+
+export default BlogLogin;

@@ -3,15 +3,15 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import AuthService from "../../services/auth.service";
-//import { useHistory } from "react-router";
+import { useHistory } from "react-router";
 
 const LoginSchema = yup.object().shape({
     username: yup.string().required(),
     password: yup.string().required()
 });
 
-const ShopLogin = () =>{
-    //const history = useHistory();
+const LoginUser = () =>{
+    const history = useHistory();
     const [ alert, setAlert ] = useState();
     const [ loading, setLoading ] = useState(false);
     const [ hidePassword , setHidePassword ] = useState(true);
@@ -28,6 +28,7 @@ const ShopLogin = () =>{
         ).then(()=>{
             setAlert(<div className="alert alert-success" role="alert">"Login Successfull!"</div>);
             setLoading(false);
+            history.push("/profile");
             window.location.reload();
         }, (error)=>{
             setAlert(<div className="alert alert-success" role="alert">{error.response.data.message}</div>);
@@ -45,6 +46,12 @@ const ShopLogin = () =>{
 
     return(
         <Fragment>
+                <div id="TitleLink">
+                <h2>Signin</h2>
+                </div>
+                <div className="BrowserNavbar">
+                    <p>Signin on DoanStack for full access</p>
+                </div>
                 <div className="col-md-12" id="Register">
                     <div className="card card-container">
                     <img
@@ -87,4 +94,4 @@ const ShopLogin = () =>{
     )
 }
 
-export default ShopLogin;
+export default LoginUser;

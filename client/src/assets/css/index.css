@@ -228,6 +228,17 @@ body {
 #switch:checked + #FullFrame .mainBoard #ShopBody #ShopHome b {
   color: white;
 }
+#switch:checked
+  + #FullFrame
+  .mainBoard
+  #ShopBody
+  #ShopHome
+  #ShopHomeProducts
+  #ShopLink
+  .shopFrame
+  .shopInfo {
+  background-color: black;
+}
 
 #switch:checked
   + #FullFrame
@@ -552,6 +563,16 @@ body {
   color: white;
 }
 
+#switch:checked
+  + #FullFrame
+  .mainBoard
+  #BlogBody
+  .articleSoloContent
+  figure
+  table {
+  color: white;
+}
+
 #switch:checked + #FullFrame .mainBoard #BlogBody .blogFrame {
   background-color: black;
 }
@@ -858,9 +879,11 @@ iframe {
 .image-style-align-right {
   float: right;
   margin-left: var(--ck-image-style-spacing) !important;
+  clear: both;
 }
 
 .image-style-align-left {
   float: left;
   margin-right: var(--ck-image-style-spacing);
+  clear: both;
 }
