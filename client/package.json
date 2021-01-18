@@ -22,9 +22,7 @@
     "react-quill": "^2.0.0-beta.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "react-validation": "^3.0.7",
     "sanitize-html": "^2.3.0",
-    "validator": "^13.5.2",
     "yup": "^0.32.8"
   },
   "scripts": {

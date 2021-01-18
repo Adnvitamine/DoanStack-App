@@ -78,10 +78,10 @@ const CreateUser = () => {
                         <input type={hidePassword ? "password":"text"} className="form-control" placeholder="Enter new password" name="password" autoComplete="off" ref={register} />
                         <div className="input-group-append">
                             
-                        { hidePassword===true && (<span className="input-group-text" onClick={showPassword}>
+                        { hidePassword && (<span className="input-group-text" onClick={showPassword}>
                                 <i className="far fa-eye"></i>
                             </span>)}
-                        { hidePassword !==true && (<span className="input-group-text" onClick={showPassword}>
+                        { !hidePassword && (<span className="input-group-text" onClick={showPassword}>
                                  <i className="fas fa-eye-slash"></i>
                             </span>)}    
                             
