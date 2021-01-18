@@ -54,89 +54,6 @@
   margin: auto;
 }
 
-#MoreProducts {
-  position: absolute;
-  right: 0px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 20%;
-  min-width: 20%;
-  word-break: break-word;
-}
-
-#MoreProducts .header {
-  display: flex;
-  flex-direction: row;
-}
-#MoreProducts .header .empty {
-  min-width: 75px;
-}
-
-#MoreProducts .header p {
-  font-size: 20px;
-  margin: auto;
-  color: rgb(0, 162, 255);
-  text-align: center;
-}
-#MoreProducts .body .list {
-  display: flex;
-  flex-direction: row;
-}
-
-#MoreProducts .body a {
-  text-decoration: none;
-}
-
-#MoreProducts .body .list {
-  color: black;
-  transition: color 0.5s linear, font-size 0.5s ease-in-out;
-}
-
-#MoreProducts .body .list:hover b {
-  color: rgb(38, 253, 38);
-  transition: color 0.5s linear;
-}
-#MoreProducts .body .list:hover {
-  transition: color 0.5s linear;
-}
-
-#MoreProducts .body .list .productImg {
-  height: 75px;
-  min-width: 75px;
-  overflow: hidden;
-}
-
-#MoreProducts .body .list .productTitle {
-  margin: auto;
-}
-
-#MoreProducts .body .list .productTitle p {
-  margin: 0;
-}
-
-#MoreProducts .body .list .productImg span {
-  display: inline-block;
-  height: 0px;
-  width: 75px;
-  margin: 0;
-  transition: height 1s ease-in-out;
-  overflow: hidden;
-}
-
-#MoreProducts .body .list:hover .productImg span {
-  height: 75px;
-
-  transition: height 1s ease-in-out;
-}
-
-#MoreProducts .body .list .productImg span img {
-  display: inline-block;
-  width: 100%;
-  object-fit: contain;
-  height: 75px;
-  margin: 0px;
-}
-
 .shopFrame {
   position: relative;
   display: inline-block;
@@ -422,8 +339,57 @@
   object-fit: contain;
 }
 
+.relatedProducts {
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
+  margin-top: 25px;
+  padding-bottom: 5px;
+}
+
+.relatedProducts:hover {
+  box-shadow: 0px 2px 0px rgba(255, 0, 0, 1), 0px 4px 0px rgba(6, 1, 255, 1),
+    0px -2px 0px rgba(6, 1, 255, 1), 0px -4px 0px rgba(255, 0, 0, 1);
+  transition: box-shadow 2s;
+}
+
+.relatedProducts:hover h1 {
+  font-size: 40px;
+  background: linear-gradient(rgba(6, 2, 247, 1), rgb(255, 0, 0, 1));
+  /* clip hackery */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.relatedProducts ul {
+  list-style-type: none;
+  width: 95%;
+  padding: 0;
+}
+
+.relatedProducts li {
+  border: 1px solid rgb(218, 215, 215);
+  text-align: left;
+  margin: 5px 0px;
+  border-radius: 10px;
+}
+
+.relatedProducts li:hover {
+  background-color: rgb(0, 255, 255);
+  margin: 8px 0px;
+  transition: background-color 1s, margin 1s;
+}
+
+.relatedProducts li p {
+  width: 90%;
+  margin: auto;
+}
+
 .rateThisProduct {
   position: relative;
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
   margin-top: 40px;
   padding-bottom: 20px;
   clear: both;
@@ -579,6 +545,9 @@
 }
 
 .reviewProduct {
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
   margin-top: 50px;
   padding-bottom: 20px;
 }
@@ -604,6 +573,9 @@
   text-align: center;
 }
 .readReviews {
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
   margin-top: 50px;
   padding-bottom: 20px;
 }

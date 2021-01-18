@@ -269,44 +269,6 @@ const ShopIdProduct = ({ productId, currentUser }) => {
           <div className="backbutton" style={{ marginBottom: "10px" }}>
           <button type="button" className="btn btn-warning" onClick={back} style={{ color: "white", textDecoration: "none"}}>Back</button>
           </div>
-          <div id="MoreProducts">
-            <div className="header">
-              <span className="empty"> </span>
-              <p>
-                <b>Suggest products</b>
-              </p>
-            </div>
-            <div className="body">
-              {listProducts.map((listproduct) => (
-                <Link
-                  to={`/shop/${listproduct.category}/${listproduct.id}/${listproduct.name}`}
-                  key={listproduct.id}
-                >
-                  
-                    {listproduct.id !== product.id && (
-                      <div className="list">
-                        <div className="productImg">
-                        <span>
-                          <img
-                            src={listproduct.image}
-                            alt={listproduct.name}
-                          ></img>
-                        </span>
-                      </div>
-                      <div className="productTitle">
-                      <b>{listproduct.name}</b>
-                   
-                      <ProductRatings productId={listproduct.id} />
-                      <p style={{ textAlign: "center", color: "#b12704" }}>
-                        € {listproduct.price}
-                      </p>
-                      </div>
-                      </div>
-                    )}
-                </Link>
-              ))}
-            </div>
-          </div>
           <div id="ShopHomeProduct">
             <div className="productSoloHeader">
               <div id="ImageFrame">
@@ -384,6 +346,22 @@ const ShopIdProduct = ({ productId, currentUser }) => {
               className="ql-editor" 
               dangerouslySetInnerHTML={{ __html: product.description }}
                />
+            </div>
+            <div className="relatedProducts">
+            <div className="ComponentTitle">
+                <div>
+                  <h1>Same category</h1>
+                </div>
+              </div>
+              <ul>
+                  {listProducts.map((listproduct)=>(
+                    <Link to={`/shop/${listproduct.category}/${listproduct.id}/${listproduct.name}`} style={{ textDecoration: "none"}}>
+                        { listproduct.id !== product.id && (
+                          <li><p>{listproduct.name}</p></li>
+                        )}
+                    </Link>
+                  ))}
+                </ul>
             </div>
             <div className="rateThisProduct">
               <div className="ComponentTitle">

@@ -221,6 +221,12 @@
   border-bottom: 1px solid rgba(182, 182, 182, 0.877);
 }
 
+#ImageFrame {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
 .relatedArticles {
   width: 100%;
   max-width: 780px;
@@ -265,12 +271,6 @@
 .relatedArticles li p {
   width: 90%;
   margin: auto;
-}
-
-#ImageFrame {
-  display: grid;
-  place-items: center;
-  overflow: hidden;
 }
 
 #ArticleCommentSubmit {

@@ -295,19 +295,12 @@ body {
   color: white;
 }
 
-#switch:checked + #FullFrame .mainBoard #ShopBody .rateThisProduct:hover {
+#switch:checked + #FullFrame .rateThisProduct:hover {
   box-shadow: 0px 2px 0px rgba(255, 136, 0, 1), 0px 4px 0px rgba(255, 238, 0, 1),
     0px -2px 0px rgba(255, 136, 0, 1), 0px -4px 0px rgba(255, 238, 0, 1);
 }
 
-#switch:checked
-  + #FullFrame
-  .mainBoard
-  #ShopBody
-  .rateThisProduct:hover
-  .ComponentTitle
-  div
-  h1 {
+#switch:checked + #FullFrame .rateThisProduct:hover .ComponentTitle div h1 {
   font-size: 40px;
   background: linear-gradient(orange, yellow);
   background-clip: text;
@@ -317,19 +310,12 @@ body {
   transition: font-size 1s, text-shadow 5s;
 }
 
-#switch:checked + #FullFrame .mainBoard #ShopBody .reviewProduct:hover {
+#switch:checked + #FullFrame .reviewProduct:hover {
   box-shadow: 0px 2px 0px rgba(255, 136, 0, 1), 0px 4px 0px rgba(255, 238, 0, 1),
     0px -2px 0px rgba(255, 136, 0, 1), 0px -4px 0px rgba(255, 238, 0, 1);
 }
 
-#switch:checked
-  + #FullFrame
-  .mainBoard
-  #ShopBody
-  .reviewProduct:hover
-  .ComponentTitle
-  div
-  h1 {
+#switch:checked + #FullFrame .reviewProduct:hover .ComponentTitle div h1 {
   font-size: 40px;
   background: linear-gradient(orange, yellow);
   background-clip: text;
@@ -339,19 +325,12 @@ body {
   transition: font-size 1s, text-shadow 5s;
 }
 
-#switch:checked + #FullFrame .mainBoard #ShopBody .readReviews:hover {
+#switch:checked + #FullFrame .readReviews:hover {
   box-shadow: 0px 2px 0px rgba(255, 136, 0, 1), 0px 4px 0px rgba(255, 238, 0, 1),
     0px -2px 0px rgba(255, 136, 0, 1), 0px -4px 0px rgba(255, 238, 0, 1);
 }
 
-#switch:checked
-  + #FullFrame
-  .mainBoard
-  #ShopBody
-  .readReviews:hover
-  .ComponentTitle
-  div
-  h1 {
+#switch:checked + #FullFrame .readReviews:hover .ComponentTitle div h1 {
   font-size: 40px;
   background: linear-gradient(orange, yellow);
   background-clip: text;
@@ -361,7 +340,7 @@ body {
   transition: font-size 1s, text-shadow 5s;
 }
 
-#switch:checked + #FullFrame .mainBoard #BlogBody .relatedArticles:hover {
+#switch:checked + #FullFrame .relatedArticles:hover {
   box-shadow: 0px 2px 0px rgba(255, 136, 0, 1), 0px 4px 0px rgba(255, 238, 0, 1),
     0px -2px 0px rgba(255, 136, 0, 1), 0px -4px 0px rgba(255, 238, 0, 1);
 }
@@ -376,19 +355,12 @@ body {
   transition: font-size 1s, text-shadow 5s;
 }
 
-#switch:checked + #FullFrame .mainBoard #BlogBody .commentArticle:hover {
+#switch:checked + #FullFrame .relatedProducts:hover {
   box-shadow: 0px 2px 0px rgba(255, 136, 0, 1), 0px 4px 0px rgba(255, 238, 0, 1),
     0px -2px 0px rgba(255, 136, 0, 1), 0px -4px 0px rgba(255, 238, 0, 1);
 }
 
-#switch:checked
-  + #FullFrame
-  .mainBoard
-  #BlogBody
-  .commentArticle:hover
-  .ComponentTitle
-  div
-  h1 {
+#switch:checked + #FullFrame .relatedProducts:hover .ComponentTitle div h1 {
   font-size: 40px;
   background: linear-gradient(orange, yellow);
   background-clip: text;
@@ -398,19 +370,27 @@ body {
   transition: font-size 1s, text-shadow 5s;
 }
 
-#switch:checked + #FullFrame .mainBoard #BlogBody .readComments:hover {
+#switch:checked + #FullFrame .commentArticle:hover {
   box-shadow: 0px 2px 0px rgba(255, 136, 0, 1), 0px 4px 0px rgba(255, 238, 0, 1),
     0px -2px 0px rgba(255, 136, 0, 1), 0px -4px 0px rgba(255, 238, 0, 1);
 }
 
-#switch:checked
-  + #FullFrame
-  .mainBoard
-  #BlogBody
-  .readComments:hover
-  .ComponentTitle
-  div
-  h1 {
+#switch:checked + #FullFrame .commentArticle:hover .ComponentTitle div h1 {
+  font-size: 40px;
+  background: linear-gradient(orange, yellow);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 248, 0, 1), 0 0 35px rgba(255, 248, 0, 1),
+    0 0 40px rgba(255, 248, 0, 1);
+  transition: font-size 1s, text-shadow 5s;
+}
+
+#switch:checked + #FullFrame .readComments:hover {
+  box-shadow: 0px 2px 0px rgba(255, 136, 0, 1), 0px 4px 0px rgba(255, 238, 0, 1),
+    0px -2px 0px rgba(255, 136, 0, 1), 0px -4px 0px rgba(255, 238, 0, 1);
+}
+
+#switch:checked + #FullFrame .readComments:hover .ComponentTitle div h1 {
   font-size: 40px;
   background: linear-gradient(orange, yellow);
   background-clip: text;
