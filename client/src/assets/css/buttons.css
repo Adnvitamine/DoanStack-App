@@ -185,7 +185,7 @@
   transition: font-size 1s;
 }
 
-#miniDeleteButton {
+.miniDeleteButton {
   border-radius: 10px;
   background: #f5f6f7;
   box-shadow: -9px 9px 11px #c4c5c6, 9px -9px 11px #ffffff;
@@ -196,7 +196,38 @@
   transition: color 1s;
 }
 
-#miniDeleteButton:visited {
+.tinyDeleteButton {
+  border-radius: 10px;
+  background: #f5f6f7;
+  border: none;
+  color: #850000;
+  font-size: 16px;
+  outline: none;
+  transition: color 1s;
+}
+
+.tinyDeleteButton:focus {
+  border-radius: 10px;
+  background: #f5f6f7;
+  border: none;
+  color: #850000;
+  font-size: 16px;
+  outline: none;
+  transition: color 1s;
+}
+.tinyDeleteButton:hover {
+  border-radius: 10px;
+  background: #f5f6f7;
+}
+
+.tinyDeleteButton:hover .svg-inline--fa {
+  border: none;
+  color: #ff0000;
+  outline: none;
+  transition: color 1s;
+}
+
+.tinyDeleteButton:active {
   border-radius: 10px;
   background: #f5f6f7;
   box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
@@ -205,7 +236,16 @@
   font-size: 16px;
   outline: none;
 }
-#miniDeleteButton:focus {
+.miniDeleteButton:visited {
+  border-radius: 10px;
+  background: #f5f6f7;
+  box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
+  border: none;
+  color: #850000;
+  font-size: 16px;
+  outline: none;
+}
+.miniDeleteButton:focus {
   border-radius: 10px;
   background: #f5f6f7;
   box-shadow: -9px 9px 11px #c4c5c6, 9px -9px 11px #ffffff;
@@ -215,20 +255,20 @@
   outline: none;
   transition: color 1s;
 }
-#miniDeleteButton:hover {
+.miniDeleteButton:hover {
   border-radius: 10px;
   background: #f5f6f7;
   box-shadow: -10px 10px 23px #c0c1c2, 10px -10px 23px #e6e7e8;
 }
 
-#miniDeleteButton:hover .svg-inline--fa {
+.miniDeleteButton:hover .svg-inline--fa {
   border: none;
   color: #ff0000;
   outline: none;
   transition: color 1s;
 }
 
-#miniDeleteButton:active {
+.miniDeleteButton:active {
   border-radius: 10px;
   background: #f5f6f7;
   box-shadow: inset -5px 5px 4px #dadbdc, inset 5px -5px 4px #ffffff;
@@ -238,14 +278,14 @@
   outline: none;
 }
 
-#miniDeleteButton:active p {
+.miniDeleteButton:active p {
   color: #ff0000;
 }
-#miniDeleteButton:active .svg-inline--fa {
+.miniDeleteButton:active .svg-inline--fa {
   color: #ff0000;
 }
 
-#miniDeleteButton i {
+.miniDeleteButton i {
   margin: 0;
   padding: 0;
   border: none;
@@ -253,7 +293,7 @@
   outline: none;
 }
 
-#miniDeleteButton p {
+.miniDeleteButton p {
   font-family: Oxygen;
   margin: 0;
   padding: 0;

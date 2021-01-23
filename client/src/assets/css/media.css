@@ -53,8 +53,9 @@
 
   #MobileMenu {
     display: block;
-    width: 100%;
+    width: 100px;
     position: absolute;
+    right: 0;
   }
   #menuToggle {
     position: relative;

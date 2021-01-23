@@ -1,4 +1,4 @@
-import { Fragment, useState, useRef } from "react";
+import { Fragment, useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import InlineEditor from "@ckeditor/ckeditor5-build-inline";
@@ -18,6 +18,8 @@ const EditProduct = ({ product }) => {
   const [quantity, setQuantity] = useState(product.quantity);
   const [category, setCategory] = useState();
   const [status, setStatus] = useState(product.status);
+  
+
 
   // SOLO: Uploaded Solo File
   const [solofile, setSoloFile] = useState();
@@ -76,36 +78,114 @@ const EditProduct = ({ product }) => {
 
   // MULTI: storing the recived file from backend
   const [previews, setPreviews] = useState([]);
-  const [file, setFile] = useState(); // storing the uploaded files
+  const [file, setFile] = useState([]); // storing the uploaded files
+  const [uploaderror, setUploaderror] = useState();
+  const imgmax = 5;
   const [pathurl, setPathurl] = useState([]);
   const [progress, setProgess] = useState(0); // progess bar
   const el = useRef(); // accessing input element
+  const [productimgs, setProductimgs] = useState([]);
+  const [imgavailable, setImgavailable] = useState(5);
+  const [array] = useState([]);
+  
+  const deleteImg = async (id) =>{
+    try {
+      const deleteImage = await fetch(
+        `http://localhost:8080/api/productimgs/${id}`, { method: "DELETE"}
+      );
+        setProductimgs(productimgs.filter((productimg) => productimg.id !== id));
+        console.log(deleteImage);
+    } catch(err){
+      console.error(err.message);
+    }
+  }
 
-  const handleChange = (e) => {
-    setProgess(0);
-    const files = e.target.files; // accesing file
-    console.log(files);
-    setFile(e.target.files); // storing file
+  const deleteImgUpload = async (index) =>{
+    try {
+        setPathurl(pathurl.filter((path) => path !== index));
+        setFile(file.filter((name) => name !== index));
+        console.log(previews);
+        const resultat = imgavailable + 1;
+        setImgavailable(resultat);
 
-    if (!e.target.files) {
-      setPreviews({
-        file: null,
-      });
-    } else {
-      //const array = [];
-      for (let i = 0; i < files.length; i++) {
-        //previews.push(files[i]);
-        //array.push(files[i]);
-        previews.push(URL.createObjectURL(files[i]));
+    } catch(err){
+      console.error(err.message);
+    }
+  }
+  
+  useEffect(() => {
+    const getProductimgs = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/productimgs/product_id/${product.id}`
+        );
+        const jsonData = await response.json();
+
+        setProductimgs(jsonData);
+      
+      } catch (err) {
+        console.error(err.message);
       }
+      
+    
+    };
+    
+    getProductimgs();
+  }, [product.id]);
+
+  
+  useEffect(()=>{
+    const resultat = imgmax - productimgs.length; 
+    setImgavailable(resultat);
+  }, [productimgs]);
+  
+  const handleChange = (e) => {
+    const files = e.target.files; // accesing file
+
+    if(files.length > 5){
+      setUploaderror("Cannot exceed 5!");
+    }else{
+
+      setUploaderror();
+
+      setProgess(0);
+
+    console.log(files);
+    if(files.length <= imgavailable){
+       // storing file
+
+      if (!e.target.files) {
+        setPreviews({
+          file: null,
+        });
+      } else {
+        //const array = [];
+        
+        for (let i = 0; i < files.length; i++) {
+          //previews.push(files[i]);
+          //array.push(files[i]);
+          previews.push(URL.createObjectURL(files[i]));
+          file.push(files[i]);
+          
+        }
+        console.log(imgmax);
+        console.log(files.length);
+        const resultat = imgavailable - files.length;
+        setImgavailable(resultat);
+      }
+    }else{
+      setUploaderror("Cannot exceed 5!");
+    }
     }
   };
 
   const uploadFile = () => {
+    console.log(file);
     const formData = new FormData();
     for (let i = 0; i < file.length; i++) {
       formData.append("file", file[i]);
     }
+    console.log(formData);
     //formData.append('file', file); // appending file
     axios
       .post("http://localhost:8080/multiuploads", formData, {
@@ -119,13 +199,13 @@ const EditProduct = ({ product }) => {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-        const array = [];
         console.log(res.data.data.length);
         for (let i = 0; i < res.data.data.length; i++) {
           //console.log("res.data[i].url");
           array.push(res.data.data[i].url);
         }
         setPathurl(array);
+        setPreviews([]);
         /*  
           
           if(!res.data){
@@ -250,7 +330,7 @@ const EditProduct = ({ product }) => {
   let soloimgPreview;
   if (solopreview) {
     soloimgPreview = <img src={solopreview.file} alt="" />;
-  }
+  };
 
   let imgPreview;
   if (previews) {
@@ -263,6 +343,28 @@ const EditProduct = ({ product }) => {
     }
     //imgPreview = <img src={previews.file}></img>;
     //console.log(previews);
+  };
+
+  let galeriePreview;
+  if (pathurl) {
+    for (let i = 0; i < pathurl.length; i++) {
+      galeriePreview = pathurl.map((index) => (
+        <div className="galeryItem" key={index} style={{ position: "relative" ,maxWidth: "130px", margin: "5px"}}>
+                    <button
+                      className="tinyDeleteButton"
+                      onClick={() => deleteImgUpload(index)}
+                      style={{ position: "absolute", right:"0"}}
+                    ><i className="far fa-trash-alt"></i>
+                    </button>
+                    <img
+                      src={index}
+                      className="galeryImage"
+                      alt=""
+                      style={{ maxWidth: "130px", height: "auto", border: "1px solid rgb(189, 184, 184)" }}
+                    />
+                  </div>
+      ));
+    }
   }
 
   /*let pathPreview;
@@ -385,6 +487,25 @@ const EditProduct = ({ product }) => {
                                     
                                     */}
                 <div className="file-upload">
+                  <p>Your product galery</p>
+                  <div className="productGalery" style={{ width: "100%", backgroundColor: " #414141", display: "flex", flexDirection: "row", flexWrap: "wrap", border: "1px solid rgb(189, 184, 184)", marginBottom: "10px", justifyContent: "center"}}>
+                {productimgs.map((productimg) => (
+                  <div className="galeryItem" key={productimg.id} style={{ position: "relative" ,maxWidth: "130px", margin: "5px"}}>
+                    <button
+                      className="tinyDeleteButton"
+                      onClick={() => deleteImg(productimg.id)}
+                      style={{ position: "absolute", right:"0"}}
+                    ><i className="far fa-trash-alt"></i>
+                    </button>
+                    <img
+                      src={productimg.path}
+                      className="galeryImage"
+                      alt=""
+                      style={{ maxWidth: "130px", height: "auto", border: "1px solid rgb(189, 184, 184)" }}
+                    />
+                  </div>
+              ))}{galeriePreview}
+                </div>
                   <input
                     type="file"
                     name="file"
@@ -393,6 +514,11 @@ const EditProduct = ({ product }) => {
                     onChange={handleChange}
                     className="inputImage"
                   />
+                    
+                    {imgavailable === 0 && (<small id="emailHelp" className="form-text text-muted">Your product galery is<span style={{color: "red"}}> full</span>.</small>)}
+                    {imgavailable === 1 && (<small id="emailHelp" className="form-text text-muted"><span style={{color: "blue"}}>{imgavailable}</span> image left</small>)}
+                    {imgavailable > 1 && (<small id="emailHelp" className="form-text text-muted"><span style={{color: "blue"}}>{imgavailable}</span> images available</small>)}
+                  {uploaderror && <div className="alert alert-danger" role="alert">{uploaderror}</div>}
                   <p
                     style={{ width: `${progress}%` }}
                     data-value={progress}

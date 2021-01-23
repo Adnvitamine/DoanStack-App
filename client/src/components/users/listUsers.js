@@ -111,7 +111,7 @@ const ListUsers = () => {
             </div>
 
             <div className="userCardAction">
-              <button id="miniDeleteButton" onClick={() => deleteUser(user.id)}>
+              <button className="miniDeleteButton" onClick={() => deleteUser(user.id)}>
                 <i className="far fa-trash-alt"></i>
                 <p>Delete</p>
               </button>

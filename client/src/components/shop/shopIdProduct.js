@@ -355,7 +355,7 @@ const ShopIdProduct = ({ productId, currentUser }) => {
               </div>
               <ul>
                   {listProducts.map((listproduct)=>(
-                    <Link to={`/shop/${listproduct.category}/${listproduct.id}/${listproduct.name}`} style={{ textDecoration: "none"}}>
+                    <Link to={`/shop/${listproduct.category}/${listproduct.id}/${listproduct.name}`} key={listproduct.id} style={{ textDecoration: "none"}}>
                         { listproduct.id !== product.id && (
                           <li><p>{listproduct.name}</p></li>
                         )}

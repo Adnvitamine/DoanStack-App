@@ -108,7 +108,7 @@ const ListProducts = ({ currentUser }) => {
               <EditProduct product={product} />
               <QuillEdit product={product} />
               <button
-                id="miniDeleteButton"
+                className="miniDeleteButton"
                 onClick={() => deleteProduct(product.id)}
               >
                 <i className="far fa-trash-alt"></i>

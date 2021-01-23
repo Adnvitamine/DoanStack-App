@@ -104,7 +104,7 @@ const ListArticles = ({ currentUser }) => {
               {/*
                         <EditArticle article={article} />*/}
               <button
-                id="miniDeleteButton"
+                className="miniDeleteButton"
                 onClick={() => deleteArticle(article.id)}
               >
                 <i className="far fa-trash-alt"></i>

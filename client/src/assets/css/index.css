@@ -54,9 +54,7 @@
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Open Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --ck-z-default: 100;
@@ -65,7 +63,6 @@ body {
 }
 
 #root {
-  /*background: url("../img/w17.jpg") no-repeat center center fixed;*/
   width: 100%;
   background-color: #e9f3fb;
   -webkit-background-size: cover;
@@ -208,6 +205,11 @@ body {
 #switch:checked + #FullFrame .mainBoard #ShopBody #ShopHome b {
   color: white;
 }
+
+#switch:checked + #FullFrame .shopFrame {
+  background-color: black;
+}
+
 #switch:checked
   + #FullFrame
   .mainBoard
@@ -635,4 +637,31 @@ iframe {
   float: left;
   margin-right: var(--ck-image-style-spacing);
   clear: both;
+}
+
+.mt-2 {
+  max-width: 780px;
+  margin: auto;
+}
+
+#ImageFrame {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 10px;
+
+  overflow: hidden;
+}
+#ImageFrame img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+#ImageFrame:hover #ShopProductZoom {
+  visibility: visible;
+  color: rgba(255, 208, 0, 0.7);
+  opacity: 1;
+  transition: visibility 1s linear, opacity 1s linear;
 }

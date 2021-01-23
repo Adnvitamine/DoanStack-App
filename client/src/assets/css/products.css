@@ -30,6 +30,7 @@
 .inputImage {
   border: 1px solid #dadad7;
   background-color: white;
+  overflow: hidden;
 }
 
 progress[value] {
@@ -91,13 +92,14 @@ p[data-value]:after {
 }
 .uploadContainer {
   width: 100%;
-  max-width: 600px;
+  max-width: 780px;
   margin: auto;
   border-radius: 10px;
   background: #f5f6f7;
   box-shadow: -5px 5px 4px rgba(197, 227, 255, 0.5),
     5px 0px 4px rgba(255, 195, 207, 0.5);
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   transition: box-shadow 2s;
 }
 
@@ -174,9 +176,10 @@ p[data-value]:after {
 
 .productImage {
   width: 100%;
-  max-width: 450px;
-  height: auto !important;
+  max-width: 500px;
+  max-height: 400px;
   margin-right: 10px;
+  object-fit: contain;
 }
 .productName {
   font-size: 2rem;
@@ -349,7 +352,6 @@ p[data-value]:after {
 }
 
 .productCardPrice {
-  height: 40px;
   font-size: 18px;
   border-bottom: 1px solid #dee2e6;
   padding-top: 5px;
