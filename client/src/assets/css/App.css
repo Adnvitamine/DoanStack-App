@@ -202,3 +202,27 @@ label {
 #Register {
   padding-top: 10px;
 }
+
+.image-gallery {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+}
+.image-gallery-slide img {
+  width: 100%;
+  height: 350px !important;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center center;
+}
+
+.fullscreen .image-gallery-slide {
+  height: 85vh !important;
+}
+
+.fullscreen .image-gallery-slide img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 85vh !important;
+}

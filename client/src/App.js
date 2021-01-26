@@ -5,6 +5,7 @@ import {
   Link
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-image-gallery/styles/css/image-gallery.css";
 import "./assets/css/App.css";
 import "./assets/css/editor.css";
 import "./assets/css/buttons.css";

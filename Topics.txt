@@ -25,7 +25,7 @@ Use display: flex,
       transform: translateX(-100%);
     }
 
-
+https://pedrobern.github.io/react-tiger-transition/demo/glide
 
 - secure_url https cloudinary
 
