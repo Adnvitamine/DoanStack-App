@@ -1,82 +1,147 @@
-<div id="MoreArticles">
-            <p>
-              <b>Related posts</b>
-            </p>
-            <ul>
-              {listArticles.map((article) => (
-                <li style={{ textAlign: "left" }} key={article.id}>
-                  {articles.title !== article.title && (
-                    <Link
-                      to={`/blog/${article.category}/${article.id}/${article.title}`}
-                    >
-                      <span className="profile-img-card">
-                        <img
-                          className="profile-img-card"
-                          src={article.image}
-                          alt={article.title}
-                        ></img>
-                      </span>
-                      <b>{article.title}</b>
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-</div>
+<div>{allArticles.sort(({id: previousID} , {id: currentID} )=> previousID -currentID).map((article) => (
+                        <div className="blogFrame" key={article.id}>
+                          <div className="blogInfo">
+                                <ul>
+                                  <li>
+                                    <b>by 
+                                    {article.author_avatar === "null" && (
+                                      <img
+                                        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        alt="profile-img"
+                                        className="profile-img-card"
+                                        style={{
+                                          width: "20px",
+                                          height: "20px",
+                                          display: "inline-block",
+                                          marginBottom: "0",
+                                          marginRight: "2px",
+                                        }}
+                                      ></img>
+                                    )}
+                                    {article.author_avatar !== "null" && (
+                                      <img
+                                        src={article.author_avatar}
+                                        className="profile-img-card"
+                                        alt={article.author}
+                                        style={{
+                                          width: "20px",
+                                          height: "20px",
+                                          display: "inline-block",
+                                          marginBottom: "0",
+                                          marginRight: "2px",
+                                        }}
+                                      ></img>
+                                    )}
+                                    {article.author}</b>
+                                  </li>
+                                  
+                                  <li>
+                                    <b>#{article.category}</b>
+                                  </li>
+                                  <li>
+                                    <b>
+                                    {new Intl.DateTimeFormat("nl-BE", {
+                                      year: "numeric",
+                                      month: "long",
+                                      day: "2-digit",
+                                    }).format(Date.parse(article.createdAt))}</b>
+                                  </li>
+                                </ul>
+                              </div>
+                          <div className="blogArticle">
+                            <div className="blogImg">
+                              <img
+                                src={article.image}
+                                alt={article.titre}
+                                style={{ width: "100%" }}
+                              ></img>
+                            </div>
+                            <Link
+                              to={`/blog/${article.category}/${article.id}/${article.title}`}
+                              id="Link"
+                            >
+                              <div className="blogBody">
+                                <div className="blogContent">
+                                  <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
+                                </div>
+                              </div>
+                            </Link>
+                          </div>
+                        </div>
+                      ))}</div>
 
-#MoreArticles p {
-  color: rgb(0, 162, 255);
-  text-align: center;
-  padding: 5px;
-  margin: 0px;
-  border-bottom: 1px solid rgba(97, 96, 96, 0.726);
-}
-#MoreArticles ul {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
 
-#MoreArticles ul li {
-  padding-left: 10px;
-  margin: 0px;
-  border: 1px solid black;
-}
 
-#MoreArticles ul li a {
-  color: black;
-  text-decoration: none;
-  transition: color 0.5s ease-in-out;
-}
-
-#MoreArticles ul li a {
-  margin-bottom: 5px !important;
-}
-
-#MoreArticles ul li:hover a {
-  color: rgb(38, 253, 38);
-  transition: color 0.5s ease-in-out;
-  text-decoration: none;
-}
-#MoreArticles ul li span {
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  margin: 0;
-  transition: width 1s ease-in-out;
-  overflow: hidden;
-  border: 1px solid black;
-  margin-top: 5px;
-}
-
-#MoreArticles ul li a span img {
-  display: inline-block;
-  width: 0px;
-  height: 50px;
-  margin: 0px;
-}
-
-#MoreArticles ul li:hover a span img {
-  width: 50px;
-  transition: width 1s ease-in-out;
-}
+                      <div>
+                              {allArticles.sort(({id: previousID} , {id: currentID} )=> currentID -previousID).map((article) => (
+                            <div className="blogFrame" key={article.id}>
+                              <div className="blogInfo">
+                                    <ul>
+                                      <li>
+                                        <b>by 
+                                        {article.author_avatar === "null" && (
+                                          <img
+                                            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                            alt="profile-img"
+                                            className="profile-img-card"
+                                            style={{
+                                              width: "20px",
+                                              height: "20px",
+                                              display: "inline-block",
+                                              marginBottom: "0",
+                                              marginRight: "2px",
+                                            }}
+                                          ></img>
+                                        )}
+                                        {article.author_avatar !== "null" && (
+                                          <img
+                                            src={article.author_avatar}
+                                            className="profile-img-card"
+                                            alt={article.author}
+                                            style={{
+                                              width: "20px",
+                                              height: "20px",
+                                              display: "inline-block",
+                                              marginBottom: "0",
+                                              marginRight: "2px",
+                                            }}
+                                          ></img>
+                                        )}
+                                        {article.author}</b>
+                                      </li>
+                                      
+                                      <li>
+                                        <b>#{article.category}</b>
+                                      </li>
+                                      <li>
+                                        <b>
+                                        {new Intl.DateTimeFormat("nl-BE", {
+                                          year: "numeric",
+                                          month: "long",
+                                          day: "2-digit",
+                                        }).format(Date.parse(article.createdAt))}</b>
+                                      </li>
+                                    </ul>
+                                  </div>
+                              <div className="blogArticle">
+                                <div className="blogImg">
+                                  <img
+                                    src={article.image}
+                                    alt={article.titre}
+                                    style={{ width: "100%" }}
+                                  ></img>
+                                </div>
+                                <Link
+                                  to={`/blog/${article.category}/${article.id}/${article.title}`}
+                                  id="Link"
+                                >
+                                  <div className="blogBody">
+                                    <div className="blogContent">
+                                      <div className="ql-editor" dangerouslySetInnerHTML={{ __html: article.content }} />
+                                    </div>
+                                  </div>
+                                </Link>
+                              </div>
+                            </div>
+                          ))}
+                        </div>

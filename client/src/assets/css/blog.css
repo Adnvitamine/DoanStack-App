@@ -54,7 +54,7 @@
 .blogFrame {
   position: relative;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   border: 1px solid rgba(182, 182, 182, 0.877);
   width: 80%;
   display: flex;
@@ -86,6 +86,7 @@
   width: 100%;
   max-height: 270px;
   max-width: 300px;
+  padding-bottom: 10px;
   margin: auto;
   overflow: hidden;
 }
