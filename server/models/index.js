@@ -31,6 +31,7 @@ db.productrating = require("../models/product_rating.model.js")(
   sequelize,
   Sequelize
 );
+db.mail = require("../models/mail.model.js")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",

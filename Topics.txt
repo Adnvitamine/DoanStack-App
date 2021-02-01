@@ -1,5 +1,9 @@
 Topics to talk about:
 
+- react website analysis
+
+- Ckeditor local build => https://topiqs.online/2193 
+
 - How to change value in LocalStorage (hint: editUser.js)
 
 - Git can save your day, git init, git add ., git commit -m "", git status, git log, git remote -v, .gitignore 
@@ -27,178 +31,23 @@ Use display: flex,
 
 https://pedrobern.github.io/react-tiger-transition/demo/glide
 
-- secure_url https cloudinary
+- result.secure_url for https cloudinary
 
 - ckeditor invalid type error import { CKeditor } from "@ckeditor/ckeditor5-react";
 
 - Package.json: update all dependencies in package: https://www.carlrippon.com/upgrading-npm-dependencies/
 
+- arrow function vs function => https://sebhastian.com/react-arrow-function/
 
-  background-color: rgba(233, 243, 251, 0.5);
+- array : .map, .filter .push  array[index]=> mailbox for complete understanding => https://stackoverflow.com/questions/5915789/how-to-replace-item-in-array
 
-1116.61
+- How to use useEffect, useState properly
 
-1229.50
+- Sequelize: -force true vs alter true
 
-    border-radius: 50px;
-background: #272626;
-box-shadow:  8px 8px 16px #1e1d1d,
-             -8px -8px 16px #302f2f;
+- Build your own pagination for react
 
-About this item
-Multi-function alarm. Acryl Glass
-LED light
-Stainless steel band
-Water resistant to 5 bar
-Calendar function
-
-Chronograph watches:
-A chronograph watch is a display watch with a timer (stopwatch) function. To use the timer function,
- push the bottom button on the side of the watch to set the second hand to zero (if it’s not on zero yet)
- and push the top button to start and stop timing. Find out more about chronograph watches here.
-
-<button type="button" onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
-                        {this.state.isToggleOn ? <li className="mobilenav-item" id="MobileHome">
-                          <Link to={"/home"} className="nav-link">
-                            on
-                          </Link>
-                        </li> : <li className="mobilenav-item" id="MobileHome">
-                          <Link to={"/home"} className="nav-link">
-                            off
-                          </Link>
-                        </li>}
-                        <li className="mobilenav-item" id="MobileHome">
-                          <Link to={"/home"} className="nav-link">
-                            Home
-                          </Link>
-                        </li>
-                        <li className="mobilenav-item" id="MobileBlog">
-                          <Link to={"/blog"} className="nav-link">
-                            Blog
-                          </Link>
-                        </li>
-                        <li className="mobilenav-item" id="MobileShop">
-                          <Link to={"/shop"} className="nav-link">
-                            Shop
-                          </Link>
-                        </li>
-
-                        {showModeratorBoard && (
-                          <li className="mobilenav-item">
-                            <Link to={"/mod"} className="nav-link">
-                              Mod
-                            </Link>
-                          </li>
-                        )}
-
-                        {currentUser && (
-                          <li className="mobilenav-item">
-                            <Link to={"/user"} className="nav-link">
-                              User
-                            </Link>
-                          </li>
-                        )}
-                        
-                        {showAdminBoard && (
-                          <li className="mobilenav-item">
-                            <Link to={"/admin"} className="nav-link">
-                              Admin
-                            </Link>
-                          </li>
-                        )}
-
-                        <li className="mobilenav-item">
-                          <Link to={"/profile"} className="nav-link">
-                            {currentUser.username}
-                          </Link>
-                        </li>
-                        <li className="mobilenav-item">
-                          <a
-                            href="/login"
-                            className="nav-link"
-                            onClick={this.logOut}
-                          >
-                            <i className="fas fa-sign-out-alt"></i>
-                          </a>
-                        </li>
-                      </ul>
+- Build your own form validation with yup and react hook form
 
 
-@keyframes slidy {
-  0% {
-    left: 0%;
-  }
-  5% {
-    left: 0%;
-  }
-  10% {
-    left: 0%;
-  }
-  15% {
-    left: -100%;
-  }
-  20% {
-    left: -100%;
-  }
-  25% {
-    left: -100%;
-  }
-  30% {
-    left: -200%;
-  }
-  35% {
-    left: -200%;
-  }
-  40% {
-    left: -200%;
-  }
-  45% {
-    left: -300%;
-  }
-  50% {
-    left: -300%;
-  }
-  55% {
-    left: -300%;
-  }
-  60% {
-    left: -400%;
-  }
-  65% {
-    left: -400%;
-  }
-  70% {
-    left: -400%;
-  }
-  70% {
-    left: 0%;
-  }
-  100% {
-    left: 0%;
-  }
-}
 
-#slider {
-  overflow: hidden;
-  width: 100%;
-  max-width: 450px;
-  margin: auto;
-}
-.productBody #slider {
-  margin-top: 0 !important;
-}
-
-#slider figure img {
-  margin-right: 0px;
-}
-
-#slider figure {
-  position: relative;
-  display: inline-block;
-  width: 600%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 15s slidy infinite;
-}

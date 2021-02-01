@@ -8,15 +8,17 @@ function newStart() {
 
     db.sequelize
   .sync({
-    force: true
+    //force: true
+    alter: true
   })
   .then(() => {
     console.log(
-      "Drop and Resync Db"
+      //"Drop and Resync Db"
       //"No Drop & Resync"
+      "Alter & Resync"
     );
-    initial();
-    createAdmin();
+    //initial();
+    //createAdmin();
     
   });
 }

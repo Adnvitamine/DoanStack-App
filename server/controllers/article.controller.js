@@ -175,7 +175,7 @@ exports.update = (req, res) => {
     })
     .catch((err) => {
       res.status(300).send({
-        message: err.message || `Could not delete Article with id ${id}`,
+        message: err.message || `Cannot update Article with id ${id}`,
       });
     });
 };

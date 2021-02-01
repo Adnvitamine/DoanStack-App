@@ -1,7 +1,8 @@
 import { Fragment, Component } from "react";
-import Products from "./products/products";
 import authService from "../services/auth.service";
 import UserService from "../services/user.service";
+import CreateProduct from "./products/createProduct";
+import ListProducts from "./products/listProducts";
 
 export default class BoardUser extends Component {
   constructor(props) {
@@ -57,7 +58,8 @@ export default class BoardUser extends Component {
               {/*this.state.content*/}
             </p>
           </div>
-          <Products currentUser={currentUser} />
+          <ListProducts currentUser={currentUser} />
+          <CreateProduct currentUser={currentUser} />
         </Fragment>
       );
     }

@@ -1,7 +1,8 @@
 import { Fragment, Component } from "react";
 import authService from "../services/auth.service";
 import UserService from "../services/user.service";
-import Articles from "../components/articles/articles";
+import CreateArticle from "./articles/createArticle";
+import ListArticles from "./articles/listArticles";
 
 export default class BoardModerator extends Component {
   constructor(props) {
@@ -57,7 +58,8 @@ export default class BoardModerator extends Component {
               {/*this.state.content*/}
             </p>
           </div>
-          <Articles currentUser={currentUser} />
+          <ListArticles currentUser={currentUser} />
+          <CreateArticle currentUser={currentUser} />
         </Fragment>
       );
     } else {

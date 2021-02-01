@@ -1,4 +1,5 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
+import ImageGallery from 'react-image-gallery';
 //var sanitizeHtml = require('sanitize-html');
 
 //
@@ -11,10 +12,11 @@ const ProductDescription = ({ product }) => {
 
     
   */
-
+  const [productimgs, setProductimgs] = useState([]);
+  const images = [];
   //const [productimgs, setProductimgs] = useState([]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const getProductimgs = async () => {
       try {
         const response = await fetch(
@@ -30,20 +32,30 @@ const ProductDescription = ({ product }) => {
 
     getProductimgs();
     //console.log(productimgs);
-  }, [product.id]);*/
+  }, [product.id]);
+
+  useEffect(()=>{
+    images.push({
+      original: product.image,
+      thumbnail: product.image
+    });
+
+    for (let i = 0; i < productimgs.length; i++) {
+      //previews.push(files[i]);
+      //array.push(files[i]);
+      images.push({
+        original: productimgs[i].path,
+        thumbnail: productimgs[i].path
+      });
+    }
+  });
 
   //var a = '<figure class="media"><oembed url="https://www.youtube.com/watch?v=VCqA52XQlys"></oembed></figure>';
   return (
     <Fragment>
       <div className="productContainer">
         <div className="productHeader">
-          <a href={product.image}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="productImage"
-            />
-          </a>
+        <ImageGallery showBullets={true} showIndex={true} slideOnThumbnailOver={true} items={images}  />
           <div className="productName">{product.name}</div>
           <div
             id="ProductInfo"

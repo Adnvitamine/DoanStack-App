@@ -3,16 +3,12 @@
 }
 
 .mainBoard {
+  position: relative;
   min-height: 100vh;
 }
 
 .adminBoard {
   width: 100%;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
 }
 
 .card-container.card {
@@ -207,6 +203,7 @@ label {
   width: 100%;
   max-width: 550px;
   height: auto;
+  margin: auto;
 }
 .image-gallery-slide img {
   width: 100%;

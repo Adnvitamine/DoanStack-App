@@ -73,14 +73,15 @@ ul {
 }
 
 .homeBody {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
   width: 90%;
   max-width: 1000px;
   display: grid;
   place-items: center;
   background-color: rgba(255, 255, 255, 0);
-  margin: auto;
-  min-height: 100vh;
 }
 
 #InlineSVG_2 {

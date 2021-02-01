@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-function HomeSVG(){
+const HomeSVG = () => {
   return (
     <Fragment>
       <svg width="100%" viewBox="0 0 1018 760" fill="none">

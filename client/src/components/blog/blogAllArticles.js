@@ -65,7 +65,7 @@ const BlogAllArticles = ({ currentUser }) => {
   let showPage;
   if(currentPage){
       if(sortButton === true){
-        showPage = <div>{allArticles.sort(({id: previousID} , {id: currentID} )=> currentID -previousID).slice(firstPost, lastPost).map((article) => (
+        showPage = <div>{allArticles.sort(({id: previousID} , {id: currentID} )=> currentID - previousID).slice(firstPost, lastPost).map((article) => (
           <div className="blogFrame" key={article.id}>
             <div className="blogInfo">
                   <ul>

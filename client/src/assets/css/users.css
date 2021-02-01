@@ -61,3 +61,29 @@
   height: 50px;
   padding-top: 10px;
 }
+
+.mailbox p {
+  margin: 0;
+}
+
+.mailboxname {
+  background-color: rgb(255, 255, 255);
+}
+
+.mailboxname:hover {
+  background-color: rgb(170, 238, 250);
+}
+
+.recentMessage {
+  background-color: red;
+  animation: recent 1s ease-in-out infinite alternate;
+}
+
+@keyframes recent {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: orange;
+  }
+}

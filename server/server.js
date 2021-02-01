@@ -5,7 +5,7 @@ const cloudinary = require("./config/cloudinaryConfig");
 const { uploader } = require ('cloudinary');
 const { multerUpload, dataUri, upload } = require("./middlewares/multer");
 const fs = require('fs');
-//const newStart = require("./middlewares/newStart");
+const newStart = require("./middlewares/newStart");
 
 
 //const path = require('path');
@@ -35,7 +35,7 @@ app.use(express.static("public")); //to access the files in public folder
 //const User = db.user;
 
 
-//newStart();
+newStart();
 
 
 /*
@@ -72,7 +72,7 @@ require("./routes/article.routes")(app);
 require("./routes/articlecom.routes")(app);
 require("./routes/articleimg.routes")(app);
 require("./routes/productRating.routes")(app);
-
+require("./routes/mail.routes")(app);
 
 
 // file upload api

@@ -1,5 +1,7 @@
 #articlesList {
   width: 100%;
+  max-width: 1000px;
+  margin: auto;
   margin-top: 10px;
   padding-bottom: 20px;
   transition: box-shadow 2s, background-color 2s linear;
@@ -13,6 +15,8 @@
 }
 
 #articleCreate {
+  max-width: 1000px;
+  margin: auto;
   margin-top: 50px;
   padding-bottom: 20px;
   margin-bottom: 50px;

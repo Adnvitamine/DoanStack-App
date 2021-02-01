@@ -1,10 +1,9 @@
-import { Component, Fragment } from "react";
-import UserService from "../services/user.service";
-import ListUsers from "./users/listUsers";
-import MailBox from "./mails/mailbox";
+import { Fragment, Component } from "react";
 import authService from "../services/auth.service";
+import UserService from "../services/user.service";
+import MailBox from "./mails/mailbox";
 
-export default class BoardAdmin extends Component {
+export default class BoardMail extends Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +14,7 @@ export default class BoardAdmin extends Component {
   }
 
   componentDidMount() {
-    UserService.getAdminBoard().then(
+    UserService.getUserBoard().then(
       (response) => {
         this.setState({
           content: response.data,
@@ -36,7 +35,7 @@ export default class BoardAdmin extends Component {
 
   render() {
     const { currentUser } = this.state;
-    //console.log(currentUser.roles[2]);
+
     if (currentUser == null) {
       return (
         <Fragment>
@@ -46,25 +45,19 @@ export default class BoardAdmin extends Component {
           <div></div>
         </Fragment>
       );
-    } else if (currentUser.roles[2] === "Role: ADMIN") {
-      return (
-        <Fragment>
-        <div id="TitleLink">
-          <h2>ADMIN PANEL</h2>
-        </div>
-          <div className="BrowserNavbar">
-            <p>"Manage registered users" - DoanStack.be</p>
-          </div>
-          <ListUsers />
-          <MailBox currentUser={currentUser} />
-        </Fragment>
-      );
     } else {
       return (
         <Fragment>
+        <div id="TitleLink">
+          <h2>Mail</h2>
+        </div>
           <div className="BrowserNavbar">
-            <p>No role permission</p>
+            <p>
+              "Manage all your products here" - DoanStack.be
+              {/*this.state.content*/}
+            </p>
           </div>
+          <MailBox currentUser={currentUser} />
         </Fragment>
       );
     }
