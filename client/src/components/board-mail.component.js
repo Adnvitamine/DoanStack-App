@@ -1,9 +1,11 @@
-import { Fragment, Component } from "react";
+import React from 'react';
+import { Fragment} from "react";
 import authService from "../services/auth.service";
 import UserService from "../services/user.service";
 import MailBox from "./mails/mailbox";
+import ListUsers from "./users/listUsers";
 
-export default class BoardMail extends Component {
+export default class BoardMail extends React.Component {
   constructor(props) {
     super(props);
 
@@ -53,10 +55,11 @@ export default class BoardMail extends Component {
         </div>
           <div className="BrowserNavbar">
             <p>
-              "Manage all your products here" - DoanStack.be
+              "Send messages to members"
               {/*this.state.content*/}
             </p>
           </div>
+          <ListUsers currentUser={currentUser} />
           <MailBox currentUser={currentUser} />
         </Fragment>
       );

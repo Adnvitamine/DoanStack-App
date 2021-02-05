@@ -9,15 +9,15 @@ import CustomUpload from "../../js/CustomUploader";
 //const sanitizeHtml = require('sanitize-html');
 
 const EditProduct = ({ product }) => {
-  const [name, setName] = useState(product.name);
   const [product_id] = useState(product.id);
+  const [name, setName] = useState(product.name);
   const [vendor_id] = useState(product.vendor_id);
   const [vendor, setVendor] = useState(product.vendor);
   const [description, setDescription] = useState(product.description);
   const [price, setPrice] = useState(product.price);
   const [quantity, setQuantity] = useState(product.quantity);
-  const [category, setCategory] = useState();
   const [status, setStatus] = useState(product.status);
+  const [category, setCategory] = useState(product.category);
   
 
 
@@ -276,6 +276,7 @@ const EditProduct = ({ product }) => {
           price,
           status,
           category,
+          quantity,
         };
         const response = await fetch(
           `http://localhost:8080/api/products/${product.id}`,
@@ -466,12 +467,12 @@ const EditProduct = ({ product }) => {
                     {/*data.path && <img src={data.path} alt={data.name} />*/}
                   </div>
                 </div>
-
                 <button id="uploadButton" onClick={soloUploadFile}>
                   <i className="fas fa-upload"></i>
                   <p>Upload</p>
                 </button>
               </div>
+              
               <div className="uploadContainer" style={{ marginTop: "20px" }}>
                 <p style={{ textAlign: "center" }}>
                   Add more images for your product (max:5!)
@@ -675,12 +676,12 @@ const EditProduct = ({ product }) => {
                         className="form-control"
                         onChange={(e) => setCategory(e.target.value)}
                       >
-                        <option value="others">Choose..</option>
-                        <option>Cosmetic</option>
-                        <option>Fashion</option>
-                        <option>PC</option>
-                        <option>Estate</option>
-                        <option>Services</option>
+                        <option value={category}>{category}</option>
+                        {category !== "Cosmetic" && (<option>Cosmetic</option>)}
+                        {category !== "Fashion" && (<option>Fashion</option>)}
+                        {category !== "PC" && (<option>PC</option>)}
+                        {category !== "Estate" && (<option>Estate</option>)}
+                        {category !== "Services" && (<option>Services</option>)}
                       </select>
                     </div>
                   </div>

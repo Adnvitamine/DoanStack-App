@@ -312,11 +312,12 @@ const QuillEdit = ({ article }) => {
                         className="form-control"
                         onChange={(e) => setCategory(e.target.value)}
                       >
-                        <option>Others</option>
-                        <option>News</option>
-                        <option>BackEnd</option>
-                        <option>FrontEnd</option>
-                        <option>Life</option>
+                        <option value={category} >{category}</option>
+                        {category !== "News" && <option>News</option>}
+                        {category !== "BackEnd" && <option>BackEnd</option>}
+                        {category !== "FrontEnd" && <option>FrontEnd</option>}
+                        {category !== "Life" && <option>Life</option>}
+                        {category !== "Others" && <option>Others</option>}
                       </select>
                     </div>
                   </div>

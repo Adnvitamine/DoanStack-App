@@ -1,10 +1,11 @@
-import { Fragment, Component } from "react";
+import React from 'react';
+import { Fragment } from "react";
 import authService from "../services/auth.service";
 import UserService from "../services/user.service";
 import CreateProduct from "./products/createProduct";
 import ListProducts from "./products/listProducts";
 
-export default class BoardUser extends Component {
+export default class BoardUser extends React.Component {
   constructor(props) {
     super(props);
 

@@ -1,4 +1,7 @@
-import { Fragment, Component } from "react";
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import { Fragment} from "react";
+import { BrowserRouter } from "react-router-dom";
 import {
   Switch,
   Route,
@@ -43,7 +46,7 @@ import ShopCateg from "./components/shop/shopCateg";
 import ShopId from "./components/shop/shopId";
 import Footer from "./components/footer/footer";
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
@@ -92,6 +95,8 @@ class App extends Component {
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
 
     return (
+      
+    <BrowserRouter>
       <Fragment>
             <input id="switch" type="checkbox" />
             <div id="FullFrame">
@@ -317,8 +322,11 @@ class App extends Component {
               <Footer />
             </div>
       </Fragment>
+    </BrowserRouter>
+      
     );
   }
 }
 
 export default App;
+ReactDOMServer.renderToString(<App/>);

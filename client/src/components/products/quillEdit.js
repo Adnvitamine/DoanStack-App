@@ -1,4 +1,4 @@
-import { Fragment, useState, useRef } from "react";
+import { Fragment, useState, useRef, useEffect } from "react";
 import axios from "axios";
 //import ReactQuill, {Quill} from 'react-quill';
 import QuillEditor from "../editor/QuillEditor";
@@ -11,13 +11,14 @@ import QuillEditor from "../editor/QuillEditor";
 
 const QuillEdit = ({ product }) => {
   const [product_id] = useState(product.id);
-  const [description, setDescription] = useState(product.description);
   const [name, setName] = useState(product.name);
-  const [vendor, setVendor] = useState(product.vendor);
   const [vendor_id] = useState(product.vendor_id);
-  const [status, setStatus] = useState(product.status);
+  const [vendor, setVendor] = useState(product.vendor);
+  const [description, setDescription] = useState(product.description);
   const [price, setPrice] = useState(product.price);
-  const [category, setCategory] = useState();
+  const [quantity, setQuantity] = useState(product.quantity);
+  const [status, setStatus] = useState(product.status);
+  const [category, setCategory] = useState(product.category);
 
   // SOLO: Uploaded Solo File
   const [solofile, setSoloFile] = useState();
@@ -80,34 +81,114 @@ const QuillEdit = ({ product }) => {
   // MULTI: storing the recived file from backend
   const [previews, setPreviews] = useState([]);
   const [file, setFile] = useState(); // storing the uploaded files
+  const [uploaderror, setUploaderror] = useState();
+  const imgmax = 5;
   const [pathurl, setPathurl] = useState([]);
   const [progress, setProgess] = useState(0); // progess bar
   const el = useRef(); // accessing input element
+  const [productimgs, setProductimgs] = useState([]);
+  const [imgavailable, setImgavailable] = useState(5);
+  const [array] = useState([]);
+
+  const deleteImg = async (id) =>{
+    try {
+      const deleteImage = await fetch(
+        `http://localhost:8080/api/productimgs/${id}`, { method: "DELETE"}
+      );
+        setProductimgs(productimgs.filter((productimg) => productimg.id !== id));
+        console.log(deleteImage);
+    } catch(err){
+      console.error(err.message);
+    }
+  }
+
+  const deleteImgUpload = async (index) =>{
+    try {
+        setPathurl(pathurl.filter((path) => path !== index));
+        setFile(file.filter((name) => name !== index));
+        console.log(previews);
+        const resultat = imgavailable + 1;
+        setImgavailable(resultat);
+
+    } catch(err){
+      console.error(err.message);
+    }
+  }
+
+  useEffect(() => {
+    const getProductimgs = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/productimgs/product_id/${product.id}`
+        );
+        const jsonData = await response.json();
+
+        setProductimgs(jsonData);
+      
+      } catch (err) {
+        console.error(err.message);
+      }
+      
+    
+    };
+    
+    getProductimgs();
+  }, [product.id]);
+
+  
+  useEffect(()=>{
+    const resultat = imgmax - productimgs.length; 
+    setImgavailable(resultat);
+  }, [productimgs]);
+
 
   const handleChange = (e) => {
-    setProgess(0);
     const files = e.target.files; // accesing file
-    setFile(e.target.files); // storing file
 
-    if (!e.target.files) {
-      setPreviews({
-        file: null,
-      });
-    } else {
-      //const array = [];
-      for (let i = 0; i < files.length; i++) {
-        //previews.push(files[i]);
-        //array.push(files[i]);
-        previews.push(URL.createObjectURL(files[i]));
+    if(files.length > 5){
+      setUploaderror("Cannot exceed 5!");
+    }else{
+
+      setUploaderror();
+
+      setProgess(0);
+
+    console.log(files);
+    if(files.length <= imgavailable){
+       // storing file
+
+      if (!e.target.files) {
+        setPreviews({
+          file: null,
+        });
+      } else {
+        //const array = [];
+        
+        for (let i = 0; i < files.length; i++) {
+          //previews.push(files[i]);
+          //array.push(files[i]);
+          previews.push(URL.createObjectURL(files[i]));
+          file.push(files[i]);
+          
+        }
+        console.log(imgmax);
+        console.log(files.length);
+        const resultat = imgavailable - files.length;
+        setImgavailable(resultat);
       }
+    }else{
+      setUploaderror("Cannot exceed 5!");
+    }
     }
   };
 
   const uploadFile = () => {
+    console.log(file);
     const formData = new FormData();
     for (let i = 0; i < file.length; i++) {
       formData.append("file", file[i]);
     }
+    console.log(formData);
     //formData.append('file', file); // appending file
     axios
       .post("http://localhost:8080/multiuploads", formData, {
@@ -119,34 +200,16 @@ const QuillEdit = ({ product }) => {
         },
       })
       .then((res) => {
-        const array = [];
+        console.log(res);
+        console.log(res.data);
+        console.log(res.data.data.length);
         for (let i = 0; i < res.data.data.length; i++) {
-          //array.push("http://localhost:8080/" + res.data[i].filename);
+          //console.log("res.data[i].url");
           array.push(res.data.data[i].url);
         }
         setPathurl(array);
-        /*  
-          
-          if(!res.data){
-          setDatas({
-                file: null
-            })
-        }else{
-         
-         for (let i = 0; i < res.data.length; i++) {
-             //previews.push(files[i]);
-             //array.push(files[i]);
-             datas.push(res.data[i]);    
-         }
-         //console.log(previews);
+        setPreviews([]);
 
-         
-        }*/
-        //getFile({ name: res.data.name,
-        //       path: 'http://localhost:8080' + res.data.path
-        //   });
-
-        //const path = res.data.path;
       })
       .catch((err) => console.log(err));
   };
@@ -165,6 +228,7 @@ const QuillEdit = ({ product }) => {
           price,
           status,
           category,
+          quantity,
         };
         const response = await fetch(
           `http://localhost:8080/api/products/${product.id}`,
@@ -191,6 +255,7 @@ const QuillEdit = ({ product }) => {
           price,
           status,
           category,
+          quantity,
         };
         const response = await fetch(
           `http://localhost:8080/api/products/${product.id}`,
@@ -239,45 +304,43 @@ const QuillEdit = ({ product }) => {
   /*
    
     */
-  let soloimgPreview;
-  if (solopreview) {
-    soloimgPreview = (
-      <img
-        src={solopreview.file}
-        alt="soloimgPreview"
-        className="soloimgPreview"
-        style={{ width: "100%" }}
-      />
-    );
-  }
+   let soloimgPreview;
+   if (solopreview) {
+     soloimgPreview = <img src={solopreview.file} alt="" />;
+   };
 
   let imgPreview;
   if (previews) {
     for (let i = 0; i < previews.length; i++) {
       imgPreview = previews.map((index) => (
         <div key={index}>
-          <img
-            src={index}
-            alt="imgsPreview"
-            className="imgsPreview"
-            style={{ width: "100%" }}
-          ></img>
+          <img src={index} alt=""></img>
         </div>
       ));
     }
-    //imgPreview = <img src={previews.file}></img>;
-    //console.log(previews);
-  }
+  };
 
-  /*let pathPreview;
-   if (pathurl) {
-       console.log(pathurl);
-       for (let i = 0; i < pathurl.length; i++) {
-       pathPreview = pathurl.map(index=>(<div key={index}><img src={index} alt=""></img></div>));
-        }
-   //datasPreview = <p>{datas}</p>;
-   
-}*/
+  let galeriePreview;
+  if (pathurl) {
+    for (let i = 0; i < pathurl.length; i++) {
+      galeriePreview = pathurl.map((index) => (
+        <div className="galeryItem" key={index} style={{ position: "relative" ,maxWidth: "130px", margin: "5px"}}>
+                    <button
+                      className="tinyDeleteButton"
+                      onClick={() => deleteImgUpload(index)}
+                      style={{ position: "absolute", right:"0"}}
+                    ><i className="far fa-trash-alt"></i>
+                    </button>
+                    <img
+                      src={index}
+                      className="galeryImage"
+                      alt=""
+                      style={{ maxWidth: "130px", height: "auto", border: "1px solid rgb(189, 184, 184)" }}
+                    />
+                  </div>
+      ));
+    }
+  };
 
   return (
     <Fragment>
@@ -316,16 +379,6 @@ const QuillEdit = ({ product }) => {
                 <p style={{ textAlign: "center" }}>
                   Change your product image:
                 </p>
-                {/*
-                        <div className="form-group preview">
-                            {imgPreview}
-                        </div>
-
-                        <div className="form-group">
-                            <input type="file" className="form-control" onChange={uploadSingleFile} />
-                        </div>
-                        
-                        */}
 
                 <div className="file-upload">
                   <input
@@ -355,39 +408,39 @@ const QuillEdit = ({ product }) => {
                   </progress>
                   <div className="form-group preview">
                     {soloimgPreview}
-
-                    {/*
-                                            previews &&
-                                            previews.map((file, index) => (
-                                                <li className="list-group-item" key={index}>
-                                                {file.name}
-                                                </li>
-                                            ))
-                                        */}
-                    {/*data.path && <img src={data.path} alt={data.name} />*/}
                   </div>
                 </div>
-
                 <button id="uploadButton" onClick={soloUploadFile}>
                   <i className="fas fa-upload"></i>
                   <p>Upload</p>
                 </button>
               </div>
+
               <div className="uploadContainer" style={{ marginTop: "20px" }}>
                 <p style={{ textAlign: "center" }}>
                   Add more images for your product (max:5!)
                 </p>
-                {/*
-                                    <div className="form-group preview">
-                                        {imgPreview}
-                                    </div>
 
-                                    <div className="form-group">
-                                        <input type="file" className="form-control" onChange={uploadSingleFile} />
-                                    </div>
-                                    
-                                    */}
                 <div className="file-upload">
+                <p>Your product galery</p>
+                  <div className="productGalery" style={{ width: "100%", backgroundColor: " #414141", display: "flex", flexDirection: "row", flexWrap: "wrap", border: "1px solid rgb(189, 184, 184)", marginBottom: "10px", justifyContent: "center"}}>
+                {productimgs.map((productimg) => (
+                  <div className="galeryItem" key={productimg.id} style={{ position: "relative" ,maxWidth: "130px", margin: "5px"}}>
+                    <button
+                      className="tinyDeleteButton"
+                      onClick={() => deleteImg(productimg.id)}
+                      style={{ position: "absolute", right:"0"}}
+                    ><i className="far fa-trash-alt"></i>
+                    </button>
+                    <img
+                      src={productimg.path}
+                      className="galeryImage"
+                      alt=""
+                      style={{ maxWidth: "130px", height: "auto", border: "1px solid rgb(189, 184, 184)" }}
+                    />
+                  </div>
+              ))}{galeriePreview}
+                </div>
                   <input
                     type="file"
                     name="file"
@@ -396,6 +449,10 @@ const QuillEdit = ({ product }) => {
                     onChange={handleChange}
                     className="inputImage"
                   />
+                   {imgavailable === 0 && (<small id="emailHelp" className="form-text text-muted">Your product galery is<span style={{color: "red"}}> full</span>.</small>)}
+                    {imgavailable === 1 && (<small id="emailHelp" className="form-text text-muted"><span style={{color: "blue"}}>{imgavailable}</span> image left</small>)}
+                    {imgavailable > 1 && (<small id="emailHelp" className="form-text text-muted"><span style={{color: "blue"}}>{imgavailable}</span> images available</small>)}
+                  {uploaderror && <div className="alert alert-danger" role="alert">{uploaderror}</div>}
                   <p
                     style={{ width: `${progress}%` }}
                     data-value={progress}
@@ -412,14 +469,6 @@ const QuillEdit = ({ product }) => {
                   </progress>
                   <div className="form-group preview">
                     {imgPreview}
-                    {/*{pathPreview}
-                                        previews &&
-                                        previews.map((file, index) => (
-                                            <li className="list-group-item" key={index}>
-                                            {file.name}
-                                            </li>
-                                        ))*/}
-                    {/*data.path && <img src={data.path} alt={data.name} />*/}
                   </div>
                 </div>
 
@@ -431,7 +480,7 @@ const QuillEdit = ({ product }) => {
 
               <form className="mt-2">
                 <div className="form-row">
-                  <div className="form-group col-md-6">
+                  <div className="form-group col-md-4">
                     <div className="input-group ">
                       <div className="input-group-prepend">
                         <span className="input-group-text">Name:</span>
@@ -445,7 +494,7 @@ const QuillEdit = ({ product }) => {
                     </div>
                   </div>
 
-                  <div className="form-group col-md-6">
+                  <div className="form-group col-md-4">
                     <div className="input-group ">
                       <div className="input-group-prepend">
                         <span className="input-group-text">Vendor:</span>
@@ -458,10 +507,25 @@ const QuillEdit = ({ product }) => {
                       ></input>
                     </div>
                   </div>
+
+                  <div className="form-group col-md-4">
+                    <div className="input-group">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text">Quantity</span>
+                      </div>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
+                        className="form-control"
+                      />
+                    </div>
+                  </div>
+
                 </div>
-                {/*<label className="mt-2">Product Description</label>        
-                            <textarea className="form-control" value={description} onChange={e => setDescription(e.target.value)}></textarea>
-                            */}
+
                 <QuillEditor
                   toolbarId={`toolbar${product_id}`}
                   value={description}
@@ -518,12 +582,12 @@ const QuillEdit = ({ product }) => {
                         className="form-control"
                         onChange={(e) => setCategory(e.target.value)}
                       >
-                        <option value="others">Choose..</option>
-                        <option>Cosmetic</option>
-                        <option>Fashion</option>
-                        <option>PC</option>
-                        <option>Estate</option>
-                        <option>Services</option>
+                        <option value={category}>{category}</option>
+                        {category !== "Cosmetic" && (<option>Cosmetic</option>)}
+                        {category !== "Fashion" && (<option>Fashion</option>)}
+                        {category !== "PC" && (<option>PC</option>)}
+                        {category !== "Estate" && (<option>Estate</option>)}
+                        {category !== "Services" && (<option>Services</option>)}
                       </select>
                     </div>
                   </div>

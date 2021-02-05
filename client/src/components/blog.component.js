@@ -1,4 +1,5 @@
-import { Fragment, Component } from "react";
+import React from 'react';
+import { Fragment } from "react";
 /*import {
   HashRouter as Router,
   Switch,
@@ -8,7 +9,7 @@ import { Fragment, Component } from "react";
 */
 import BlogHome from "../components/blog/blogHome";
 
-export default class Blog extends Component {
+export default class Blog extends React.Component {
   render() {
     return (
       <Fragment>
