@@ -1,5 +1,5 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const cors = require("cors");
 const cloudinary = require("./config/cloudinaryConfig");
 const { uploader } = require ('cloudinary');
@@ -53,10 +53,10 @@ var multiupload = multer({ storage: storage }).array("file");
 */
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // parse requests of content-type - application/json
-app.use(bodyParser.json({ limit: "800kb" }));
+app.use(express.json({ limit: "800kb" }));
 
 // simple route
 app.get("/", (req, res) => {
