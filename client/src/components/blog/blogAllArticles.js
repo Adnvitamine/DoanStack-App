@@ -30,6 +30,12 @@ const BlogAllArticles = ({ currentUser }) => {
   }, []);
 
   useEffect(()=>{
+    if(allArticles){
+      console.log(Array.isArray(allArticles));
+    }
+  }, [allArticles]);
+
+  useEffect(()=>{
     setLastPost(currentPage*postLimit);
     setFirstPost(lastPost-postLimit);
   }, [currentPage, lastPost])

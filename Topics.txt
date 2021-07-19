@@ -49,5 +49,4 @@ https://pedrobern.github.io/react-tiger-transition/demo/glide
 
 - Build your own form validation with yup and react hook form
 
-
-
+- build your hooks for Firebase link => https://github.com/briandesousa/firebase-with-react-hooks/blob/logrocket-blog/src/App.js
