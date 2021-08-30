@@ -1,3 +1,4 @@
+const sslRedirect = require("heroku-ssl-redirect");
 const express = require("express");
 //const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -57,6 +58,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // parse requests of content-type - application/json
 app.use(express.json({ limit: "800kb" }));
+
+// Enable SSL redirect
+app.use(sslRedirect());
 
 // simple route
 app.get("/", (req, res) => {
