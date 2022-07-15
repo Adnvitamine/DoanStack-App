@@ -47,10 +47,10 @@ const CreateUser = () => {
     return(
         <Fragment>
             <div id="TitleLink">
-                <h2>Subscribe</h2>
+                <h2>Sign Up</h2>
             </div>
             <div className="BrowserNavbar">
-                <p>Subscribe on DoanStack for full access</p>
+                <p>Sign up to try my Eshop project!</p>
             </div>
             <div className="col-md-12" id="Register">
                 <div className="card card-container">

@@ -51,7 +51,7 @@ export default class BoardModerator extends React.Component {
       return (
         <Fragment>
         <div id="TitleLink">
-          <h2>MOD PANEL</h2>
+          <h2>My post panel</h2>
         </div>
           <div className="BrowserNavbar">
             <p>

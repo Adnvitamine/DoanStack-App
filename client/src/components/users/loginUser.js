@@ -47,10 +47,10 @@ const LoginUser = () =>{
     return(
         <Fragment>
                 <div id="TitleLink">
-                <h2>Signin</h2>
+                <h2>Log In</h2>
                 </div>
                 <div className="BrowserNavbar">
-                    <p>Signin on DoanStack for full access</p>
+                    <p>Log in to access my Eshop project!</p>
                 </div>
                 <div className="col-md-12" id="Register">
                     <div className="card card-container">

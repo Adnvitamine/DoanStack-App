@@ -51,7 +51,7 @@ export default class BoardUser extends React.Component {
       return (
         <Fragment>
         <div id="TitleLink">
-          <h2>USER PANEL</h2>
+          <h2>My product panel</h2>
         </div>
           <div className="BrowserNavbar">
             <p>

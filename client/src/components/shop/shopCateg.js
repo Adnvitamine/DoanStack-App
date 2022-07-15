@@ -20,7 +20,7 @@ class shopCateg extends Component {
         <div className="BrowserNavbar">
           <p>
             All our best {this.props.match.params.category}'s deals -
-            DoanStack.be
+            DoanStack.com
           </p>
         </div>
         <div id="ShopBody">

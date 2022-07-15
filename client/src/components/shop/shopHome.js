@@ -40,7 +40,7 @@ class ShopHome extends Component {
           <h2>Shop</h2>
         </div>
         <div className="BrowserNavbar">
-          <p>My Eshop project.</p>
+          <p>My Eshop project - DoanStack.com</p>
         </div>
         <div id="ShopBody">
           <div id="ShopNav">

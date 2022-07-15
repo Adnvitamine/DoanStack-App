@@ -34,10 +34,10 @@ export default class Home extends React.Component {
     return (
       <Fragment>
         <div id="TitleLink">
-          <h2>Greetings, it's so nice to meet you!</h2>
+          <h2>Coding from scratch!</h2>
         </div>
         <div className="BrowserNavbar">
-          <p>"Welcome to my React Web Portfolio"</p>
+          <p>"A fullstack developer's journey"</p>
         </div>
         <div className="homeBody">
           <HomeSVG />

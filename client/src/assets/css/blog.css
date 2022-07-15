@@ -112,7 +112,9 @@
 }
 
 .blogInfo ul {
-  box-shadow: inset 0px -1px 4px #1101ff, inset -1px 0px 4px #ff2600;
+  /*box-shadow: inset 0px -1px 4px #1101ff, inset -1px 0px 4px #ff2600;*/
+  border-radius: 15px;
+  background-color: #dac1fa;
   padding-left: 0;
   display: flex;
   flex-direction: row;

@@ -122,7 +122,7 @@ class App extends React.Component {
                   </li>
                   <li className="nav-item">
                     <Link to={"/shop"} className="nav-link">
-                      Shop
+                      Eshop
                     </Link>
                   </li>
                 </div>
@@ -153,7 +153,7 @@ class App extends React.Component {
                         {showModeratorBoard && (
                           <li className="mobilenav-item" onClick={this.handleClick}>
                             <Link to={"/mod"} className="nav-link">
-                              Mod
+                              Posts
                             </Link>
                           </li>
                         )}
@@ -161,7 +161,7 @@ class App extends React.Component {
                         {currentUser && (
                           <li className="mobilenav-item" onClick={this.handleClick}>
                             <Link to={"/user"} className="nav-link">
-                              User
+                              Products
                             </Link>
                           </li>
                         )}
@@ -211,17 +211,17 @@ class App extends React.Component {
                         </li>
                         <li className="mobilenav-item" id="MobileShop" onClick={this.handleClick}>
                           <Link to={"/shop"} className="nav-link">
-                            Shop
+                            Eshop
                           </Link>
                         </li>
                         <li className="mobilenav-item" onClick={this.handleClick}>
                           <Link to={"/register"} className="nav-link">
-                            Register
+                            Sign Up
                           </Link>
                         </li>
                         <li className="mobilenav-item" onClick={this.handleClick}>
                           <Link to={"/login"} className="nav-link">
-                            Login
+                            Log In
                           </Link>
                         </li>
                       </ul>
@@ -234,7 +234,7 @@ class App extends React.Component {
                     {showModeratorBoard && (
                       <li className="nav-item">
                         <Link to={"/mod"} className="nav-link">
-                          Mod
+                          Posts
                         </Link>
                       </li>
                     )}
@@ -242,7 +242,7 @@ class App extends React.Component {
                     {currentUser && (
                       <li className="nav-item">
                         <Link to={"/user"} className="nav-link">
-                          User
+                          Products
                         </Link>
                       </li>
                     )}
@@ -282,12 +282,12 @@ class App extends React.Component {
                   <div className="navbar-nav ml-auto" id="rightMenu">
                     <li className="nav-item">
                       <Link to={"/register"} className="nav-link">
-                        Register
+                        Sign up
                       </Link>
                     </li>
                     <li className="nav-item">
                       <Link to={"/login"} className="nav-link">
-                        Login
+                        Log In
                       </Link>
                     </li>
                   </div>

@@ -91,6 +91,7 @@
   z-index: 12;
   opacity: 1;
   transition: visibility 1s, opacity 1s linear;
+  width: 100%;
 }
 
 .shopImg img {

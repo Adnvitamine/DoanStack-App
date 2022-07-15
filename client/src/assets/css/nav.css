@@ -30,7 +30,7 @@
   top: 0; /* At the top */
   z-index: 150;
   height: 40px;
-  background-color: #e9f3fb;
+  background-color: white;
   padding: 0;
 }
 
@@ -61,7 +61,9 @@
 .BrowserNavbar p {
   position: relative;
   display: inline-block;
-  margin-bottom: 0;
+  margin-bottom: 0px !important;
+  padding-bottom: 10px;
+  padding-top: 15px;
   background: linear-gradient(red, blue);
   background-clip: text;
   -webkit-text-fill-color: transparent;

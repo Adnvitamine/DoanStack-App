@@ -40,7 +40,7 @@ class BlogHome extends Component {
           <h2>Blog</h2>
         </div>
         <div className="BrowserNavbar">
-          <p>All my topics about PERNstack Application.</p>
+          <p>Read all my topics - DoanStack.com</p>
         </div>
         <div id="BlogBody">
           <div id="BlogNav">

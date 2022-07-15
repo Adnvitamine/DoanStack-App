@@ -1,0 +1,94 @@
+Welcome on Doanstack!!
+
+
+
+Hello everyone!!
+
+
+
+My name is Doan Nguyen, I am a FullStack Developer based in Belgium.
+
+I am very proud and excited to finally being able to show my website portfolio “DoanStack”!
+
+Building this portfolio was quite an amazing journey and I can't wait to tell you more about it.
+
+
+
+I started coding this website as a personal hobby project for learning purpose because I was very interested into learning REACT framework.
+
+
+
+First of all, I want you to know that I have no professional experiences as a web developer.
+
+I've learned coding as a self-taught developer because I feel very passionate about it but never had the opportunity to evolve professionally.
+
+But the year 2021, despite the COVID event that occurred, was a great opportunity for me in terms of time to get back into coding.
+
+So I've come up with the will to fulfill one of my wildest dream which was to have a personal website.
+
+After a bit of research about the most popular framework on the market, I've decide to pick React.js framework as a Frontend Framework for my project and Node.js for the Backend.
+
+And before starting to work on it, I already had a very specific idea about the way I wanted to build my project portfolio.
+
+
+
+First my project had to be budget free which means no cost at all.
+
+Then, I wanted to build it in a way to be a RESTFULL API (see picture)
+
+
+
+And of course I wanted my application to be able to do those CRUD operations (see picture):
+
+
+
+finally, during the development of the project and as my learning curve was growing, I've decide to integrate other features such as:
+
+SVG animation (see homepage)
+dark theme mode (for the planet <3)
+Users authentication && authorization
+Users privileges (admin, moderator, user)
+Images upload (Cloudinary)
+Youtube videos integrations
+WYSIWIG HTML editor (see picture)
+
+
+
+Mailbox System for registered users
+And many others little features that you might be able to notice by taking time to visit my portfolio…
+
+I promise, I will give you more details about all the features in another post.
+
+I forgot to mention that I am using postgreSQL for my database.
+
+
+
+I've also added a little eshop project in my application where you can sell products if you are registered. It has image carousel, product ratings, and comments features as well :).
+
+
+
+Allow me to finish this post by saying that building this application from scratch wasn't smooth at all.
+
+I've encountered countless obstacles like bugs and issues and some of them had me spend many nights without sleep and a crazy amount of coffees.
+
+I don't even want to mention the feeling of loneliness and failure I had to fight with.
+
+
+
+But at the end, I manage to go through it all without having to invest any money like I said above thanks to Heroku hosting and Cloudinary for image upload free tier plan.
+
+
+
+I really hope this project can help me maybe get a job as a developer somehow and to be honest I still don't know if I am worthy enough to get one. But at least I want to say to anyone who is going to read this post that no matter who you are, especially if you are self taught beginner or not, do not give up on your passion. I sure can't tell if it will help in your life, but I can promise you that the feeling of accomplishment is really worth giving it a try!! 
+
+
+
+I stand myself at disposition for any kind of questions and I wish you all the best.
+
+
+
+PS: I want to personally thank all the developers on Youtube and the Stackoverflow community to give the opportunity for someone like me to learn so much for free.   
+
+
+
+Thank you everyone from the bottom of my heart!!
